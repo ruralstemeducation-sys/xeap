@@ -204,3 +204,30 @@ add_action( 'wp_head', function () {
 	}
 	echo '<style id="sepa-qf-sanglap">.page-id-22325 .elementor-element-174801db,.page-id-22325 .elementor-element-174801db p,.page-id-22325 .elementor-widget-text-editor p{color:#e4ecf6!important}.page-id-22325 .elementor-drop-cap-letter{color:#f3a53a!important}</style>' . "\n";
 }, 99 );
+
+/* 7. Trang con rộng hơn: khung nội dung 1200px thay cho 880px (theme cũ để trống hai bên trên màn hình lớn),
+   ẩn tiêu đề trang lặp khi nội dung đã có phần mở đầu riêng, chia đôi các khối chỉ có chữ */
+add_action( 'wp_head', function () {
+	if ( ! is_page() || is_front_page() ) {
+		return;
+	}
+	echo '<style id="sepa-qf-layout">body.page .content-layout{max-width:1200px}body.page .content-layout:has(.hp-hero) > .entry-header{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;padding:0}@media (min-width:900px){body.page .sp-story.sp-text>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);column-gap:56px;align-items:center}body.page .sp-story.sp-text>div>*{grid-column:1}body.page .sp-story.sp-text>div>.sp-facts{grid-column:2;grid-row:1/span 3;max-width:none;margin:0}body.page .sp-table{max-width:760px}}</style>' . "\n";
+}, 99 );
+
+/* 8. Không hiện ảnh đại diện của theme khi nội dung trang đã có chính ảnh đó (tránh ảnh lặp hai lần) */
+add_action( 'wp_head', function () {
+	if ( ! is_page() || is_front_page() || ! has_post_thumbnail() ) {
+		return;
+	}
+	$id   = get_queried_object_id();
+	$file = get_attached_file( get_post_thumbnail_id( $id ) );
+	if ( ! $file ) {
+		return;
+	}
+	$base = preg_replace( '/\.[a-z0-9]+$/i', '', wp_basename( $file ) );
+	$base = preg_replace( '/-scaled$/', '', $base );
+	$hay  = (string) get_post_field( 'post_content', $id ) . (string) get_post_meta( $id, '_elementor_data', true );
+	if ( '' !== $base && false !== strpos( $hay, $base ) ) {
+		echo '<style id="sepa-qf-nodupthumb">.content-layout .featured-image{display:none!important}</style>' . "\n";
+	}
+}, 99 );

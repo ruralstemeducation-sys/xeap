@@ -19,3 +19,5 @@ Repo dùng để xây lại và quản lý thay đổi cho website của Liên m
 - Canonical cho trang chủ và trang chuyên mục (kể cả trang 2, 3…), meta description cho trang chuyên mục, dữ liệu cấu trúc Organization.
 - Trang chủ: một thẻ H1, khu "Kết nối cùng SEPA" gọn.
 - Sửa độ tương phản trang `/sang-lap`.
+- Trang con rộng 1200px thay cho 880px; ẩn tiêu đề trang lặp khi nội dung có phần mở đầu riêng; khối chỉ có chữ chia hai cột trên màn hình rộng.
+- Không hiện ảnh đại diện của theme khi nội dung trang đã có chính ảnh đó.
