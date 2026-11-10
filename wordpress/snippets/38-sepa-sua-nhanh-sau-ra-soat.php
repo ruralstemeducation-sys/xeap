@@ -75,8 +75,24 @@ add_action( 'wp_head', function () {
 	$url = '';
 	if ( is_front_page() ) {
 		$url = function_exists( 'pll_home_url' ) ? pll_home_url() : home_url( '/' );
-	} elseif ( ( is_category() || is_tag() ) && ! is_paged() ) {
+	} elseif ( is_category() || is_tag() ) {
 		$url = get_term_link( get_queried_object() );
+		if ( is_paged() && ! is_wp_error( $url ) ) {
+			$url = trailingslashit( $url ) . 'page/' . (int) get_query_var( 'paged' );
+		}
+		/* Mô tả cho trang danh sách tin: lấy mô tả chuyên mục nếu có, không thì dùng câu chung */
+		$term = get_queried_object();
+		$desc = $term && ! empty( $term->description ) ? wp_strip_all_tags( $term->description ) : '';
+		if ( '' === $desc ) {
+			$name = $term ? $term->name : '';
+			$desc = sepa_qf_is_en()
+				? sprintf( '%s from SEPA – STEM Education Promotion Alliance: programmes, competitions and stories on STEM, robotics and AI education in Vietnam.', $name )
+				: sprintf( '%s của SEPA – Liên minh Thúc đẩy Giáo dục STEM: chương trình, giải đấu và câu chuyện giáo dục STEM, Robotics, AI tại Việt Nam.', $name );
+		}
+		if ( is_paged() ) {
+			$desc .= sepa_qf_is_en() ? ' Page ' . (int) get_query_var( 'paged' ) . '.' : ' Trang ' . (int) get_query_var( 'paged' ) . '.';
+		}
+		echo '<meta name="description" content="' . esc_attr( $desc ) . '">' . "\n";
 	}
 	if ( $url && ! is_wp_error( $url ) ) {
 		echo '<link rel="canonical" href="' . esc_url( $url ) . '">' . "\n";

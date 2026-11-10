@@ -16,6 +16,6 @@ Repo dùng để xây lại và quản lý thay đổi cho website của Liên m
 - Header bảo mật: HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy; bỏ `X-Powered-By`.
 - Tiêu đề trang dạng `Tên trang | SEPA`.
 - Chuyển hướng 301 các trang trùng/rỗng.
-- Canonical cho trang chủ, dữ liệu cấu trúc Organization.
+- Canonical cho trang chủ và trang chuyên mục (kể cả trang 2, 3…), meta description cho trang chuyên mục, dữ liệu cấu trúc Organization.
 - Trang chủ: một thẻ H1, khu "Kết nối cùng SEPA" gọn.
 - Sửa độ tương phản trang `/sang-lap`.
