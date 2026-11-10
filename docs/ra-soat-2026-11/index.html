@@ -1,0 +1,284 @@
+<title>Đánh giá website SEPA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap">
+<style>
+/* Layout: one reading column (~760px) with wide bands for scorecard, comparison table and screenshots */
+:root{
+  --bg:#f7f8fb; --surface:#ffffff; --ink:#14202e; --muted:#5a6676; --line:#e1e6ee;
+  --navy:#0b2a4a; --accent:#d9820a; --accent-soft:#fff3e0;
+  --bad:#c0392b; --bad-soft:#fdecea; --warn:#b7791f; --warn-soft:#fff6e0; --good:#1f8a5b; --good-soft:#e6f5ee;
+  --f-display:"Lexend","Be Vietnam Pro",system-ui,sans-serif;
+  --f-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e141c; --surface:#151d28; --ink:#e7ecf3; --muted:#9aa7b8; --line:#253142;
+  --navy:#9cc4ef; --accent:#f3a53a; --accent-soft:#2a2012;
+  --bad:#f08072; --bad-soft:#2c1714; --warn:#e8b65a; --warn-soft:#2a2210; --good:#5cc79a; --good-soft:#12261d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e141c; --surface:#151d28; --ink:#e7ecf3; --muted:#9aa7b8; --line:#253142;
+  --navy:#9cc4ef; --accent:#f3a53a; --accent-soft:#2a2012;
+  --bad:#f08072; --bad-soft:#2c1714; --warn:#e8b65a; --warn-soft:#2a2210; --good:#5cc79a; --good-soft:#12261d; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16.5px;line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px}
+.wrap{max-width:820px;margin:0 auto}
+.wide{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);color:var(--navy);text-wrap:balance;line-height:1.25;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700}
+h2{font-size:26px;font-weight:600;margin:64px 0 16px}
+h3{font-size:18.5px;font-weight:600;margin:28px 0 8px}
+p{margin:0 0 14px}
+a{color:var(--navy);text-underline-offset:2px}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.meta{color:var(--muted);font-size:14.5px;margin-top:14px}
+.lead{font-size:19px;line-height:1.65;margin:28px 0 0;max-width:68ch}
+.verdict{margin-top:32px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;padding:22px 24px}
+.verdict b{color:var(--navy)}
+.muted{color:var(--muted)}
+small,.note{font-size:14px;color:var(--muted)}
+
+/* Scorecard */
+.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:8px}
+.sc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;gap:6px;min-width:0}
+.sc .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.sc .name{font-weight:600;font-size:15px}
+.sc .num{font-family:var(--f-display);font-weight:700;font-size:22px;font-variant-numeric:tabular-nums}
+.sc .num small{font-size:13px;color:var(--muted);font-weight:500}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:3px}
+.sc.bad .num{color:var(--bad)} .sc.bad .bar i{background:var(--bad)}
+.sc.warn .num{color:var(--warn)} .sc.warn .bar i{background:var(--warn)}
+.sc.good .num{color:var(--good)} .sc.good .bar i{background:var(--good)}
+.sc p{font-size:14px;color:var(--muted);margin:0;line-height:1.5}
+
+/* Table */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.5;min-width:640px}
+th{text-align:left;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:12px 16px;border-bottom:1px solid var(--line)}
+td{padding:12px 16px;border-top:1px solid var(--line);vertical-align:top}
+tr:first-child td{border-top:0}
+td:first-child{font-weight:600;width:30%}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.p-bad{background:var(--bad-soft);color:var(--bad)} .p-warn{background:var(--warn-soft);color:var(--warn)} .p-good{background:var(--good-soft);color:var(--good)}
+
+/* Findings */
+.finding{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0}
+.finding h3{margin:0 0 8px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.finding ul{margin:8px 0 0;padding-left:20px}
+.finding li{margin:4px 0}
+.fix{margin-top:12px;padding:12px 14px;background:var(--accent-soft);border-radius:8px;font-size:15px}
+.fix b{color:var(--accent)}
+figure{margin:16px 0 0}
+figure img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.5}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.two>*{min-width:0}
+@media (max-width:720px){.two{grid-template-columns:1fr}}
+
+/* Home structure */
+.blocks{display:grid;gap:8px;margin-top:12px;counter-reset:b}
+.blk{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+.blk::before{counter-increment:b;content:counter(b);font-family:var(--f-display);font-weight:700;color:var(--accent);font-size:20px;line-height:1.3}
+.blk b{display:block;color:var(--navy)}
+.blk span{font-size:14.5px;color:var(--muted)}
+
+/* Roadmap */
+.phases{display:grid;gap:14px;margin-top:12px}
+.phase{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;display:grid;grid-template-columns:160px 1fr;gap:18px}
+.phase>*{min-width:0}
+.phase .when{font-family:var(--f-display);font-weight:600;color:var(--navy)}
+.phase .when small{display:block;font-family:var(--f-body);font-weight:500}
+.phase ul{margin:0;padding-left:18px}
+.phase li{margin:3px 0}
+@media (max-width:640px){.phase{grid-template-columns:1fr;gap:8px}}
+.method{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.method ul{padding-left:18px}
+code{font-size:.9em;background:var(--line);padding:1px 5px;border-radius:4px}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Báo cáo rà soát · sepa.org.vn</div>
+  <h1>Website SEPA chưa kể được câu chuyện mà Hồ sơ năng lực đang kể</h1>
+  <div class="meta">Ngày 10/11/2026 · Đối chiếu với “SEPA – Hồ sơ năng lực” · Rà soát 198 URL, chụp 16 trang chính trên máy tính và điện thoại</div>
+
+  <p class="lead">Về kỹ thuật, website chạy ổn: nhanh, không lỗi, có song ngữ. Vấn đề nằm ở chỗ khác. Người mới vào trang chủ chỉ thấy một bảng tin. Họ không biết SEPA là ai, đã làm được gì, có những đối tác lớn nào. Những điều làm nên tầm vóc SEPA như 400.000 học sinh, vinh danh cấp Chính phủ, đối tác RECF, ITU, NIC, NSSC đều nằm sâu ở trang con, viết thành đoạn văn dài, gần như không có hình ảnh và logo.</p>
+
+  <div class="verdict">
+    <b>Kết luận ngắn:</b> Nên làm lại trang chủ và hệ thống nhận diện trước, chưa cần thay toàn bộ nền tảng. Có khoảng 10 việc sửa nhanh trong 1 tuần giúp website bớt “nghiệp dư” ngay. Phần làm lại sâu hơn (trang chủ, trang chương trình, bộ nhận diện) cần 3–5 tuần.
+  </div>
+</div>
+
+<div class="wide">
+  <h2 class="wrap" style="max-width:none">Chấm điểm theo 8 tiêu chí</h2>
+  <div class="scores">
+    <div class="sc bad"><div class="top"><span class="name">Ấn tượng đầu &amp; thương hiệu</span><span class="num">3<small>/10</small></span></div><div class="bar"><i style="width:30%"></i></div><p>Logo nhỏ, không có chữ “SEPA”. Màn hình đầu là một tin thông báo, không nói SEPA là ai.</p></div>
+    <div class="sc bad"><div class="top"><span class="name">Thông điệp &amp; nội dung chiến lược</span><span class="num">4<small>/10</small></span></div><div class="bar"><i style="width:40%"></i></div><p>Số liệu tác động, giải thưởng, đối tác có đủ nhưng bị giấu ở trang con và viết dạng văn bản.</p></div>
+    <div class="sc warn"><div class="top"><span class="name">Thiết kế thị giác</span><span class="num">5<small>/10</small></span></div><div class="bar"><i style="width:50%"></i></div><p>Sạch sẽ nhưng giống mẫu chung. Ít ảnh thật, nhiều chữ, màu sắc không thống nhất giữa các khu vực.</p></div>
+    <div class="sc warn"><div class="top"><span class="name">Trải nghiệm trên điện thoại</span><span class="num">5<small>/10</small></span></div><div class="bar"><i style="width:50%"></i></div><p>Không vỡ bố cục, nhưng trang rất dài (Hợp tác ~11.900px) và nhiều nút bấm nhỏ hơn 24px.</p></div>
+    <div class="sc good"><div class="top"><span class="name">Tốc độ</span><span class="num">7<small>/10</small></span></div><div class="bar"><i style="width:70%"></i></div><p>TTFB 0,3–1 giây nhờ LiteSpeed Cache. Có 2 trang nhúng ảnh base64 nặng 1–3MB.</p></div>
+    <div class="sc warn"><div class="top"><span class="name">SEO kỹ thuật</span><span class="num">5<small>/10</small></span></div><div class="bar"><i style="width:50%"></i></div><p>Không có canonical, không có dữ liệu cấu trúc. 43/198 trang có nhiều hơn 1 thẻ H1. 160 ảnh thiếu alt.</p></div>
+    <div class="sc warn"><div class="top"><span class="name">Khả năng tiếp cận</span><span class="num">6<small>/10</small></span></div><div class="bar"><i style="width:60%"></i></div><p>Đã có plugin WCAG. Còn trang chữ xám trên nền xanh đậm gần như không đọc được.</p></div>
+    <div class="sc warn"><div class="top"><span class="name">Bảo mật &amp; vận hành</span><span class="num">5<small>/10</small></span></div><div class="bar"><i style="width:50%"></i></div><p>Lộ danh sách tài khoản, thiếu header bảo mật, 17 plugin không dùng vẫn chưa gỡ.</p></div>
+  </div>
+  <p class="note" style="margin-top:10px">Điểm do người rà soát đánh giá dựa trên bằng chứng bên dưới, không phải điểm từ công cụ tự động.</p>
+</div>
+
+<div class="wrap">
+  <h2>Hồ sơ năng lực nói gì, website thể hiện ra sao</h2>
+  <p>Đây là khoảng cách lớn nhất. Hồ sơ năng lực cho thấy SEPA ở tầm quốc gia và quốc tế, còn website hiện tại để khách tự đi tìm điều đó.</p>
+</div>
+<div class="wide">
+  <div class="tbl"><table>
+    <thead><tr><th>Điểm mạnh trong Hồ sơ</th><th>Trên website hiện tại</th><th>Mức độ</th></tr></thead>
+    <tbody>
+      <tr><td>400.000+ học sinh, 12.000+ giáo viên, 75% dân tộc thiểu số, 60% nữ</td><td>Có ở Giới thiệu và Tác động. <b>Không có trên trang chủ.</b></td><td><span class="pill p-bad">Thiếu ở trang chủ</span></td></tr>
+      <tr><td>Phó Thủ tướng vinh danh tại NIC 2025, Top 9 SAM RATULANGI, giải UNESCO, đề cử UNICEF</td><td>Nằm ở cuối trang Tác động (~vị trí 5.000px), dạng danh sách chữ, không có ảnh hay huy hiệu.</td><td><span class="pill p-bad">Bị chôn</span></td></tr>
+      <tr><td>Đối tác RECF, ITU – Liên Hợp Quốc, British Science Association, NIC, NSSC, Ford, Samsung (MSF)</td><td>Chỉ có tên dạng chữ. <b>Không có logo đối tác nào trên toàn website.</b></td><td><span class="pill p-bad">Thiếu</span></td></tr>
+      <tr><td>Robotics for Good: 2 đội Việt Nam đạt giải Nhì toàn cầu tại Geneva</td><td>Một tin tức ngày 05/07/2026. Trang Hợp tác có nhắc nhưng không được đưa lên làm điểm nhấn.</td><td><span class="pill p-warn">Yếu</span></td></tr>
+      <tr><td>NASA Space Apps Ninh Bình 2025: hạng 42/400+ thế giới, thứ 2 Đông Nam Á</td><td>Có ở Tác động và Hợp tác, dạng ô số nhỏ.</td><td><span class="pill p-warn">Yếu</span></td></tr>
+      <tr><td>Hợp tác chiến lược với Taleem (Ả Rập Xê Út), THCS Trưng Vương 2026–2029</td><td>Taleem chỉ là một ô chữ ở trang Hợp tác.</td><td><span class="pill p-warn">Yếu</span></td></tr>
+      <tr><td>Davilearn, 2.000 mô phỏng miễn phí</td><td>Một dòng ở trang Hoạt động.</td><td><span class="pill p-warn">Yếu</span></td></tr>
+      <tr><td>Hoạt động tại <b>19</b> tỉnh thành (Hồ sơ)</td><td>Website ghi <b>23</b> tỉnh thành ở Giới thiệu, Hoạt động, Tác động.</td><td><span class="pill p-bad">Mâu thuẫn số liệu</span></td></tr>
+      <tr><td>Sứ mệnh “Giáo dục STEM chất lượng cho mọi trẻ em”</td><td>Chỉ có ở thẻ tiêu đề trình duyệt và chân trang.</td><td><span class="pill p-warn">Yếu</span></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div class="wrap">
+  <h2>Các vấn đề chính, kèm ảnh chụp</h2>
+
+  <div class="finding">
+    <h3>1. Màn hình đầu tiên không nói SEPA là ai <span class="pill p-bad">Nghiêm trọng</span></h3>
+    <p>Phần đầu trang chủ là một slider gồm 4 tin tức. Người lần đầu vào trang, như nhà tài trợ, đối tác quốc tế hay Sở Giáo dục, chỉ thấy “Thông báo Giải Vô địch Robotics…”. Không có câu sứ mệnh, không có ảnh học sinh, không có con số. Logo trên đầu trang hiển thị “STEM Education” rất nhỏ, chữ <b>SEPA</b> không xuất hiện ở đâu trong phần này.</p>
+    <figure><img src="img/home-fold.jpg" alt="Màn hình đầu trang chủ sepa.org.vn trên máy tính" width="1100" height="687" loading="lazy"><figcaption>Trang chủ trên máy tính 1440px. Toàn bộ màn hình đầu là một tin thông báo.</figcaption></figure>
+    <div class="fix"><b>Nên làm:</b> Phần đầu trang gồm câu sứ mệnh lớn, một ảnh thật của học sinh vùng cao, 3 con số tác động và 2 nút “Hợp tác cùng SEPA” và “Các chương trình”. Tin tức chuyển xuống dưới.</div>
+  </div>
+
+  <div class="finding">
+    <h3>2. Gần 40% trang chủ là các khung mạng xã hội trống <span class="pill p-bad">Nghiêm trọng</span></h3>
+    <p>Khu “Kết nối cùng SEPA” có 4 khung Facebook/YouTube. Để trang nhẹ, các khung này chỉ nạp nội dung khi người xem bấm vào. Kết quả là ai mới vào cũng thấy 4 ô xám lớn, trông như website bị lỗi. Phần này cao khoảng 1.500px trên tổng 3.900px của trang chủ.</p>
+    <figure><img src="img/home-social.jpg" alt="Khu vực mạng xã hội trên trang chủ với các khung trống" width="1100" height="1366" loading="lazy"><figcaption>Các khung Facebook và YouTube khi chưa bấm.</figcaption></figure>
+    <div class="fix"><b>Nên làm:</b> Thay bằng một hàng nút mạng xã hội gọn hoặc 3–4 ảnh hoạt động mới nhất. Khu vực này nên cao dưới 300px.</div>
+  </div>
+
+  <div class="finding">
+    <h3>3. Ảnh đại diện tin tức là poster chữ bị cắt cụt <span class="pill p-warn">Quan trọng</span></h3>
+    <p>Nhiều ảnh đại diện là poster thiết kế sẵn có chữ, kích thước 1200×630. Khi bị cắt vào khung thẻ, chữ mất đầu mất đuôi, ví dụ “CF Achieve / nacle”, “BAL STEM EVENTS”. Có bài dùng ảnh tạm chỉ ghi chữ “SEPA”. Trang Tin tức cũng không có bộ lọc theo chương trình (Robotics, NASA, CREST…).</p>
+    <figure><img src="img/news-thumbs.jpg" alt="Lưới thẻ tin tức với ảnh đại diện bị cắt chữ" width="1100" height="669" loading="lazy"><figcaption>Trang Tin tức: chữ trên poster bị cắt ở cả ba thẻ đầu.</figcaption></figure>
+    <div class="fix"><b>Nên làm:</b> Ảnh đại diện dùng ảnh chụp thật, không chữ. Poster chỉ đặt trong thân bài. Thêm bộ lọc theo chương trình.</div>
+  </div>
+
+  <div class="finding">
+    <h3>4. Trang con nhiều chữ, ít ảnh, giống văn bản báo cáo <span class="pill p-warn">Quan trọng</span></h3>
+    <p>Các trang Giới thiệu, Hoạt động, Tác động, Hợp tác có nội dung tốt và đầy đủ. Nhưng mỗi trang dài 4.200–6.800px trên máy tính (8.500–11.900px trên điện thoại) mà chỉ có 3–6 ảnh, chủ yếu là các khối chữ nhỏ màu xám. SEPA làm việc với học sinh vùng cao, nữ sinh mặc trang phục dân tộc, robot, drone. Đó là chất liệu hình ảnh rất mạnh mà website gần như chưa khai thác.</p>
+    <ul>
+      <li>Trang Hợp tác liệt kê 13 tổ chức đối tác nhưng không có logo nào.</li>
+      <li>Giải thưởng trình bày dạng bảng chữ, không có ảnh trao giải hay huy hiệu.</li>
+      <li>Màu nút bấm là gradient xanh–tím, trong khi các bài viết dùng xanh navy–cam. Hai “giọng” màu khác nhau.</li>
+    </ul>
+    <div class="fix"><b>Nên làm:</b> Mỗi trang chương trình có ảnh lớn ở đầu, một hàng số liệu, ảnh xen kẽ nội dung và một câu chuyện học sinh hoặc giáo viên. Trang Hợp tác có tường logo đối tác.</div>
+  </div>
+
+  <div class="finding">
+    <h3>5. Trang cũ thiết kế khác hẳn, có trang gần như không đọc được <span class="pill p-warn">Quan trọng</span></h3>
+    <p>Website có 52 trang tiếng Việt và 22 trang tiếng Anh. Phần lớn trang cũ chưa được làm lại theo giao diện mới. Ví dụ trang <code>/sang-lap</code>: chữ xám đậm trên nền xanh navy, độ tương phản quá thấp. Đây lại là trang giới thiệu Nhà sáng lập.</p>
+    <div class="two">
+      <figure><img src="img/sanglap.jpg" alt="Trang Sáng lập với chữ xám trên nền xanh đậm" width="900" height="1017" loading="lazy"><figcaption>/sang-lap: phần nội dung chính gần như không đọc được.</figcaption></figure>
+      <div>
+        <p style="margin-top:16px"><b>Các trang trùng hoặc lỗi thời:</b></p>
+        <ul style="padding-left:20px;margin:0">
+          <li><code>/sang-lap</code> và <code>/gioi-thieu/doi-ngu-sang-lap/sang-lap-va-dieu-hanh</code></li>
+          <li><code>/lang-chanh</code> và <code>/lang-chanh-thanh-hoa</code></li>
+          <li><code>/dai-su-stem-hoc-sinh-2</code> và <code>/dai-su-stem-hoc-sinh-2/dai-su-stem-2</code></li>
+          <li><code>/hoithaostemnu</code> và <code>/stem-cho-phai-nu</code></li>
+          <li><code>/thu-thach-nasa-2025</code>, <code>/cuoc-thi-co-hoi</code>: cần kiểm tra còn dùng hay không</li>
+          <li><code>/robotics-summer-camp-2026</code>: HTML nặng hơn 1MB vì nhúng 14 ảnh base64, tải quá 60 giây trong lần kiểm tra. Bản tiếng Anh nặng 3MB.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fix"><b>Nên làm:</b> Gộp hoặc chuyển hướng (301) các trang trùng, làm lại các trang còn giá trị theo một mẫu chung, ẩn các trang sự kiện đã qua vào mục Lưu trữ.</div>
+  </div>
+
+  <div class="finding">
+    <h3>6. SEO kỹ thuật còn thiếu nền tảng <span class="pill p-warn">Quan trọng</span></h3>
+    <ul>
+      <li>Không có thẻ <code>canonical</code> và không có dữ liệu cấu trúc Organization. Google khó hiểu SEPA là một tổ chức, có logo, có trang Facebook chính thức.</li>
+      <li>Plugin Yoast SEO đã cài nhưng đang tắt. Website dùng sitemap mặc định của WordPress.</li>
+      <li>135/198 trang có tiêu đề dài hơn 70 ký tự vì đuôi “– SEPA – STEM Education Promotion Alliance” bị cắt trên Google. Nên rút gọn thành “… | SEPA”.</li>
+      <li>Trang chủ có 4 thẻ H1. Tổng cộng 43 trang có nhiều hơn 1 H1.</li>
+      <li>160/928 ảnh thiếu mô tả (alt). Trang Tin tức không có meta description.</li>
+    </ul>
+  </div>
+
+  <div class="finding">
+    <h3>7. Bảo mật và vận hành <span class="pill p-bad">Nên xử lý ngay</span></h3>
+    <ul>
+      <li><b>Lộ tên đăng nhập:</b> <code>/wp-json/wp/v2/users</code> và <code>wp-sitemap-users-1.xml</code> công khai 5 tài khoản, trong đó có tài khoản quản trị. Kẻ xấu biết sẵn tên đăng nhập để dò mật khẩu.</li>
+      <li><b>Plugin thừa:</b> 28 plugin, trong đó 17 plugin đang tắt nhưng chưa gỡ. Có WP File Manager (từng dính lỗ hổng nghiêm trọng) và Slider Revolution 6.6.7 (bản cũ). Plugin tắt vẫn có thể bị khai thác. Nên gỡ hẳn.</li>
+      <li><b>Thiếu header bảo mật:</b> chưa có HSTS, X-Frame-Options, Content-Security-Policy. Server còn để lộ phiên bản PHP qua header <code>x-powered-by</code>.</li>
+      <li><b>Mật khẩu ứng dụng “sepaclaude”</b> đã được gửi qua chat. Nên thu hồi sau khi dùng xong.</li>
+    </ul>
+  </div>
+
+  <div class="finding">
+    <h3>Những điểm đang làm tốt <span class="pill p-good">Giữ lại</span></h3>
+    <ul>
+      <li>Tốc độ tốt: TTFB 0,3–1 giây, trang 530KB–1,9MB, 32–44 request, không có lỗi JavaScript trên 16 trang kiểm tra.</li>
+      <li>Song ngữ Việt–Anh đầy đủ ở các trang chính, menu rõ ràng.</li>
+      <li>Nội dung các trang Giới thiệu, Tác động, Hợp tác đã viết chuẩn và có số liệu. Chỉ cần trình bày lại.</li>
+      <li>Mẫu bài viết “sepa-pr” (navy–cam, có số liệu, dòng thời gian) chuyên nghiệp nhất website. Nên lấy làm gốc cho bộ nhận diện.</li>
+      <li>Trang Tra cứu chứng nhận và nền tảng EventSTEM là điểm khác biệt nên làm nổi bật hơn.</li>
+    </ul>
+  </div>
+
+  <h2>Trang chủ nên kể câu chuyện theo thứ tự này</h2>
+  <p>Mỗi khối trả lời một câu hỏi của nhà tài trợ hoặc đối tác. Nội dung đã có sẵn trong Hồ sơ năng lực.</p>
+  <div class="blocks">
+    <div class="blk"><div><b>SEPA là ai</b><span>Sứ mệnh “Giáo dục STEM chất lượng cho mọi trẻ em”, ảnh thật học sinh vùng cao, 2 nút hành động.</span></div></div>
+    <div class="blk"><div><b>Tác động bằng con số</b><span>400.000+ học sinh · 12.000+ giáo viên · 19 tỉnh thành · 75% học sinh dân tộc thiểu số · 60% nữ sinh.</span></div></div>
+    <div class="blk"><div><b>Ghi nhận và đối tác</b><span>Dải logo RECF, ITU, British Science Association, NIC, NSSC, Ford, kèm dòng “Được Phó Thủ tướng vinh danh tại NIC 2025”.</span></div></div>
+    <div class="blk"><div><b>Ba nhóm học sinh SEPA ưu tiên</b><span>Vùng cao và dân tộc thiểu số · Nữ sinh · Học sinh khuyết tật. Mỗi nhóm có một ảnh và một câu chuyện ngắn.</span></div></div>
+    <div class="blk"><div><b>Chương trình và giải đấu</b><span>VRC/RECF, Robotics for Good, NASA Space Apps, CREST Awards, đào tạo giáo viên “A Piece of Teach”, Davilearn.</span></div></div>
+    <div class="blk"><div><b>Thành tích quốc tế</b><span>2 đội giải Nhì toàn cầu tại Geneva · NASA Space Apps hạng 2 Đông Nam Á · 5 đội đạt giải tại VEX World.</span></div></div>
+    <div class="blk"><div><b>Tin mới và sự kiện sắp tới</b><span>3 tin mới nhất và lịch sự kiện gần nhất. Đây là phần duy nhất thay đổi hàng tuần.</span></div></div>
+    <div class="blk"><div><b>Lời mời hợp tác</b><span>Dành cho doanh nghiệp, tổ chức quốc tế, Sở Giáo dục. Có tải Hồ sơ năng lực và thông tin liên hệ Giám đốc.</span></div></div>
+  </div>
+
+  <h2>Lộ trình đề xuất</h2>
+  <div class="phases">
+    <div class="phase"><div class="when">Sửa nhanh<small class="muted">1 tuần</small></div><ul>
+      <li>Thay khu mạng xã hội trống bằng hàng nút gọn.</li>
+      <li>Sửa màu chữ trang /sang-lap. Thống nhất số tỉnh thành (19 hay 23).</li>
+      <li>Gỡ 17 plugin không dùng. Chặn lộ danh sách tài khoản. Thêm header bảo mật.</li>
+      <li>Chuyển hướng 301 các trang trùng. Thay ảnh base64 bằng file ảnh.</li>
+      <li>Rút gọn đuôi tiêu đề trang, sửa H1 trên trang chủ.</li>
+    </ul></div>
+    <div class="phase"><div class="when">Nhận diện &amp; trang chủ<small class="muted">2–3 tuần</small></div><ul>
+      <li>Bộ nhận diện web: logo có chữ SEPA rõ ràng, bảng màu navy–cam, kiểu chữ, quy chuẩn ảnh.</li>
+      <li>Làm lại trang chủ theo 8 khối ở trên.</li>
+      <li>Thu thập logo đối tác và 30–50 ảnh chất lượng cao từ các chương trình.</li>
+    </ul></div>
+    <div class="phase"><div class="when">Trang chương trình &amp; tin tức<small class="muted">2 tuần</small></div><ul>
+      <li>Một mẫu trang chương trình dùng chung (VRC, R4G, NASA, CREST, ba nhóm học sinh).</li>
+      <li>Trang Tin tức có bộ lọc theo chương trình, ảnh đại diện không chữ.</li>
+      <li>Bật SEO (Yoast hoặc tương đương), thêm dữ liệu cấu trúc Organization và Event.</li>
+    </ul></div>
+    <div class="phase"><div class="when">Nền tảng lâu dài<small class="muted">cần quyết định</small></div><ul>
+      <li><b>Phương án A:</b> giữ WordPress, làm lại theme gọn, bỏ dần các trang Elementor cũ. Đội ngũ vẫn đăng bài như hiện nay.</li>
+      <li><b>Phương án B:</b> dựng lại trong repo <code>xeap</code> (ví dụ Astro), dùng WordPress làm nơi nhập tin. Nhanh và an toàn hơn, nhưng cần người kỹ thuật duy trì.</li>
+    </ul></div>
+  </div>
+
+  <div class="method">
+    <b>Cách rà soát:</b>
+    <ul>
+      <li>Tải toàn bộ 198 URL trong sitemap (52 trang và 80 bài tiếng Việt; 22 trang và 44 bài tiếng Anh). Phân tích tiêu đề, mô tả, H1, alt ảnh, kích thước.</li>
+      <li>Mở 16 trang chính bằng Chromium ở khổ máy tính 1440px và iPhone 13. Đo thời gian tải, dung lượng, số request, lỗi console, độ rộng tràn, nút bấm nhỏ.</li>
+      <li>Kiểm tra header HTTP, danh sách plugin và theme qua tài khoản quản trị (chỉ đọc), các endpoint công khai.</li>
+      <li>Đối chiếu nội dung với tài liệu “SEPA – Hồ sơ năng lực”.</li>
+    </ul>
+    Số đo là tại thời điểm kiểm tra từ máy chủ đám mây. Tốc độ thực tế tại Việt Nam có thể khác.
+  </div>
+</div>
