@@ -24,4 +24,4 @@ Repo dùng để xây lại và quản lý thay đổi cho website của Liên m
 
 ## Brochure cho trường tư thục, quốc tế
 
-`docs/brochure-truong-quoc-te/` – brochure song ngữ Việt–Anh, A4 dọc, 8 trang (in gập giữa được). Mở `index.html` để xem/sửa, file in là `SEPA-brochure-truong-quoc-te.pdf`.
+`docs/brochure-truong-quoc-te/` – hồ sơ giới thiệu SEPA song ngữ Việt–Anh (giới thiệu tổ chức, hợp tác quốc tế, sự kiện, chuyên môn, tác động, ghi nhận), A4 dọc, 8 trang, in gập giữa được. Mở `index.html` để xem/sửa, file in là `SEPA-brochure-truong-quoc-te.pdf`.
