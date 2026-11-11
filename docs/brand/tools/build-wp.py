@@ -71,8 +71,8 @@ css_out += """
 #sepa-brand h1{font-size:clamp(40px,6.5vw,68px)!important;line-height:1.05!important}
 #sepa-brand h2{font-size:clamp(28px,4vw,38px)!important;line-height:1.15!important}
 #sepa-brand .specimen-b{font-family:"Myriad Pro","Be Vietnam Pro",sans-serif!important}
-#sepa-brand dd,#sepa-brand dd span:not(.vi):not(.en){font-family:var(--f-mono)!important}
-#sepa-brand dd .copy,#sepa-brand dd .copy span{font-family:var(--f-body)!important}
+#sepa-brand .swatch dd{font-family:var(--f-mono)!important}
+#sepa-brand .swatch dd .copy,#sepa-brand .swatch dd .copy span,#sepa-brand .swatch dd span{font-family:var(--f-body)!important}
 """
 open(os.path.join(BRAND, 'wp', 'sepa-brand.css'), 'w', encoding='utf-8').write(css_out)
 

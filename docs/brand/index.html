@@ -159,6 +159,12 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
 .lang{display:inline-flex;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;overflow:hidden;flex:none}
 .lang button{font:700 13px/1 var(--f-body);letter-spacing:.06em;padding:8px 13px;border:0;background:transparent;color:#fff;cursor:pointer}
 .lang button[aria-pressed="true"]{background:#fff;color:var(--brand)}
+.tm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:22px;align-items:start}
+.tm .stage{aspect-ratio:16/10}
+.tm dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.tm dt{color:var(--muted)}
+.tm dd{margin:0;font-variant-numeric:tabular-nums}
+@media (max-width:860px){.tm{grid-template-columns:1fr}}
 </style>
 
 <header class="mast">
@@ -192,6 +198,7 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
     <a href="#khoang-cach"><span class="vi">Vùng an toàn</span><span class="en" lang="en">Clear space</span></a>
     <a href="#nen"><span class="vi">Chọn nền</span><span class="en" lang="en">Backgrounds</span></a>
     <a href="#luu-y"><span class="vi">Lưu ý khi dùng</span><span class="en" lang="en">Please avoid</span></a>
+    <a href="#nhan-hieu"><span class="vi">Bảo hộ nhãn hiệu</span><span class="en" lang="en">Trademark</span></a>
     <a href="#doi-tac"><span class="vi">Ghép logo đối tác</span><span class="en" lang="en">Co-branding</span></a>
   </div>
 </nav>
@@ -337,6 +344,25 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
     </div>
   </section>
 
+  <section id="nhan-hieu">
+    <div class="sec-head">
+      <h2><span class="vi">Nhãn hiệu đã được bảo hộ</span><span class="en" lang="en">A registered trademark</span></h2>
+      <p class="muted"><span class="vi">Logo SEPA đã được Cục Sở hữu trí tuệ (Bộ Khoa học và Công nghệ) cấp Giấy chứng nhận đăng ký nhãn hiệu. Nhãn hiệu được bảo hộ tổng thể, vì vậy mong bạn luôn dùng logo đầy đủ và nguyên vẹn như file đã tải về.</span><span class="en" lang="en">The SEPA logo is registered with the Intellectual Property Office of Viet Nam. The mark is protected as a whole, so please always use the complete logo exactly as supplied.</span></p>
+    </div>
+    <div class="tm">
+      <div class="stage on-white"><img src="logo/sepa-logo-ngang-mau.svg" alt=""></div>
+      <dl>
+        <dt><span class="vi">Giấy chứng nhận</span><span class="en" lang="en">Certificate</span></dt><dd><span class="vi">Số 639865</span><span class="en" lang="en">No. 639865</span> (VN 4-0639865)</dd>
+        <dt><span class="vi">Cơ quan cấp</span><span class="en" lang="en">Issued by</span></dt><dd><span class="vi">Cục Sở hữu trí tuệ</span><span class="en" lang="en">Intellectual Property Office of Viet Nam</span></dd>
+        <dt><span class="vi">Chủ sở hữu</span><span class="en" lang="en">Owner</span></dt><dd>Công ty TNHH Liên minh Thúc đẩy Giáo dục STEM</dd>
+        <dt><span class="vi">Ngày cấp</span><span class="en" lang="en">Granted</span></dt><dd>07/09/2026</dd>
+        <dt><span class="vi">Hiệu lực đến</span><span class="en" lang="en">Valid until</span></dt><dd>13/08/2035 <span class="vi">(có thể gia hạn)</span><span class="en" lang="en">(renewable)</span></dd>
+        <dt><span class="vi">Nhóm</span><span class="en" lang="en">Class</span></dt><dd><span class="vi">41 – dịch vụ hỗ trợ giáo dục, giáo dục STEM</span><span class="en" lang="en">41 – educational support services, STEM education</span></dd>
+        <dt><span class="vi">Màu sắc bảo hộ</span><span class="en" lang="en">Colours</span></dt><dd><span class="vi">Xanh dương đậm, trắng</span><span class="en" lang="en">Dark blue, white</span></dd>
+      </dl>
+    </div>
+  </section>
+
   <section id="doi-tac">
     <div class="sec-head">
       <h2><span class="vi">Ghép logo với đối tác</span><span class="en" lang="en">Co-branding</span></h2>
@@ -360,7 +386,7 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
 <footer>
   <div class="wrap">
     <span>© <span class="vi">Liên minh Thúc đẩy Giáo dục STEM (SEPA)</span><span class="en" lang="en">STEM Education Promotion Alliance (SEPA)</span> · <a href="https://sepa.org.vn">sepa.org.vn</a></span>
-    <span><span class="vi">Logo SEPA thuộc sở hữu của SEPA. Cảm ơn bạn đã sử dụng logo đúng cách trong các hoạt động hợp tác.</span><span class="en" lang="en">The SEPA logo is the property of SEPA. Thank you for using it with care in our joint activities.</span></span>
+    <span><span class="vi">Logo SEPA là nhãn hiệu đã đăng ký bảo hộ tại Việt Nam (GCN số 639865). Cảm ơn bạn đã sử dụng logo đúng cách trong các hoạt động hợp tác.</span><span class="en" lang="en">The SEPA logo is a registered trademark in Viet Nam (Certificate No. 639865). Thank you for using it with care in our joint activities.</span></span>
   </div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>

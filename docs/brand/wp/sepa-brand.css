@@ -116,6 +116,12 @@
 #sepa-brand .lang{display:inline-flex;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;overflow:hidden;flex:none}
 #sepa-brand .lang button{font:700 13px/1 var(--f-body);letter-spacing:.06em;padding:8px 13px;border:0;background:transparent;color:#fff;cursor:pointer}
 #sepa-brand .lang button[aria-pressed="true"]{background:#fff;color:var(--brand)}
+#sepa-brand .tm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:22px;align-items:start}
+#sepa-brand .tm .stage{aspect-ratio:16/10}
+#sepa-brand .tm dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+#sepa-brand .tm dt{color:var(--muted)}
+#sepa-brand .tm dd{margin:0;font-variant-numeric:tabular-nums}
+@media (max-width:860px){#sepa-brand .tm{grid-template-columns:1fr}}
 #sepa-brand{font-size:16px;line-height:1.65;border-radius:18px;overflow:hidden;margin:8px 0 40px;text-align:left}
 #sepa-brand .wrap{padding-left:clamp(16px,4vw,40px);padding-right:clamp(16px,4vw,40px)}
 #sepa-brand main.wrap{padding-bottom:8px}
@@ -135,5 +141,5 @@
 #sepa-brand h1{font-size:clamp(40px,6.5vw,68px)!important;line-height:1.05!important}
 #sepa-brand h2{font-size:clamp(28px,4vw,38px)!important;line-height:1.15!important}
 #sepa-brand .specimen-b{font-family:"Myriad Pro","Be Vietnam Pro",sans-serif!important}
-#sepa-brand dd,#sepa-brand dd span:not(.vi):not(.en){font-family:var(--f-mono)!important}
-#sepa-brand dd .copy,#sepa-brand dd .copy span{font-family:var(--f-body)!important}
+#sepa-brand .swatch dd{font-family:var(--f-mono)!important}
+#sepa-brand .swatch dd .copy,#sepa-brand .swatch dd .copy span,#sepa-brand .swatch dd span{font-family:var(--f-body)!important}
