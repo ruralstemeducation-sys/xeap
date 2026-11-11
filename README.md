@@ -21,3 +21,7 @@ Repo dùng để xây lại và quản lý thay đổi cho website của Liên m
 - Sửa độ tương phản trang `/sang-lap`.
 - Trang con rộng 1200px thay cho 880px; ẩn tiêu đề trang lặp khi nội dung có phần mở đầu riêng; khối chỉ có chữ chia hai cột trên màn hình rộng.
 - Không hiện ảnh đại diện của theme khi nội dung trang đã có chính ảnh đó.
+
+## Brochure cho trường tư thục, quốc tế
+
+`docs/brochure-truong-quoc-te/` – brochure song ngữ Việt–Anh, A4 dọc, 8 trang (in gập giữa được). Mở `index.html` để xem/sửa, file in là `SEPA-brochure-truong-quoc-te.pdf`.

@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brochure SEPA – Trường quốc tế</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* Brochure A4 dọc, 8 trang (in gập giữa / đóng ghim được). Màu theo Bộ nhận diện SEPA: Xanh SEPA #253E93. */
+:root{
+  --blue:#253E93; --navy:#0f1a3d; --navy-2:#16245a; --gold:#F1B33C; --gold-soft:#fdf3dc;
+  --sky:#e9ecf7; --sky-2:#f4f6fb; --ink:#1b2442; --muted:#5b6480; --en:#41538f; --line:#d9deec;
+  --f:"Be Vietnam Pro","Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4;margin:0}
+html{background:#cfd4e2}
+body{font-family:var(--f);color:var(--ink);font-size:8.6pt;line-height:1.48;-webkit-print-color-adjust:exact;print-color-adjust:exact;background:#cfd4e2}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:#fff;margin:10mm auto;box-shadow:0 4px 24px rgba(15,26,61,.18);page-break-after:always;break-after:page}
+@media print{html,body{background:#fff}.page{margin:0;box-shadow:none}}
+@media screen and (max-width:820px){.page{zoom:.46}}
+img{display:block;max-width:100%}
+.in{position:absolute;inset:16mm 15mm 17mm}
+h1,h2,h3,h4{font-weight:800;line-height:1.15;color:var(--navy);letter-spacing:-.01em}
+.eyebrow{font-size:7pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.eyebrow .en{color:var(--muted);font-weight:600}
+.h2{font-size:21pt;margin-top:2.5mm}
+.h2-en{font-size:12pt;font-weight:500;color:var(--en);margin-top:1.2mm;letter-spacing:0}
+.en{color:var(--en)}
+.bi{display:grid;grid-template-columns:1fr 1fr;gap:7mm}
+.bi>div{min-width:0}
+.bi .en{border-left:.6pt solid var(--line);padding-left:7mm;margin-left:-3.5mm}
+.lead{font-size:9.6pt;line-height:1.5}
+.tag{display:inline-block;white-space:nowrap;font-size:6.4pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.6mm 2mm;border-radius:1mm;background:var(--sky);color:var(--blue)}
+.foot{position:absolute;left:15mm;right:15mm;bottom:8mm;display:flex;justify-content:space-between;font-size:6.6pt;color:var(--muted);border-top:.5pt solid var(--line);padding-top:2mm}
+.foot b{color:var(--blue);font-weight:700}
+.photo{position:relative;overflow:hidden;border-radius:2mm}
+.photo img{width:100%;height:100%;object-fit:cover}
+.cap{font-size:6.6pt;color:var(--muted);margin-top:1.4mm;line-height:1.4}
+.cap i{color:var(--en);font-style:normal}
+
+/* ---------- 1. Bìa ---------- */
+.cover{background:var(--navy)}
+.cover .hero{position:absolute;inset:0 0 auto 0;height:206mm}
+.cover .hero img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.cover .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,26,61,.55) 0%,rgba(15,26,61,0) 26%,rgba(15,26,61,0) 52%,rgba(15,26,61,1) 100%)}
+.cover .logo{position:absolute;top:13mm;left:15mm;width:52mm;z-index:2}
+.cover .badge{position:absolute;top:15mm;right:15mm;z-index:2;color:#fff;text-align:right;font-size:6.8pt;letter-spacing:.14em;text-transform:uppercase;font-weight:600;line-height:1.6}
+.cover .badge b{display:block;font-size:15pt;letter-spacing:0;color:var(--gold);font-weight:800}
+.cover .body{position:absolute;left:15mm;right:15mm;top:170mm;color:#fff;z-index:2}
+.cover .kicker{font-size:7.4pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.cover .kicker span{color:#b9c3e6;font-weight:600}
+.cover h1{color:#fff;font-size:34pt;line-height:1.06;margin-top:4mm;letter-spacing:-.02em}
+.cover .t-en{font-size:17pt;font-weight:400;color:#c9d2f0;margin-top:3mm;line-height:1.2}
+.cover .sub{display:grid;grid-template-columns:1fr 1fr;gap:8mm;margin-top:7mm;font-size:8.8pt;line-height:1.5;color:#e4e9f8}
+.cover .sub .en{color:#aab6e0;border-left:.6pt solid rgba(255,255,255,.22);padding-left:6mm;margin-left:-3mm}
+.cover .paths{position:absolute;left:15mm;right:15mm;bottom:21mm;display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;z-index:2}
+.cover .paths div{border-top:1.4pt solid var(--gold);padding-top:2.4mm;color:#fff;font-size:8pt;font-weight:700;line-height:1.3}
+.cover .paths small{display:block;font-weight:400;color:#aab6e0;font-size:6.6pt;margin-top:.8mm;line-height:1.35}
+.cover .bar{position:absolute;left:0;right:0;bottom:0;height:12mm;background:var(--blue);display:flex;align-items:center;justify-content:space-between;padding:0 15mm;color:#fff;font-size:7.4pt;font-weight:600;letter-spacing:.04em}
+.cover .bar span{color:#c9d2f0;font-weight:400}
+
+/* ---------- 2. Giới thiệu ---------- */
+.about .split{display:grid;grid-template-columns:1fr 62mm;gap:8mm;margin-top:7mm}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:8mm;background:var(--navy);border-radius:2.5mm;color:#fff;overflow:hidden}
+.stats div{padding:5mm 4mm 4.4mm;border-left:.5pt solid rgba(255,255,255,.14)}
+.stats div:first-child{border-left:0}
+.stats b{display:block;font-size:21pt;font-weight:800;color:var(--gold);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stats span{display:block;font-size:7.6pt;margin-top:2mm;line-height:1.3}
+.stats i{display:block;font-style:normal;font-size:6.8pt;color:#aab6e0;margin-top:.6mm;line-height:1.3}
+.src{font-size:6.4pt;color:var(--muted);margin-top:1.6mm}
+.mv{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:7mm}
+.mv div{background:var(--sky-2);border-radius:2mm;padding:4.5mm 5mm;border-top:1.4pt solid var(--blue)}
+.mv h4{font-size:10pt}
+.mv h4 small{font-weight:500;color:var(--en);font-size:8pt;margin-left:1.5mm}
+.mv p{margin-top:1.6mm}
+.mv p.en{margin-top:1.2mm;font-size:8pt}
+.values{display:flex;gap:2mm;margin-top:5mm;flex-wrap:wrap;align-items:center}
+.values span{font-size:7.4pt;font-weight:600;border:.6pt solid var(--line);border-radius:5mm;padding:1mm 3mm;color:var(--navy)}
+.values span i{font-style:normal;color:var(--en);font-weight:400}
+.values em{display:block;width:100%;margin-bottom:.6mm;font-style:normal;font-size:7pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:1mm}
+.team{margin-top:7mm;display:grid;grid-template-columns:repeat(3,1fr);gap:5mm}
+.person{border-top:.6pt solid var(--line);padding-top:3mm}
+.person h4{font-size:9.4pt}
+.person .role{font-size:7.2pt;color:var(--blue);font-weight:600;margin-top:.8mm;line-height:1.35}
+.person .role i{font-style:normal;color:var(--muted);font-weight:400;display:block}
+.person ul{list-style:none;margin-top:2mm;font-size:7.3pt;line-height:1.42}
+.person li{padding-left:3mm;position:relative;margin-top:.8mm}
+.person li::before{content:"";position:absolute;left:0;top:1.6mm;width:1.2mm;height:1.2mm;background:var(--gold);border-radius:50%}
+.person li i{font-style:normal;color:var(--en)}
+
+/* ---------- 3. Vì sao chọn SEPA ---------- */
+.why .top{display:grid;grid-template-columns:1fr 76mm;gap:8mm;align-items:end}
+.reasons{display:grid;grid-template-columns:1fr 1fr;gap:4mm 6mm;margin-top:7mm}
+.rs{display:grid;grid-template-columns:9mm 1fr;gap:3mm;padding:4mm 0 3.6mm;border-top:.6pt solid var(--line)}
+.rs .n{font-size:17pt;font-weight:800;color:var(--blue);line-height:1}
+.rs h3{font-size:10.4pt}
+.rs h3 small{display:block;font-size:8.2pt;font-weight:500;color:var(--en);margin-top:.6mm;letter-spacing:0}
+.rs p{margin-top:1.6mm;font-size:8pt}
+.rs p.en{margin-top:1mm;font-size:7.6pt}
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-top:6mm}
+.proof div{background:var(--gold-soft);border-radius:2mm;padding:3.6mm 3.6mm 3.2mm}
+.proof b{display:block;font-size:16pt;font-weight:800;color:var(--navy);line-height:1;letter-spacing:-.02em}
+.proof span{display:block;font-size:7.2pt;margin-top:1.4mm;line-height:1.3}
+.proof i{display:block;font-style:normal;font-size:6.7pt;color:var(--en);margin-top:.5mm;line-height:1.3}
+.schools{margin-top:6mm;font-size:7.4pt;color:var(--muted);line-height:1.5}
+.schools b{color:var(--navy);font-weight:700}
+
+/* ---------- 4. Robotics ---------- */
+.prog-head{display:flex;justify-content:space-between;align-items:flex-end;gap:8mm}
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:6mm;position:relative}
+.step{background:var(--sky-2);padding:4.4mm 4.6mm 4mm;position:relative;border-right:.6pt solid #fff;min-width:0}
+.step:nth-child(2){background:var(--sky)}
+.step:nth-child(3){background:#dde3f4}
+.step:first-child{border-radius:2mm 0 0 2mm}
+.step:last-child{border-radius:0 2mm 2mm 0;border-right:0}
+.step .lv{font-size:6.6pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.step h4{font-size:11pt;margin-top:1mm}
+.step .age{font-size:7.4pt;font-weight:600;margin-top:.8mm}
+.step .age i{font-style:normal;color:var(--en);font-weight:400}
+.step p{font-size:7.4pt;margin-top:1.8mm;line-height:1.4}
+.step p.en{margin-top:.8mm;font-size:7pt}
+.arrow-note{font-size:7pt;color:var(--muted);margin-top:2mm}
+.season{margin-top:6mm;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.season::before{content:"";position:absolute;left:2mm;right:2mm;top:2.2mm;height:.8pt;background:var(--line)}
+.season div{position:relative;padding-top:6.4mm;padding-right:3mm}
+.season div::before{content:"";position:absolute;top:.8mm;left:0;width:3mm;height:3mm;border-radius:50%;background:#fff;border:1pt solid var(--blue)}
+.season div.hl::before{background:var(--gold);border-color:var(--gold)}
+.season b{display:block;font-size:8pt;color:var(--navy)}
+.season span{display:block;font-size:7.2pt;margin-top:.6mm;line-height:1.35}
+.season i{display:block;font-style:normal;font-size:6.8pt;color:var(--en);margin-top:.4mm;line-height:1.35}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:7mm}
+.card{border:.6pt solid var(--line);border-radius:2.2mm;padding:4.6mm 5mm}
+.card h3{font-size:11pt}
+.card h3 small{display:block;font-size:8.2pt;font-weight:500;color:var(--en);margin-top:.6mm;letter-spacing:0}
+.card p{margin-top:2mm;font-size:7.9pt}
+.card p.en{margin-top:1mm;font-size:7.5pt}
+.facts{display:flex;gap:5mm;flex-wrap:nowrap;margin-top:3mm;flex-wrap:wrap}
+.facts span{font-size:7pt;line-height:1.3}
+.facts b{display:block;font-size:10.5pt;font-weight:800;color:var(--blue)}
+.ticks{list-style:none;margin-top:2.4mm;font-size:7.6pt}
+.ticks li{position:relative;padding-left:4.4mm;margin-top:1.2mm;line-height:1.4}
+.ticks li::before{content:"";position:absolute;left:.4mm;top:1.1mm;width:2.2mm;height:1.2mm;border-left:1.1pt solid var(--blue);border-bottom:1.1pt solid var(--blue);transform:rotate(-45deg)}
+.ticks li i{font-style:normal;color:var(--en);display:block;font-size:7.2pt}
+
+/* ---------- 5. Nghiên cứu & khóa học ---------- */
+.crest{display:grid;grid-template-columns:1fr 70mm;gap:7mm;margin-top:6mm}
+table{border-collapse:collapse;width:100%;font-size:7.6pt}
+th{font-size:6.4pt;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:700;padding:1.6mm 2mm;border-bottom:.8pt solid var(--navy)}
+td{padding:1.7mm 2mm;border-bottom:.5pt solid var(--line);vertical-align:top}
+td:first-child{font-weight:700;color:var(--navy)}
+td i{font-style:normal;color:var(--en)}
+.lvbar-unused{display:inline-block;height:1.6mm;border-radius:1mm;background:var(--gold);vertical-align:middle;margin-right:1.6mm}
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:4mm}
+.course{background:var(--sky-2);border-radius:2mm;padding:4mm 4.2mm;min-width:0}
+.course .code{font-size:6.6pt;font-weight:800;letter-spacing:.12em;color:#fff;background:var(--blue);display:inline-block;padding:.5mm 1.8mm;border-radius:1mm}
+.course h4{font-size:9.6pt;margin-top:2mm}
+.course h4 small{display:block;font-weight:500;color:var(--en);font-size:7.8pt;margin-top:.4mm}
+.course .meta{font-size:7pt;font-weight:600;margin-top:1.6mm;color:var(--blue)}
+.course p{font-size:7.3pt;margin-top:1.4mm;line-height:1.4}
+.course p.en{font-size:7pt;margin-top:.8mm}
+.events{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:4mm}
+.ev{border-top:1.2pt solid var(--gold);padding-top:2.6mm}
+.ev h4{font-size:9pt}
+.ev h4 small{display:block;font-weight:500;color:var(--en);font-size:7.6pt;margin-top:.4mm}
+.ev p{font-size:7.3pt;margin-top:1.4mm;line-height:1.4}
+.ev p.en{font-size:7pt;margin-top:.6mm}
+.sec{margin-top:7mm;display:flex;align-items:baseline;gap:3mm}
+.sec h3{font-size:12pt}
+.sec span{font-size:9pt;font-weight:500;color:var(--en)}
+.sec::after{content:"";flex:1;height:.6pt;background:var(--line);transform:translateY(-1mm)}
+
+/* ---------- 6. Giáo viên & nền tảng ---------- */
+.modules{margin-top:5mm;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(4,auto);grid-auto-flow:column;gap:0 6mm;counter-reset:m}
+.mod{display:grid;grid-template-columns:8mm 1fr;gap:2mm;padding:2.6mm 0;border-top:.5pt solid var(--line)}
+.mod::before{counter-increment:m;content:counter(m,decimal-leading-zero);font-size:10pt;font-weight:800;color:var(--blue);line-height:1.2}
+.mod.core::before{color:var(--blue)}
+.mod.opt::before{color:#9aa6cc}
+.mod b{display:block;font-size:8.2pt;color:var(--navy)}
+.mod i{display:block;font-style:normal;font-size:7.4pt;color:var(--en);margin-top:.3mm}
+.legend{display:flex;gap:5mm;font-size:6.8pt;color:var(--muted);margin-top:2mm}
+.legend span::before{content:"";display:inline-block;width:2.4mm;height:2.4mm;border-radius:50%;margin-right:1.2mm;vertical-align:-.3mm;background:var(--blue)}
+.legend span.o::before{background:#9aa6cc}
+.formats{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:5mm}
+.formats div{background:var(--sky-2);border-radius:2mm;padding:3.6mm 4.2mm}
+.formats h4{font-size:9pt}
+.formats h4 small{font-weight:500;color:var(--en);font-size:7.8pt;margin-left:1mm}
+.formats p{font-size:7.4pt;margin-top:1.2mm;line-height:1.4}
+.formats p.en{font-size:7pt;margin-top:.6mm}
+.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:4mm}
+.pf{border:.6pt solid var(--line);border-radius:2mm;padding:4mm 4.2mm}
+.pf .big{font-size:15pt;font-weight:800;color:var(--blue);line-height:1;letter-spacing:-.02em}
+.pf h4{font-size:9.4pt;margin-top:2mm}
+.pf p{font-size:7.3pt;margin-top:1.2mm;line-height:1.4}
+.pf p.en{font-size:7pt;margin-top:.6mm}
+.pf .url{font-size:7pt;font-weight:700;color:var(--blue);margin-top:1.6mm}
+
+.trainers{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4mm 5mm;margin-top:3mm;font-size:7.2pt;color:var(--muted);line-height:1.35}
+.trainers div{border-left:1.2pt solid var(--gold);padding-left:2.6mm}
+.trainers b{display:block;color:var(--navy);font-size:8pt}
+/* ---------- 7. Hợp tác ---------- */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:6mm}
+.tier{border-radius:2.4mm;padding:5mm 4.6mm;background:var(--sky-2);position:relative;min-width:0}
+.tier.feat{background:var(--navy);color:#fff}
+.tier.feat h3,.tier.feat .lv{color:#fff}
+.tier.feat .en,.tier.feat h3 small{color:#aab6e0}
+.tier.feat .ticks li::before{border-color:var(--gold)}
+.tier .lv{font-size:6.6pt;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.tier.feat .lv{color:var(--gold)}
+.tier h3{font-size:11.4pt;margin-top:1.4mm}
+.tier h3 small{display:block;font-size:8pt;font-weight:500;color:var(--en);margin-top:.5mm;letter-spacing:0}
+.tier .ticks{font-size:7.4pt}
+.tier .ticks li i{font-size:7pt}
+.tier .eg{font-size:6.9pt;margin-top:3mm;padding-top:2.4mm;border-top:.5pt solid rgba(91,100,128,.3);line-height:1.4}
+.tier.feat .eg{border-color:rgba(255,255,255,.2);color:#dfe5f7}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:5mm;counter-reset:s}
+.steps div{position:relative;padding-top:8mm}
+.steps div::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:6mm;height:6mm;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-size:8pt;display:flex;align-items:center;justify-content:center}
+.steps div::after{content:"";position:absolute;top:3mm;left:8mm;right:-2mm;height:.6pt;background:var(--line)}
+.steps div:last-child::after{display:none}
+.steps b{display:block;font-size:8.6pt;color:var(--navy)}
+.steps b small{display:block;font-weight:500;color:var(--en);font-size:7.4pt}
+.steps p{font-size:7.2pt;margin-top:1.2mm;line-height:1.4}
+.steps p.en{font-size:6.9pt;margin-top:.5mm}
+.net{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:6mm}
+.net ul{list-style:none;font-size:7.4pt}
+.net li{padding:1.5mm 0;border-top:.5pt solid var(--line);line-height:1.38}
+.net li b{color:var(--navy)}
+.net li i{font-style:normal;color:var(--en);display:block;font-size:7pt}
+.net h4{font-size:9pt;margin-bottom:1.6mm}
+.net h4 small{font-weight:500;color:var(--en);font-size:7.8pt;margin-left:1mm}
+
+/* ---------- 8. Bìa sau ---------- */
+.back{background:var(--blue);color:#fff}
+.back .strip{position:absolute;top:0;left:0;right:0;height:82mm;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:1.2mm}
+.back .strip img{width:100%;height:100%;object-fit:cover}
+.back .strip::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(37,62,147,0) 55%,rgba(37,62,147,1) 100%)}
+.back .body{position:absolute;left:15mm;right:15mm;top:92mm}
+.back h2{color:#fff;font-size:27pt;line-height:1.08;letter-spacing:-.02em}
+.back .t-en{font-size:14pt;font-weight:400;color:#c9d2f0;margin-top:2.6mm}
+.back .msg{display:grid;grid-template-columns:1fr 1fr;gap:8mm;margin-top:6mm;font-size:8.8pt;color:#e4e9f8}
+.back .msg .en{color:#b9c3e6;border-left:.6pt solid rgba(255,255,255,.25);padding-left:6mm;margin-left:-3mm}
+.open{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:7mm}
+.open div{border-top:1.2pt solid var(--gold);padding-top:2.4mm}
+.open small{display:block;font-size:6.4pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.open b{display:block;font-size:9.6pt;margin-top:1mm}
+.open span{display:block;font-size:7.4pt;color:#c9d2f0;margin-top:.6mm}
+.contact{position:absolute;left:15mm;right:15mm;top:181mm;display:grid;grid-template-columns:1fr 40mm;gap:8mm;background:#fff;color:var(--ink);border-radius:3mm;padding:7mm 7mm}
+.contact .who{font-size:7pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.contact h3{font-size:14pt;margin-top:1.6mm}
+.contact .ttl{font-size:8pt;color:var(--muted)}
+.contact dl{display:grid;grid-template-columns:22mm 1fr;gap:1.6mm 3mm;margin-top:4.4mm;font-size:8.6pt}
+.contact dt{font-size:6.8pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:.5mm}
+.contact dd{font-weight:600;color:var(--navy)}
+.qr{text-align:center}
+.qr img{width:34mm;height:34mm;margin:0 auto}
+.qr p{font-size:6.8pt;color:var(--muted);margin-top:2mm;line-height:1.35}
+.qr p b{color:var(--navy);display:block}
+.legal{position:absolute;left:15mm;right:15mm;bottom:20mm;display:grid;grid-template-columns:auto 1fr;gap:8mm;align-items:end}
+.legal img{width:46mm}
+.legal p{font-size:6.8pt;color:#c9d2f0;line-height:1.5;text-align:right}
+.legal p b{color:#fff;font-weight:600}
+.back .bar{position:absolute;left:0;right:0;bottom:0;height:10mm;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 15mm;font-size:6.8pt;color:#aab6e0;letter-spacing:.04em}
+.back .bar b{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<!-- ===================== TRANG 1 · BÌA ===================== -->
+<section class="page cover">
+  <div class="hero"><img src="img/cover.jpg" alt="Học sinh thi đấu robot VEX IQ"></div>
+  <img class="logo" src="img/logo-trang.svg" alt="SEPA – STEM Education Promotion Alliance">
+  <div class="badge">Năm học · School year<b>2026–2027</b></div>
+  <div class="body">
+    <div class="kicker">Dành cho trường tư thục &amp; quốc tế <span>· For private &amp; international schools</span></div>
+    <h1>Đối tác STEM chuẩn quốc tế cho nhà trường</h1>
+    <div class="t-en">Your international-standard STEM partner</div>
+    <div class="sub">
+      <p>Robotics, nghiên cứu khoa học và dữ liệu mở theo chuẩn của các tổ chức quốc tế, triển khai ngay tại trường và dẫn học sinh đến các sân chơi toàn cầu.</p>
+      <p class="en">Robotics, science research and open-data programmes to international standards, delivered on your campus and leading students to global stages.</p>
+    </div>
+  </div>
+  <div class="paths">
+    <div>RECF Robotics<small>Đại diện quốc tế tại Việt Nam<br>International Representative</small></div>
+    <div>CREST Awards<small>British Science Association<br>Đối tác triển khai · Delivery partner</small></div>
+    <div>NASA Space Apps<small>Đơn vị đăng cai điểm thi<br>Local event host</small></div>
+    <div>AI for Good – ITU<small>Robotics for Good Youth Challenge<br>Đơn vị tổ chức · Organiser</small></div>
+  </div>
+  <div class="bar">Liên minh Thúc đẩy Giáo dục STEM <span>STEM Education Promotion Alliance</span> sepa.org.vn</div>
+</section>
+
+<!-- ===================== TRANG 2 · VỀ SEPA ===================== -->
+<section class="page about">
+  <div class="in">
+    <div class="eyebrow">01 · Về SEPA <span class="en">· About SEPA</span></div>
+    <h2 class="h2">Giáo dục STEM chất lượng cho mọi trẻ em</h2>
+    <div class="h2-en">Quality STEM Education for All</div>
+
+    <div class="bi lead" style="margin-top:6mm">
+      <div><p>Liên minh Thúc đẩy Giáo dục STEM (SEPA) là doanh nghiệp xã hội tại Việt Nam. SEPA thiết kế và vận hành chương trình STEM cho học sinh và giáo viên, cùng các tổ chức quốc tế đưa những chuẩn mực đánh giá và sân chơi toàn cầu về Việt Nam.</p></div>
+      <div class="en"><p>The STEM Education Promotion Alliance (SEPA) is a Vietnamese social enterprise. We design and run STEM programmes for students and teachers, and work with international organisations to bring global assessment standards and competitions to Vietnam.</p></div>
+    </div>
+
+    <div class="stats">
+      <div><b>400.000+</b><span>học sinh được hỗ trợ</span><i>students supported</i></div>
+      <div><b>12.000+</b><span>giáo viên, cán bộ quản lý được tập huấn</span><i>teachers &amp; leaders trained</i></div>
+      <div><b>19</b><span>tỉnh thành triển khai</span><i>provinces &amp; cities</i></div>
+      <div><b>100+</b><span>trường đã tham gia hoạt động</span><i>schools engaged</i></div>
+    </div>
+    <div class="src">Số liệu lũy kế 2023–2025 theo hồ sơ năng lực SEPA · Cumulative figures 2023–2025, SEPA capability statement.</div>
+
+    <div class="mv">
+      <div><h4>Sứ mệnh <small>Mission</small></h4>
+        <p>Đưa giáo dục STEM chất lượng đến với mọi trẻ em.</p>
+        <p class="en">To bring quality STEM education to every child.</p></div>
+      <div><h4>Tầm nhìn <small>Vision</small></h4>
+        <p>Mọi học sinh, ở thành phố hay vùng cao, đều có cơ hội học STEM như nhau.</p>
+        <p class="en">Fair access to STEM for every student, in cities and in the mountains alike.</p></div>
+    </div>
+
+    <div class="values"><em>Giá trị cốt lõi · Core values</em>
+      <span>Hợp tác <i>Collaboration</i></span><span>Xuất sắc <i>Excellence</i></span><span>Hành động <i>Action</i></span><span>Nhân ái <i>Compassion</i></span><span>Chính trực <i>Integrity</i></span>
+    </div>
+
+    <div class="sec" style="margin-top:7mm"><h3>Đội ngũ điều hành</h3><span>Leadership</span></div>
+    <div class="team">
+      <div class="person">
+        <h4>Đào Thị Hồng Quyên</h4>
+        <div class="role">Nhà sáng lập &amp; Giám đốc<i>Founder &amp; Director</i></div>
+        <ul>
+          <li>Đại diện quốc tế của RECF tại Việt Nam <i>· RECF International Representative</i></li>
+          <li>Chevron/National Geographic Fab STEM Fellow</li>
+          <li>Học bổng Fulbright TEA và Honeywell Educators at Space Academy <i>· Fulbright TEA &amp; Honeywell scholar</i></li>
+        </ul>
+      </div>
+      <div class="person">
+        <h4>TS. Đặng Văn Sơn</h4>
+        <div class="role">Giảng viên, ĐH Khoa học Tự nhiên – ĐHQG Hà Nội<i>Lecturer, VNU University of Science</i></div>
+        <ul>
+          <li>Tiến sĩ Khoa học vật liệu, ĐH Birmingham (Anh), học bổng Marie Curie <i>· PhD, University of Birmingham</i></li>
+          <li>Sáng lập Học viện Sáng tạo S3; nhiều năm trưởng ban chuyên môn Ngày hội STEM Quốc gia <i>· Founder, S3 Creative Academy</i></li>
+        </ul>
+      </div>
+      <div class="person">
+        <h4>TS. Dương Tuấn Hưng</h4>
+        <div class="role">Trưởng phòng Thí nghiệm Hóa học Môi trường, Viện Hóa học – VAST<i>Head of Lab, Institute of Chemistry, VAST</i></div>
+        <ul>
+          <li>Từng huấn luyện đội tuyển Việt Nam dự Intel ISEF <i>· Former coach, Vietnam team at Intel ISEF</i></li>
+          <li>Giảng dạy tại Học viện Khoa học và Công nghệ <i>· Lecturer, Graduate University of Science &amp; Technology</i></li>
+        </ul>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:4mm;margin-top:6mm">
+      <div class="photo" style="height:29mm"><img src="img/camp.jpg" alt="Đội ngũ Robotics Summer Camp 2026"></div>
+      <div class="photo" style="height:29mm"><img src="img/outdoor.jpg" alt="Học sinh thi đấu robot ngoài trời"></div>
+    </div>
+    <div class="cap">Robotics Summer Camp 2026 tại American Center, Đại sứ quán Hoa Kỳ và Giải RECF Engage tại THCS Trưng Vương. <i>Robotics Summer Camp 2026 at the American Center Hanoi; RECF Engage at Trung Vuong School.</i></div>
+  </div>
+  <div class="foot"><span><b>SEPA</b> · Hồ sơ giới thiệu dành cho nhà trường · School partnership brochure</span><span>02</span></div>
+</section>
+
+<!-- ===================== TRANG 3 · VÌ SAO CHỌN SEPA ===================== -->
+<section class="page why">
+  <div class="in">
+    <div class="top">
+      <div>
+        <div class="eyebrow">02 · Vì sao chọn SEPA <span class="en">· Why SEPA</span></div>
+        <h2 class="h2">Điều nhà trường nhận được khi đồng hành cùng SEPA</h2>
+        <div class="h2-en">What your school gains from partnering with SEPA</div>
+      </div>
+      <div>
+        <div class="photo" style="height:46mm"><img src="img/wellspring.jpg" alt="Đội WSHN.POI, Wellspring Hà Nội"></div>
+        <div class="cap">Đội WSHN.POI – Wellspring Hà Nội tại Giải RECF Engage khu vực Hà Nội, 11/2026. <i>Wellspring Hanoi team at the RECF Engage Hanoi regional event.</i></div>
+      </div>
+    </div>
+
+    <div class="reasons">
+      <div class="rs"><div class="n">1</div><div>
+        <h3>Lộ trình quốc tế chính thức<small>Official international pathways</small></h3>
+        <p>SEPA tổ chức vòng thi tại Việt Nam của các sân chơi toàn cầu: RECF STEM World Championship (Hoa Kỳ), Chung kết AI for Good (Geneva), NASA Space Apps Challenge.</p>
+        <p class="en">SEPA runs the Vietnam rounds of global programmes leading to the RECF World Championship (USA), the AI for Good final (Geneva) and NASA Space Apps.</p></div></div>
+      <div class="rs"><div class="n">2</div><div>
+        <h3>Học theo dự án, đánh giá theo chuẩn<small>Project-based, internationally assessed</small></h3>
+        <p>Engineering Notebook, phỏng vấn giám khảo, chứng nhận CREST: học sinh có hồ sơ dự án và chứng nhận quốc tế cho hồ sơ học thuật.</p>
+        <p class="en">Engineering notebooks, judge interviews and CREST certification give students a documented project portfolio and international recognition.</p></div></div>
+      <div class="rs"><div class="n">3</div><div>
+        <h3>Chuyên gia từ đại học và viện nghiên cứu<small>Experts from universities and institutes</small></h3>
+        <p>Giảng viên, nhà khoa học từ ĐHQG Hà Nội, ĐH Bách khoa Hà Nội, ĐH Sư phạm và Viện Hàn lâm KH&amp;CN Việt Nam trực tiếp tập huấn và chấm thi.</p>
+        <p class="en">Scientists and lecturers from leading Vietnamese universities and the Vietnam Academy of Science and Technology train teachers and judge projects.</p></div></div>
+      <div class="rs"><div class="n">4</div><div>
+        <h3>Linh hoạt theo chương trình của trường<small>Fits your curriculum and timetable</small></h3>
+        <p>Tích hợp vào giờ học, câu lạc bộ, hoạt động ngoại khóa, tuần lễ STEM hoặc dự án cộng đồng; tài liệu và hoạt động bằng tiếng Việt hoặc tiếng Anh.</p>
+        <p class="en">Delivered in lessons, clubs, co-curricular activities, STEM weeks or service projects, in Vietnamese or English.</p></div></div>
+      <div class="rs"><div class="n">5</div><div>
+        <h3>Vận hành sự kiện trọn gói<small>End-to-end event delivery</small></h3>
+        <p>Nhà trường có thể đăng cai giải đấu ngay tại trường: SEPA lo luật thi, sân đấu, trọng tài, giám khảo, chấm điểm trực tiếp và chứng nhận điện tử.</p>
+        <p class="en">Host a tournament on campus: SEPA handles rules, fields, referees, judges, live scoring and digital certificates.</p></div></div>
+      <div class="rs"><div class="n">6</div><div>
+        <h3>STEM gắn với trách nhiệm xã hội<small>STEM with social purpose</small></h3>
+        <p>Học sinh có thể đồng hành cùng chương trình STEM cho học sinh vùng cao, học sinh nữ và học sinh khuyết tật: trải nghiệm phục vụ cộng đồng thực chất.</p>
+        <p class="en">Students can support SEPA’s programmes for rural students, girls and students with disabilities: genuine service-learning experience.</p></div></div>
+    </div>
+
+    <div class="proof">
+      <div><b>18</b><span>đội dự VEX Worlds 2025, 5 đội đạt 6 giải thế giới</span><i>teams at VEX Worlds; 6 world awards</i></div>
+      <div><b>2</b><span>đội Việt Nam đạt giải Nhì Chung kết Geneva 2026</span><i>teams won 2nd prize in Geneva</i></div>
+      <div><b>42/400+</b><span>xếp hạng toàn cầu điểm thi NASA Space Apps Ninh Bình</span><i>global location ranking</i></div>
+      <div><b>135</b><span>giám khảo từ đại học, viện nghiên cứu</span><i>judges from universities &amp; institutes</i></div>
+    </div>
+
+    <p class="schools"><b>Đã đồng hành cùng SEPA · Schools we have worked with:</b> THCS Trưng Vương (đối tác chiến lược 2026–2029) · Hanoi Toronto School · Wellspring Hà Nội · FPT School · Hệ thống Alpha School · Trường Thực nghiệm Victory · Hệ thống Giáo dục Tân Thời Đại và hơn 100 trường trên cả nước.</p>
+  </div>
+  <div class="foot"><span><b>SEPA</b> · Hồ sơ giới thiệu dành cho nhà trường · School partnership brochure</span><span>03</span></div>
+</section>
+
+<!-- ===================== TRANG 4 · ROBOTICS ===================== -->
+<section class="page">
+  <div class="in">
+    <div class="prog-head">
+      <div>
+        <div class="eyebrow">03 · Chương trình học sinh <span class="en">· Student programmes</span></div>
+        <h2 class="h2">Robotics: từ câu lạc bộ đến Giải Vô địch Thế giới</h2>
+        <div class="h2-en">Robotics: from school club to World Championship</div>
+      </div>
+      <span class="tag">RECF · VEX · ITU</span>
+    </div>
+
+    <div class="bi" style="margin-top:5mm">
+      <div><p>Là đại diện quốc tế của Robotics Education &amp; Competition Foundation (RECF) tại Việt Nam, SEPA đưa hệ thống thi đấu robotics giáo dục lớn nhất thế giới vào nhà trường. Học sinh tự thiết kế, chế tạo, lập trình robot và trình bày quá trình kỹ thuật trước giám khảo.</p></div>
+      <div class="en"><p>As RECF’s International Representative in Vietnam, SEPA brings the world’s largest educational robotics competition system to schools. Students design, build and code their own robots and present their engineering process to judges.</p></div>
+    </div>
+
+    <div class="ladder">
+      <div class="step"><div class="lv">Bước 1 · Level 1</div><h4>RECF Engage</h4>
+        <div class="age">U12 · U15 <i>· Tiểu học, THCS / Primary &amp; lower secondary</i></div>
+        <p>VEX IQ hoặc LEGO SPIKE. Làm quen với thiết kế, lập trình và làm việc nhóm.</p>
+        <p class="en">VEX IQ or LEGO SPIKE. First steps in design, coding and teamwork.</p></div>
+      <div class="step"><div class="lv">Bước 2 · Level 2</div><h4>RECF Achieve</h4>
+        <div class="age">THCS · THPT <i>· Secondary school</i></div>
+        <p>Nền tảng VEX V5: cơ khí, lập trình tự động, điều khiển và chiến thuật liên minh.</p>
+        <p class="en">VEX V5 platform: mechanics, autonomous coding, driving and alliance strategy.</p></div>
+      <div class="step"><div class="lv">Bước 3 · Level 3</div><h4>RECF Inspire</h4>
+        <div class="age">Sau THPT <i>· Post-secondary</i></div>
+        <p>V5 mở rộng với cảm biến thương mại, Raspberry Pi, gia công và in 3D.</p>
+        <p class="en">Extended V5 with commercial sensors, Raspberry Pi, machining and 3D printing.</p></div>
+    </div>
+    <div class="arrow-note">Cùng một nền tảng, độ mở tăng dần theo độ tuổi: học sinh phát triển liên tục từ tiểu học đến đại học. · <span class="en">One platform family, opening up with age, so skills keep building from primary to university.</span></div>
+
+    <div class="sec"><h3>Mùa giải 2026–2027</h3><span>Season timeline</span></div>
+    <div class="season">
+      <div><b>T8–9/2026</b><span>Khởi động, thành lập đội, tập huấn HLV</span><i>Kick-off, team set-up, coach training</i></div>
+      <div><b>T10/2026</b><span>2 sự kiện thi thử Bắc, Nam</span><i>2 scrimmages, North &amp; South</i></div>
+      <div><b>T11–12/2026</b><span>2 vòng loại khu vực</span><i>2 regional qualifiers</i></div>
+      <div class="hl"><b>19–21/02/2027</b><span>Vietnam Open, cùng 12–24 đội quốc tế</span><i>Vietnam Open with international teams</i></div>
+      <div class="hl"><b>27/4–6/5/2027</b><span>RECF STEM World Championship, St. Louis, Hoa Kỳ</span><i>World Championship, USA</i></div>
+    </div>
+
+    <div class="duo" style="margin-top:9mm">
+      <div class="card">
+        <h3>Robotics for Good Youth Challenge<small>Coordinated by ITU – AI for Good (United Nations)</small></h3>
+        <p>SEPA được Liên minh Viễn thông Quốc tế (ITU) phê duyệt tổ chức tại Việt Nam. Học sinh 10–18 tuổi dùng phần cứng, phần mềm mã nguồn mở để giải bài toán an ninh lương thực.</p>
+        <p class="en">ITU-approved organiser in Vietnam. Students aged 10–18 use open-source hardware and software to tackle food security.</p>
+        <div class="facts"><span><b>0 đ</b>phí tham gia · free</span><span><b>T11/2026–T3/2027</b>mùa giải · season</span><span><b>Geneva</b>chung kết toàn cầu · global final</span></div>
+      </div>
+      <div class="card">
+        <h3>Nhà trường nhận được<small>What your school receives</small></h3>
+        <ul class="ticks">
+          <li>Thành lập, huấn luyện CLB Robotics &amp; AI <i>Set-up and coaching of a Robotics &amp; AI club</i></li>
+          <li>Tập huấn giáo viên, huấn luyện viên theo chuẩn RECF <i>RECF-standard teacher and coach training</i></li>
+          <li>Đăng ký đội, hỗ trợ hồ sơ thi đấu quốc tế <i>Team registration and international entry support</i></li>
+          <li>Đăng cai giải đấu tại trường, như Giải RECF Engage tại THCS Trưng Vương 11/2026: 25 đội, 63 trận <i>Host an event on campus (e.g. Trung Vuong 2026: 25 teams, 63 matches)</i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>SEPA</b> · Hồ sơ giới thiệu dành cho nhà trường · School partnership brochure</span><span>04</span></div>
+</section>
+
+<!-- ===================== TRANG 5 · NGHIÊN CỨU, DỮ LIỆU, KHÓA HỌC ===================== -->
+<section class="page">
+  <div class="in">
+    <div class="eyebrow">04 · Chương trình học sinh <span class="en">· Student programmes</span></div>
+    <h2 class="h2">Nghiên cứu, dữ liệu mở và khóa học</h2>
+    <div class="h2-en">Research, open data and specialist courses</div>
+
+    <div class="crest">
+      <div>
+        <div class="sec" style="margin-top:0"><h3>CREST Awards</h3><span>British Science Association</span></div>
+        <div class="bi" style="margin-top:2.6mm;gap:6mm">
+          <div><p style="font-size:8pt">Chứng nhận dự án khoa học của Hiệp hội Khoa học Anh cho học sinh 3–19 tuổi. Học sinh tự đặt câu hỏi, thiết kế nghiên cứu và trình bày kết quả. SEPA triển khai tại miền Bắc cùng SSEN và STEAMAX.</p></div>
+          <div class="en"><p style="font-size:7.6pt">The British Science Association’s project award for ages 3–19. Students ask their own questions, design investigations and present results. Delivered by SEPA in northern Vietnam with SSEN and STEAMAX.</p></div>
+        </div>
+        <table style="margin-top:3mm">
+          <thead><tr><th>Cấp · Level</th><th>Độ tuổi · Age</th><th>Thời lượng · Typical time</th></tr></thead>
+          <tbody>
+            <tr><td>Star</td><td>3–7</td><td>6 × ~1 giờ <i>· 6 × ~1 h</i></td></tr>
+            <tr><td>SuperStar</td><td>7–11</td><td>6 × ~1 giờ <i>· 6 × ~1 h</i></td></tr>
+            <tr><td>Discovery</td><td>10–14</td><td>~5 giờ <i>· ~5 hours</i></td></tr>
+            <tr><td>Bronze</td><td>11+</td><td>~10 giờ <i>· ~10 hours</i></td></tr>
+            <tr><td>Silver</td><td>14+</td><td>~30 giờ <i>· ~30 hours</i></td></tr>
+            <tr><td>Gold</td><td>16+</td><td>~70 giờ <i>· ~70 hours</i></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="photo" style="height:52mm"><img src="img/certificates.jpg" alt="Học viên nhận chứng nhận Trại hè Khám phá Dữ liệu Mở 2026"></div>
+        <div class="cap">Lễ bế mạc Trại hè Khám phá Dữ liệu Mở 2026 tại American Center Hanoi. <i>Open Data Exploration Summer Camp 2026, American Center Hanoi.</i></div>
+        <div class="card" style="margin-top:4mm;padding:4mm">
+          <h3 style="font-size:10pt">NASA Space Apps Challenge<small>Hackathon lớn nhất thế giới do NASA khởi xướng</small></h3>
+          <p style="font-size:7.4pt">48 giờ dùng dữ liệu mở của NASA để giải bài toán trên Trái Đất và ngoài không gian. SEPA đăng cai điểm thi Ninh Bình 2025 và Hà Nội 14–15/11/2026.</p>
+          <p class="en" style="font-size:7pt">48 hours using NASA open data to solve challenges on Earth and in space. SEPA hosted Ninh Binh 2025 and hosts Hanoi on 14–15 Nov 2026.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec"><h3>Khóa học chuyên đề</h3><span>Specialist short courses · 2 ngày / 4 buổi · 2 days / 4 sessions</span></div>
+    <div class="courses">
+      <div class="course"><span class="code">OD01</span>
+        <h4>Khám phá và khai thác dữ liệu mở<small>Open Data Exploration</small></h4>
+        <div class="meta">14–17 tuổi · ages 14–17</div>
+        <p>Tìm, đánh giá và trực quan hóa dữ liệu mở (như NASA Worldview) để giải một vấn đề thực tiễn.</p>
+        <p class="en">Find, evaluate and visualise open data (e.g. NASA Worldview) to solve a real-world problem.</p></div>
+      <div class="course"><span class="code">BIO01</span>
+        <h4>Thế giới sống dưới kính hiển vi<small>Microscopic World</small></h4>
+        <div class="meta">12–17 tuổi · ages 12–17</div>
+        <p>Làm tiêu bản, chụp ảnh hiển vi và thực hiện mini project theo nhóm 3–4 học sinh.</p>
+        <p class="en">Prepare slides, take micrographs and complete a mini project in teams of 3–4.</p></div>
+      <div class="course"><span class="code">LD01</span>
+        <h4>Lãnh đạo trong STEM<small>Leadership in STEM for Youth</small></h4>
+        <div class="meta">THCS &amp; THPT · secondary · 4 buổi × 2,5–3 giờ</div>
+        <p>Từ hiểu bản thân đến dẫn dắt nhóm và hoàn thành một dự án STEM cộng đồng đo được tác động.</p>
+        <p class="en">From self-awareness to team leadership and a community STEM project with measurable impact.</p></div>
+    </div>
+
+    <div class="sec"><h3>Trại hè và trải nghiệm</h3><span>Camps and STEM expeditions</span></div>
+    <div class="events">
+      <div class="ev"><h4>Open Data Exploration Camp<small>American Center, U.S. Embassy Hanoi</small></h4>
+        <p>3 ngày khám phá dữ liệu NASA, mô phỏng vệ tinh CubeSat, thuyết trình trước hội đồng.</p>
+        <p class="en">3 days with NASA data, CubeSat simulation and a final panel pitch.</p></div>
+      <div class="ev"><h4>Robotics Summer Camp<small>CyberChamps × aDudu × SEPA</small></h4>
+        <p>Học sinh từng thi đấu VEX, FIRST dẫn dắt học viên làm quen Robotics, Coding và AI.</p>
+        <p class="en">Student mentors with VEX and FIRST experience lead robotics, coding and AI.</p></div>
+      <div class="ev"><h4>NIC STEM Expedition<small>Trung tâm Đổi mới Sáng tạo Quốc gia</small></h4>
+        <p>Chuyến tham quan học tập: trạm khoa học, kính hiển vi, thử thách chế tạo theo nhóm.</p>
+        <p class="en">Field trip to the National Innovation Center: science stations and team build challenges.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span><b>SEPA</b> · Hồ sơ giới thiệu dành cho nhà trường · School partnership brochure</span><span>05</span></div>
+</section>
+
+<!-- ===================== TRANG 6 · GIÁO VIÊN & NỀN TẢNG ===================== -->
+<section class="page">
+  <div class="in">
+    <div class="eyebrow">05 · Giáo viên &amp; học liệu <span class="en">· Teachers &amp; resources</span></div>
+    <h2 class="h2">Đầu tư vào giáo viên để STEM bền vững</h2>
+    <div class="h2-en">Investing in teachers so STEM lasts</div>
+
+    <div style="display:grid;grid-template-columns:1fr 66mm;gap:7mm;margin-top:5mm">
+      <div class="bi" style="gap:6mm">
+        <div><p>Chương trình tập huấn <b>“A Piece of Teach”</b> chia thành các chuyên đề ngắn để nhà trường chọn đúng nội dung mình cần. Giảng viên là nhà khoa học, giảng viên đại học và giáo viên phổ thông giàu kinh nghiệm dạy học STEM.</p></div>
+        <div class="en"><p>Our <b>“A Piece of Teach”</b> programme is split into short modules so each school picks exactly what it needs. Trainers are scientists, university lecturers and experienced STEM teachers.</p></div>
+      </div>
+      <div class="photo" style="height:40mm"><img src="img/interview.jpg" alt="Giám khảo phỏng vấn đội thi"></div>
+    </div>
+
+    <div class="modules">
+      <div class="mod core"><div><b>Tổng quan về giáo dục STEM</b><i>Introduction to STEM education</i></div></div>
+      <div class="mod core"><div><b>Quy trình khám phá khoa học</b><i>Scientific inquiry</i></div></div>
+      <div class="mod core"><div><b>Quy trình thiết kế kỹ thuật</b><i>Engineering design process</i></div></div>
+      <div class="mod core"><div><b>Hướng dẫn học sinh nghiên cứu khoa học kỹ thuật</b><i>Guiding student research</i></div></div>
+      <div class="mod core"><div><b>Robotics và AI trong dạy học</b><i>Robotics and AI in teaching</i></div></div>
+      <div class="mod opt"><div><b>Thực tế ảo và tăng cường (AR, VR)</b><i>Virtual and augmented reality</i></div></div>
+      <div class="mod opt"><div><b>STEM gắn với văn hóa địa phương</b><i>STEM rooted in local culture</i></div></div>
+      <div class="mod opt"><div><b>Định hướng nghề nghiệp STEM, STEM cho học sinh nữ</b><i>STEM careers and girls in STEM</i></div></div>
+    </div>
+    <div class="legend"><span>Chuyên đề cốt lõi · Core module</span><span class="o">Chuyên đề theo nhu cầu · Optional module</span></div>
+
+    <div class="formats">
+      <div><h4>Trực tiếp tại trường <small>On campus</small></h4>
+        <p>Chuyên gia đến trường, cùng giáo viên xây dựng bài học phù hợp với học sinh và điều kiện thực tế.</p>
+        <p class="en">Trainers come to your school and co-design lessons with your teachers.</p></div>
+      <div><h4>Trực tuyến <small>Online</small></h4>
+        <p>Linh hoạt thời gian; phù hợp cho các hệ thống trường có nhiều cơ sở.</p>
+        <p class="en">Flexible scheduling; well suited to multi-campus school groups.</p></div>
+    </div>
+
+    <div class="sec"><h3>Nền tảng học tập và vận hành</h3><span>Learning and event platforms</span></div>
+    <div class="platforms">
+      <div class="pf"><div class="big">~2.000</div><h4>Davilearn</h4>
+        <p>Mô phỏng và hoạt động tương tác miễn phí, bám sát chương trình, chuyên đề mở rộng và các cuộc thi.</p>
+        <p class="en">About 2,000 free simulations and interactive activities aligned with curriculum and competitions.</p>
+        <div class="url">davilearn.com</div></div>
+      <div class="pf"><div class="big">Live</div><h4>EventSTEM</h4>
+        <p>Chấm điểm và bảng xếp hạng trực tiếp, đồng hồ trọng tài, cổng thông tin sự kiện.</p>
+        <p class="en">Live scoring and rankings, referee timers and event portals for every tournament.</p>
+        <div class="url">Dùng tại các giải do SEPA tổ chức</div></div>
+      <div class="pf"><div class="big">Online</div><h4>Chứng nhận điện tử</h4>
+        <p>Chứng nhận do SEPA cấp được tra cứu trực tuyến, thuận tiện cho hồ sơ học sinh.</p>
+        <p class="en">Every certificate can be verified online, ready for student portfolios.</p>
+        <div class="url">sepa.org.vn/chung-nhan</div></div>
+    </div>
+
+    <div class="sec"><h3>Một số chuyên gia tập huấn</h3><span>Selected trainers</span></div>
+    <div class="trainers">
+      <div><b>PGS.TS. Nguyễn Văn Biên</b>Trung tâm NC Ứng dụng Nghiệp vụ Sư phạm, ĐH Sư phạm Hà Nội</div>
+      <div><b>PGS.TS. Lê Chí Ngọc</b>Khoa Toán – Tin, ĐH Bách khoa Hà Nội</div>
+      <div><b>TS. Nguyễn Thị Thu Trang</b>Trung tâm STEM, ĐH Sư phạm TP.HCM</div>
+      <div><b>TS. Đặng Văn Sơn</b>ĐH Khoa học Tự nhiên, ĐHQG Hà Nội</div>
+      <div><b>TS. Dương Tuấn Hưng</b>Viện Hàn lâm KH&amp;CN Việt Nam</div>
+      <div><b>Cô Đặng Thị Thu Hà</b>THPT chuyên Hà Nội – Amsterdam</div>
+    </div>
+  </div>
+  <div class="foot"><span><b>SEPA</b> · Hồ sơ giới thiệu dành cho nhà trường · School partnership brochure</span><span>06</span></div>
+</section>
+
+<!-- ===================== TRANG 7 · HÌNH THỨC HỢP TÁC ===================== -->
+<section class="page">
+  <div class="in">
+    <div class="eyebrow">06 · Hợp tác <span class="en">· Partnership</span></div>
+    <h2 class="h2">Ba cấp độ hợp tác với nhà trường</h2>
+    <div class="h2-en">Three ways to work with SEPA</div>
+
+    <div class="tiers">
+      <div class="tier"><div class="lv">Khởi đầu · Starter</div>
+        <h3>Chương trình đơn lẻ<small>Single programme</small></h3>
+        <ul class="ticks">
+          <li>Một khóa học chuyên đề (OD01, BIO01, LD01) <i>One specialist course</i></li>
+          <li>Trại hè hoặc chuyến trải nghiệm STEM <i>A camp or STEM expedition</i></li>
+          <li>Một buổi tập huấn giáo viên <i>A teacher training session</i></li>
+        </ul>
+        <div class="eg">Phù hợp để nhà trường làm quen với cách làm của SEPA. · <span class="en">A good first step.</span></div>
+      </div>
+      <div class="tier"><div class="lv">Phát triển · Growth</div>
+        <h3>Câu lạc bộ &amp; đội tuyển<small>Club &amp; competition teams</small></h3>
+        <ul class="ticks">
+          <li>Thành lập CLB Robotics, AI hoặc nghiên cứu khoa học <i>Robotics, AI or research club</i></li>
+          <li>Huấn luyện và đăng ký mùa giải RECF, Robotics for Good <i>Coaching and season entry</i></li>
+          <li>Dự án CREST Awards theo năm học <i>Year-long CREST projects</i></li>
+        </ul>
+        <div class="eg">Học sinh có lộ trình thi đấu và chứng nhận quốc tế. · <span class="en">A clear pathway to international awards.</span></div>
+      </div>
+      <div class="tier feat"><div class="lv">Chiến lược · Strategic</div>
+        <h3>Đối tác chiến lược nhiều năm<small>Multi-year strategic partner (MOU)</small></h3>
+        <ul class="ticks">
+          <li>Kế hoạch STEM và đổi mới sáng tạo toàn trường <i class="en">Whole-school STEM &amp; innovation plan</i></li>
+          <li>Tập huấn giáo viên theo lộ trình <i class="en">Ongoing teacher development</i></li>
+          <li>Đăng cai giải đấu, tuần lễ STEM tại trường <i class="en">Host tournaments and STEM weeks</i></li>
+          <li>Báo cáo kết quả định kỳ <i class="en">Regular impact reports</i></li>
+        </ul>
+        <div class="eg">Ví dụ: THCS Trưng Vương ký MOU giai đoạn 2026–2029. · <span class="en">E.g. Trung Vuong School, 2026–2029 MOU.</span></div>
+      </div>
+    </div>
+
+    <div class="sec"><h3>Bốn bước để bắt đầu</h3><span>Four steps to get started</span></div>
+    <div class="steps">
+      <div><b>Trao đổi nhu cầu<small>Share your goals</small></b>
+        <p>Nhà trường chia sẻ mục tiêu, khối lớp và thời gian.</p><p class="en">Tell us your goals, year groups and timing.</p></div>
+      <div><b>Nhận đề xuất<small>Receive a proposal</small></b>
+        <p>SEPA gửi hồ sơ năng lực, nội dung, kế hoạch và ngân sách.</p><p class="en">We send our capability statement, plan and budget.</p></div>
+      <div><b>Triển khai<small>Deliver together</small></b>
+        <p>Hai bên thống nhất vai trò và triển khai tại trường.</p><p class="en">We agree roles and deliver on campus.</p></div>
+      <div><b>Báo cáo kết quả<small>Report results</small></b>
+        <p>SEPA tổng hợp số liệu, hình ảnh, kết quả học sinh.</p><p class="en">We report figures, photos and student outcomes.</p></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:62mm 1fr;gap:7mm;margin-top:7mm">
+      <div>
+        <div class="photo" style="height:44mm"><img src="img/mou.jpg" alt="Lễ ký kết MOU giữa THCS Trưng Vương và SEPA"></div>
+        <div class="cap">Lễ ký kết MOU giữa THCS Trưng Vương và SEPA, 15/10/2026. <i>MOU signing with Trung Vuong School.</i></div>
+      </div>
+      <div class="net">
+        <div><h4>Đối tác quốc tế <small>International</small></h4>
+          <ul>
+            <li><b>RECF</b> – Robotics Education &amp; Competition Foundation<i>SEPA là đại diện quốc tế tại Việt Nam · International Representative</i></li>
+            <li><b>AI for Good – ITU</b> (Liên Hợp Quốc · United Nations)<i>Tổ chức Robotics for Good tại Việt Nam · National organiser</i></li>
+            <li><b>British Science Association</b> – CREST Awards<i>Đối tác triển khai miền Bắc · Delivery partner</i></li>
+            <li><b>Taleem Cooperative Society</b>, Ả Rập Xê Út<i>Hợp tác STEM, AI, Robotics 2026–2028</i></li>
+          </ul></div>
+        <div><h4>Ghi nhận <small>Recognition</small></h4>
+          <ul>
+            <li><b>2025</b> Vinh danh tại Tuần lễ Đổi mới Sáng tạo Quốc gia<i>Honoured at National Innovation Week (NIC)</i></li>
+            <li><b>2025</b> Top 9 bài học xuất sắc, SAM RATULANGI AWARD<i>SEAMEO QITEP in Mathematics</i></li>
+            <li><b>2024</b> Lọt vòng chung khảo SEAMEO INNOTECH<i>Shortlisted, SEA Educational Innovation Awards</i></li>
+            <li><b>UNICEF</b> đề cử dự án “Tỏa sáng sức mạnh tri thức”<i>Power of Radiance, nominated by UNICEF</i></li>
+          </ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>SEPA</b> · Hồ sơ giới thiệu dành cho nhà trường · School partnership brochure</span><span>07</span></div>
+</section>
+
+<!-- ===================== TRANG 8 · BÌA SAU ===================== -->
+<section class="page back">
+  <div class="strip">
+    <img src="img/opendata.jpg" alt="Học sinh phân tích dữ liệu NASA">
+    <img src="img/microscope.jpg" alt="Học sinh quan sát qua kính hiển vi">
+    <img src="img/judging.jpg" alt="Đội thi trình bày robot trước giám khảo">
+  </div>
+  <div class="body">
+    <h2>Cùng xây dựng thế hệ nhà sáng tạo tiếp theo</h2>
+    <div class="t-en">Let’s build the next generation of innovators together</div>
+    <div class="msg">
+      <p>Hãy cho chúng tôi biết khối lớp, mục tiêu và thời gian nhà trường quan tâm. SEPA sẽ phản hồi kèm hồ sơ năng lực và đề xuất chương trình phù hợp.</p>
+      <p class="en">Tell us which year groups, goals and timing you have in mind. We will reply with our capability statement and a tailored proposal.</p>
+    </div>
+    <div class="open">
+      <div><small>Đang mở đăng ký · Open now</small><b>Vietnam Open 2026–2027</b><span>Chung kết 19–21/02/2027 · RECF robotics</span></div>
+      <div><small>Đang mở đăng ký · Open now</small><b>Robotics for Good 2026–2027</b><span>T11/2026–T3/2027 · miễn phí, 10–18 tuổi</span></div>
+      <div><small>Quanh năm · Year-round</small><b>CREST Awards</b><span>Star → Gold · 3–19 tuổi</span></div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div>
+      <div class="who">Liên hệ hợp tác · Partnership contact</div>
+      <h3>Bà Đào Thị Hồng Quyên</h3>
+      <div class="ttl">Giám đốc · Director, STEM Education Promotion Alliance</div>
+      <dl>
+        <dt>Điện thoại</dt><dd>+84 817 750 229</dd>
+        <dt>Email</dt><dd>daoquyen@sepa.org.vn · sepa@sepa.org.vn</dd>
+        <dt>Website</dt><dd>sepa.org.vn</dd>
+        <dt>Địa chỉ</dt><dd style="font-weight:500">Thôn Cao Đài 2, phường Mỹ Lộc, tỉnh Ninh Bình, Việt Nam</dd>
+      </dl>
+    </div>
+    <div class="qr">
+      <img src="img/qr-partners.svg" alt="Mã QR đến trang Đối tác của SEPA">
+      <p><b>Quét để xem đối tác</b>Scan for our partners<br>sepa.org.vn/en/partners</p>
+    </div>
+  </div>
+
+  <div class="legal">
+    <img src="img/logo-trang.svg" alt="SEPA">
+    <p><b>Công ty TNHH Liên minh Thúc đẩy Giáo dục STEM</b> (doanh nghiệp xã hội) · MST 0601247587<br>
+    STEM Education Promotion Alliance Company Limited (social enterprise)<br>
+    Đóng góp vào Mục tiêu Phát triển Bền vững · Contributing to UN SDGs 4, 5, 7, 10, 11, 13, 14, 15</p>
+  </div>
+  <div class="bar"><span>Facebook · LinkedIn · YouTube: <b>SEPA</b></span><span>© 2026 SEPA · Ảnh: hoạt động của SEPA · Photos: SEPA programmes</span></div>
+</section>
+
+</body>
+</html>
