@@ -21,3 +21,12 @@ Repo dùng để xây lại và quản lý thay đổi cho website của Liên m
 - Sửa độ tương phản trang `/sang-lap`.
 - Trang con rộng 1200px thay cho 880px; ẩn tiêu đề trang lặp khi nội dung có phần mở đầu riêng; khối chỉ có chữ chia hai cột trên màn hình rộng.
 - Không hiện ảnh đại diện của theme khi nội dung trang đã có chính ảnh đó.
+
+## Snippet 39 – Thư viện album ảnh (/media)
+
+Trang https://sepa.org.vn/media (ID 24123, có trong Main menu) dùng shortcode `[sepa_media_albums]`,
+tự liệt kê mọi trang con của /media thành thẻ album (ảnh bìa, ngày, số ảnh, tóm tắt), nhóm theo năm.
+
+Thêm album mới: tạo trang → Trang cha = "Media – Thư viện ảnh sự kiện" → đặt ảnh đại diện,
+tóm tắt (excerpt) và ngày đăng = ngày sự kiện. Album xuất hiện ngay trên /media.
+Link cũ dạng `/album-...` tự chuyển 301 sang `/media/album-...`.

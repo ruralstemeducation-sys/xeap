@@ -1,6 +1,6 @@
 # Album ảnh – RECF Engage khu vực Hà Nội – Trưng Vương 2026
 
-Đã đăng: https://sepa.org.vn/album-recf-engage-trung-vuong-2026 (trang ID 24120, ảnh đại diện = ảnh 01).
+Đã đăng: https://sepa.org.vn/media/album-recf-engage-trung-vuong-2026 (trang ID 24120, ảnh đại diện = ảnh 01).
 Bài thông cáo https://sepa.org.vn/giai-robotics-recf-engage-trung-vuong-2026.htm (ID 23952) có nút
 "Xem album 22 ảnh của giải" ngay dưới mục "Khoảnh khắc tại giải".
 
