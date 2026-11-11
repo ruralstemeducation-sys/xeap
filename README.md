@@ -24,4 +24,4 @@ Repo dùng để xây lại và quản lý thay đổi cho website của Liên m
 
 ## Brochure cho trường tư thục, quốc tế
 
-`docs/brochure-truong-quoc-te/` – hồ sơ giới thiệu SEPA song ngữ Việt–Anh (giới thiệu tổ chức, hợp tác quốc tế, sự kiện, chuyên môn, tác động, ghi nhận), A4 dọc, 8 trang, in gập giữa được. Mở `index.html` để xem/sửa, file in là `SEPA-brochure-truong-quoc-te.pdf`.
+`docs/brochure-truong-quoc-te/` – hồ sơ giới thiệu SEPA song ngữ Việt–Anh (giới thiệu tổ chức, hợp tác quốc tế, sự kiện, chuyên môn, tác động, ghi nhận), A4 dọc, 8 trang, in gập giữa được. File in: `SEPA-brochure-truong-quoc-te.pdf`. File gửi đi xem trên máy: `SEPA-ho-so-gioi-thieu.html` (đã nhúng sẵn ảnh, mở riêng vẫn đủ hình). Sửa nội dung ở `index.html` rồi chạy `python3 tools/build-standalone.py` để tạo lại bản một file.
