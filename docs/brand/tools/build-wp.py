@@ -92,7 +92,7 @@ js = r"""/* SEPA brand guidelines – WordPress embed. Built by docs/brand/tools
 var host=document.getElementById('sepa-brand'); if(!host) return;
 var UP=%(up)s, SVG=%(svgs)s, COL={mau:'#253E93',trang:'#FFFFFF',den:'#000000'};
 host.innerHTML=%(markup)s;
-var art=host.closest('article'),eh=art&&art.querySelector('.entry-header');if(eh&&/thương hiệu|brand/i.test(eh.textContent))eh.style.display='none';
+var art=host.closest('article'),eh=art&&art.querySelector('.entry-header');if(eh&&/nhận diện|thương hiệu|brand/i.test(eh.textContent))eh.style.display='none';
 function svgText(name){var m=name.match(/^sepa-logo-(ngang|doc|bieu-tuong)-(mau|trang|den)$/);return SVG[m[1]].replace('fill="#253E93"','fill="'+COL[m[2]]+'"')}
 var urls={};
 function svgUrl(name){if(!urls[name])urls[name]=URL.createObjectURL(new Blob([svgText(name)],{type:'image/svg+xml'}));return urls[name]}

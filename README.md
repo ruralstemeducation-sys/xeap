@@ -6,7 +6,7 @@ Repo dùng để xây lại và quản lý thay đổi cho website của Liên m
 
 - `docs/ra-soat-2026-11/` – báo cáo rà soát toàn diện website (11/2026), kèm ảnh chụp.
 - `docs/brand/` – trang nhận diện thương hiệu cho đối tác: logo ngang/dọc/biểu tượng (màu, trắng, đen; SVG + PNG), gói `sepa-logo-tron-bo.zip`, file gốc `.ai`/`.pdf` trong `goc/`. Dựng lại logo bằng `node docs/brand/tools/build-logo.js <trang2.svg> docs/brand/logo` (SVG xuất từ trang 2 file .ai bằng `pdftocairo -svg`).
-- Trang trên web: https://sepa.org.vn/thuong-hieu (page ID 24092). Nội dung trang chỉ gọi `docs/brand/wp/sepa-brand.css` và `sepa-brand.js` qua jsDelivr, ghim theo commit. Sửa `docs/brand/index.html` → chạy `python3 docs/brand/tools/build-wp.py` → commit, push → đổi mã commit trong 2 đường dẫn ở nội dung trang. PNG/PDF nằm trong thư viện Media (uploads/2026/11/).
+- Trang trên web: https://sepa.org.vn/brand (page ID 24092). Nội dung trang chỉ gọi `docs/brand/wp/sepa-brand.css` và `sepa-brand.js` qua jsDelivr, ghim theo commit. Sửa `docs/brand/index.html` → chạy `python3 docs/brand/tools/build-wp.py` → commit, push → đổi mã commit trong 2 đường dẫn ở nội dung trang. PNG/PDF nằm trong thư viện Media (uploads/2026/11/).
 - `wordpress/snippets/` – bản sao mã các snippet đang chạy trên WordPress (plugin Code Snippets).
   Số ở đầu tên file là ID snippet trên web. Sửa trên web thì cập nhật lại file ở đây.
 

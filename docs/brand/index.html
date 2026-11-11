@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>Nhận diện thương hiệu SEPA</title>
+<title>Bộ nhận diện SEPA</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Logo, màu sắc và quy tắc sử dụng nhận diện của Liên minh Thúc đẩy Giáo dục STEM (SEPA) dành cho đối tác.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -170,7 +170,7 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
           <button type="button" id="lang-vi" data-lang="vi" aria-pressed="true">VI</button><button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
         </div>
       </div>
-      <h1><span class="vi">Nhận diện thương hiệu SEPA</span><span class="en" lang="en">SEPA Brand Guidelines</span></h1>
+      <h1><span class="vi">Bộ nhận diện SEPA</span><span class="en" lang="en">SEPA Brand Guidelines</span></h1>
       <p class="lead"><span class="vi">Logo chính thức, màu sắc và hướng dẫn sử dụng của Liên minh Thúc đẩy Giáo dục STEM (STEM Education Promotion Alliance). Mời bạn tải phiên bản phù hợp ở bên dưới.</span><span class="en" lang="en">Official logo, colours and usage notes for the STEM Education Promotion Alliance (SEPA). Pick the version you need below.</span></p>
       <div class="mast-actions">
         <a class="btn btn-light" href="sepa-logo-tron-bo.zip" download data-dl="sepa-logo-tron-bo.zip">
@@ -396,7 +396,7 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
   }
   function setLang(l,save){
     lang=l==='en'?'en':'vi'; root.setAttribute('data-lang',lang); root.lang=lang;
-    document.title=T('Nhận diện thương hiệu SEPA','SEPA Brand Guidelines');
+    document.title=T('Bộ nhận diện SEPA','SEPA Brand Guidelines');
     ['vi','en'].forEach(function(k){document.getElementById('lang-'+k).setAttribute('aria-pressed',String(k===lang))});
     renderVariants();
     if(save){try{localStorage.setItem('sepa-lang',lang)}catch(e){}}
