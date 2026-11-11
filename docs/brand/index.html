@@ -150,29 +150,49 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
   .swatches{grid-template-columns:1fr}
   .cobrand{justify-content:flex-start}
 }
+
+/* Language toggle: Vietnamese by default, English when data-lang="en" */
+:root:not([data-lang="en"]) .en{display:none}
+:root[data-lang="en"] .vi{display:none}
+.mast-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.mast-top .eyebrow{margin:0}
+.lang{display:inline-flex;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;overflow:hidden;flex:none}
+.lang button{font:700 13px/1 var(--f-body);letter-spacing:.06em;padding:8px 13px;border:0;background:transparent;color:#fff;cursor:pointer}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--brand)}
 </style>
 
 <header class="mast">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Tài liệu dành cho đối tác</p>
-      <h1>Nhận diện thương hiệu SEPA</h1>
-      <p class="lead">Logo chính thức, màu sắc và các quy tắc sử dụng của Liên minh Thúc đẩy Giáo dục STEM (STEM Education Promotion Alliance). Tải đúng phiên bản bạn cần ở bên dưới.</p>
+      <div class="mast-top">
+        <p class="eyebrow"><span class="vi">Tài liệu dành cho đối tác</span><span class="en" lang="en">For partners</span></p>
+        <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+          <button type="button" id="lang-vi" data-lang="vi" aria-pressed="true">VI</button><button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+      <h1><span class="vi">Nhận diện thương hiệu SEPA</span><span class="en" lang="en">SEPA Brand Guidelines</span></h1>
+      <p class="lead"><span class="vi">Logo chính thức, màu sắc và hướng dẫn sử dụng của Liên minh Thúc đẩy Giáo dục STEM (STEM Education Promotion Alliance). Mời bạn tải phiên bản phù hợp ở bên dưới.</span><span class="en" lang="en">Official logo, colours and usage notes for the STEM Education Promotion Alliance (SEPA). Pick the version you need below.</span></p>
       <div class="mast-actions">
         <a class="btn btn-light" href="sepa-logo-tron-bo.zip" download data-dl="sepa-logo-tron-bo.zip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
-          Tải trọn bộ logo (.zip)
+          <span class="vi">Tải trọn bộ logo (.zip)</span><span class="en" lang="en">Download all logos (.zip)</span>
         </a>
-        <a class="btn btn-ghost" href="#logo">Xem từng phiên bản</a>
+        <a class="btn btn-ghost" href="#logo"><span class="vi">Xem từng phiên bản</span><span class="en" lang="en">Browse versions</span></a>
       </div>
     </div>
-    <img class="mast-logo" src="logo/sepa-logo-ngang-trang.svg" alt="Logo SEPA – STEM Education Promotion Alliance">
+    <img class="mast-logo" src="logo/sepa-logo-ngang-trang.svg" alt="SEPA – STEM Education Promotion Alliance">
   </div>
 </header>
 
-<nav class="toc" aria-label="Mục lục">
+<nav class="toc" aria-label="Mục lục / Contents">
   <div class="wrap">
-    <a href="#logo">Tải logo</a><a href="#mau">Màu sắc</a><a href="#chu">Kiểu chữ</a><a href="#khoang-cach">Vùng an toàn</a><a href="#nen">Chọn nền</a><a href="#khong">Không được làm</a><a href="#doi-tac">Ghép logo đối tác</a>
+    <a href="#logo"><span class="vi">Tải logo</span><span class="en" lang="en">Logos</span></a>
+    <a href="#mau"><span class="vi">Màu sắc</span><span class="en" lang="en">Colours</span></a>
+    <a href="#chu"><span class="vi">Kiểu chữ</span><span class="en" lang="en">Typefaces</span></a>
+    <a href="#khoang-cach"><span class="vi">Vùng an toàn</span><span class="en" lang="en">Clear space</span></a>
+    <a href="#nen"><span class="vi">Chọn nền</span><span class="en" lang="en">Backgrounds</span></a>
+    <a href="#luu-y"><span class="vi">Lưu ý khi dùng</span><span class="en" lang="en">Please avoid</span></a>
+    <a href="#doi-tac"><span class="vi">Ghép logo đối tác</span><span class="en" lang="en">Co-branding</span></a>
   </div>
 </nav>
 
@@ -180,39 +200,39 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
 
   <section id="logo">
     <div class="sec-head">
-      <h2>Tải logo</h2>
-      <p class="muted">Logo gồm biểu tượng (bánh răng ôm hai bàn tay tạo thành chữ S và chuỗi xoắn) và chữ “STEM Education Promotion Alliance”. Ưu tiên bản <b>ngang</b>; dùng bản <b>dọc</b> khi khung hẹp, bản <b>biểu tượng</b> khi không đủ chỗ cho chữ (ảnh đại diện mạng xã hội, favicon, con dấu).</p>
+      <h2><span class="vi">Tải logo</span><span class="en" lang="en">Download the logo</span></h2>
+      <p class="muted"><span class="vi">Logo gồm biểu tượng (bánh răng ôm hai bàn tay tạo thành chữ S và chuỗi xoắn) và chữ “STEM Education Promotion Alliance”. Bản <b>ngang</b> là phiên bản chính; bản <b>dọc</b> hợp với khung hẹp; bản <b>biểu tượng</b> dùng khi không đủ chỗ cho chữ (ảnh đại diện mạng xã hội, favicon, huy hiệu).</span><span class="en" lang="en">The logo combines the symbol (a gear embracing two hands that form an S and a helix) with the words “STEM Education Promotion Alliance”. The <b>horizontal</b> version is the primary one; the <b>stacked</b> version suits narrow spaces; the <b>symbol</b> works where there is no room for text (social avatars, favicons, badges).</span></p>
     </div>
     <div id="variants"></div>
-    <p class="callout"><b>Nên chọn định dạng nào?</b> SVG là file vector, phóng to bao nhiêu cũng nét: dùng cho in ấn, website, thiết kế. PNG có nền trong suốt, rộng 3000 px (biểu tượng 2048 px): dùng cho Word, PowerPoint, Canva. File gốc dạng PDF vector (mở được bằng Illustrator) nằm trong gói .zip.</p>
+    <p class="callout"><span class="vi"><b>Nên chọn định dạng nào?</b> SVG là file vector, phóng to bao nhiêu cũng nét: dùng cho in ấn, website, thiết kế. PNG có nền trong suốt, rộng 3000 px (biểu tượng 2048 px): dùng cho Word, PowerPoint, Canva. File gốc dạng PDF vector (mở được bằng Illustrator) nằm trong gói .zip.</span><span class="en" lang="en"><b>Which format?</b> SVG is vector and stays sharp at any size: use it for print, web and design work. PNG has a transparent background and is 3000 px wide (symbol 2048 px): use it in Word, PowerPoint or Canva. The master vector PDF (opens in Illustrator) is included in the .zip.</span></p>
   </section>
 
   <section id="mau">
     <div class="sec-head">
-      <h2>Màu sắc</h2>
-      <p class="muted">Logo chỉ dùng một màu: xanh SEPA. Bản trắng dành cho nền tối, bản đen chỉ dùng khi in đơn sắc.</p>
+      <h2><span class="vi">Màu sắc</span><span class="en" lang="en">Colours</span></h2>
+      <p class="muted"><span class="vi">Logo dùng một màu duy nhất là xanh SEPA. Bản trắng dành cho nền tối, bản đen dành cho in đơn sắc.</span><span class="en" lang="en">The logo uses a single colour, SEPA Blue. The white version is for dark backgrounds; the black version is for one-colour printing.</span></p>
     </div>
     <div class="swatches">
       <div class="swatch">
-        <div class="chipcol" style="background:#253E93;color:#fff">Xanh SEPA</div>
+        <div class="chipcol" style="background:#253E93;color:#fff"><span class="vi">Xanh SEPA</span><span class="en" lang="en">SEPA Blue</span></div>
         <dl>
-          <dt>HEX</dt><dd>#253E93<button class="copy" data-copy="#253E93">Sao chép</button></dd>
+          <dt>HEX</dt><dd>#253E93<button class="copy" data-copy="#253E93"><span class="vi">Sao chép</span><span class="en" lang="en">Copy</span></button></dd>
           <dt>RGB</dt><dd>37 62 147</dd>
           <dt>CMYK</dt><dd>100 91 5 0</dd>
-          <dt>Dùng</dt><dd style="font-family:var(--f-body)">Logo trên nền trắng, nền sáng</dd>
+          <dt><span class="vi">Dùng</span><span class="en" lang="en">Use</span></dt><dd style="font-family:var(--f-body)"><span class="vi">Logo trên nền trắng, nền sáng</span><span class="en" lang="en">Logo on white or light backgrounds</span></dd>
         </dl>
       </div>
       <div class="swatch">
-        <div class="chipcol" style="background:#fff;color:#253E93;border-bottom:1px solid var(--line)">Trắng</div>
+        <div class="chipcol" style="background:#fff;color:#253E93;border-bottom:1px solid var(--line)"><span class="vi">Trắng</span><span class="en" lang="en">White</span></div>
         <dl>
-          <dt>HEX</dt><dd>#FFFFFF<button class="copy" data-copy="#FFFFFF">Sao chép</button></dd>
+          <dt>HEX</dt><dd>#FFFFFF<button class="copy" data-copy="#FFFFFF"><span class="vi">Sao chép</span><span class="en" lang="en">Copy</span></button></dd>
           <dt>CMYK</dt><dd>0 0 0 0</dd>
         </dl>
       </div>
       <div class="swatch">
-        <div class="chipcol" style="background:#000;color:#fff">Đen</div>
+        <div class="chipcol" style="background:#000;color:#fff"><span class="vi">Đen</span><span class="en" lang="en">Black</span></div>
         <dl>
-          <dt>HEX</dt><dd>#000000<button class="copy" data-copy="#000000">Sao chép</button></dd>
+          <dt>HEX</dt><dd>#000000<button class="copy" data-copy="#000000"><span class="vi">Sao chép</span><span class="en" lang="en">Copy</span></button></dd>
           <dt>CMYK</dt><dd>0 0 0 100</dd>
         </dl>
       </div>
@@ -221,49 +241,47 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
 
   <section id="chu">
     <div class="sec-head">
-      <h2>Kiểu chữ trong logo</h2>
-      <p class="muted">Chữ trong file logo đã được chuyển thành hình (outline), bạn không cần cài font để dùng logo. Thông tin dưới đây để tham khảo khi thiết kế ấn phẩm đi kèm.</p>
+      <h2><span class="vi">Kiểu chữ trong logo</span><span class="en" lang="en">Typefaces in the logo</span></h2>
+      <p class="muted"><span class="vi">Chữ trong file logo đã được chuyển thành hình (outline), bạn không cần cài font để dùng logo. Thông tin dưới đây để tham khảo khi thiết kế ấn phẩm đi kèm.</span><span class="en" lang="en">The lettering in the logo files is outlined, so no fonts need to be installed. The details below are for reference when designing related materials.</span></p>
     </div>
     <div class="type">
       <div class="card">
-        <p class="label">Chữ “STEM”</p>
+        <p class="label"><span class="vi">Chữ “STEM”</span><span class="en" lang="en">“STEM”</span></p>
         <p class="specimen-a">STEM</p>
         <h3>UTM HelvetIns</h3>
-        <p class="note">Chữ đậm, dáng hẹp. Hỗ trợ tiếng Việt, hợp làm tiêu đề lớn.</p>
+        <p class="note"><span class="vi">Chữ đậm, dáng hẹp, hỗ trợ tiếng Việt, hợp làm tiêu đề lớn.</span><span class="en" lang="en">Bold and condensed, with Vietnamese support. Good for large headlines.</span></p>
       </div>
       <div class="card">
-        <p class="label">Chữ “Education Promotion Alliance”</p>
+        <p class="label"><span class="vi">Chữ “Education Promotion Alliance”</span><span class="en" lang="en">“Education Promotion Alliance”</span></p>
         <p class="specimen-b">Education</p>
         <h3>Myriad Pro Regular</h3>
-        <p class="note">Chữ không chân, nét đều. Có thể thay bằng Be Vietnam Pro hoặc Arial cho văn bản tiếng Việt.</p>
+        <p class="note"><span class="vi">Chữ không chân, nét đều. Có thể thay bằng Be Vietnam Pro hoặc Arial cho văn bản tiếng Việt.</span><span class="en" lang="en">A clean sans serif. Be Vietnam Pro or Arial are good substitutes for body text.</span></p>
       </div>
     </div>
   </section>
 
   <section id="khoang-cach">
     <div class="sec-head">
-      <h2>Vùng an toàn và kích thước tối thiểu</h2>
-      <p class="muted">Đơn vị đo <b>X</b> là chiều cao chữ “E” trong chữ Education. Giữ khoảng trống tối thiểu bằng X ở cả bốn phía logo; không đặt chữ, hình hay mép giấy vào vùng này.</p>
+      <h2><span class="vi">Vùng an toàn và kích thước tối thiểu</span><span class="en" lang="en">Clear space and minimum size</span></h2>
+      <p class="muted"><span class="vi">Đơn vị đo <b>X</b> là chiều cao chữ “E” trong chữ Education. Mời bạn chừa khoảng trống tối thiểu bằng X ở cả bốn phía logo để logo luôn thoáng và dễ nhận ra.</span><span class="en" lang="en">The unit <b>X</b> is the height of the “E” in Education. Please leave at least X of empty space on all four sides so the logo can breathe and stay easy to recognise.</span></p>
     </div>
     <div class="rules">
-      <div class="diagram" role="img" aria-label="Sơ đồ vùng an toàn: khoảng trống bằng X quanh logo ngang">
+      <div class="diagram" role="img" aria-label="Clear space: X on every side of the horizontal logo">
         <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#eef1fa"/><line x1="0" y1="0" x2="0" y2="8" stroke="#c9d1ee" stroke-width="3"/></pattern>
           </defs>
-          <!-- logo box 520x259 at (90,70); X = 0.1386 * height = 36 -->
           <rect x="54" y="34" width="592" height="331" fill="url(#hatch)"/>
           <rect x="90" y="70" width="520" height="259" fill="#ffffff"/>
           <image href="logo/sepa-logo-ngang-mau.svg" x="90" y="70" width="520" height="259"/>
           <rect x="54" y="34" width="592" height="331" fill="none" stroke="#253E93" stroke-width="1.5" stroke-dasharray="6 5"/>
           <rect x="90" y="70" width="520" height="259" fill="none" stroke="#9aa6d6" stroke-width="1"/>
           <g fill="#253E93" font-family="Be Vietnam Pro, sans-serif" font-weight="700" font-size="16" text-anchor="middle">
-                        <path d="M54 200h36" stroke="#253E93" stroke-width="1.5"/><text x="72" y="192">X</text>
+            <path d="M54 200h36" stroke="#253E93" stroke-width="1.5"/><text x="72" y="192">X</text>
             <path d="M610 200h36" stroke="#253E93" stroke-width="1.5"/><text x="628" y="192">X</text>
             <path d="M350 34v36" stroke="#253E93" stroke-width="1.5"/><text x="364" y="58">X</text>
             <path d="M350 329v36" stroke="#253E93" stroke-width="1.5"/><text x="364" y="353">X</text>
           </g>
-          <!-- X reference on the E of Education: E sits at x≈90+(499.7-167.4)/571.3*520=392, cap 431.99→471.41 -->
           <g stroke="#e8564a" stroke-width="1.5" fill="none">
             <path d="M386 215.1v35.9"/><path d="M382 215.1h8M382 251h8"/>
           </g>
@@ -272,20 +290,20 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
       </div>
       <div class="facts">
         <div class="fact">
-          <h3>Kích thước tối thiểu</h3>
-          <p class="note">Nhỏ hơn mức này chữ “Promotion Alliance” sẽ không đọc được; khi đó hãy dùng bản biểu tượng.</p>
+          <h3><span class="vi">Kích thước tối thiểu</span><span class="en" lang="en">Minimum size</span></h3>
+          <p class="note"><span class="vi">Nhỏ hơn mức này, dòng “Promotion Alliance” sẽ khó đọc; khi đó bạn có thể dùng bản biểu tượng.</span><span class="en" lang="en">Below these sizes “Promotion Alliance” becomes hard to read; the symbol version is a good alternative.</span></p>
           <table class="min">
-            <thead><tr><th>Phiên bản</th><th>In ấn (rộng)</th><th>Màn hình (rộng)</th></tr></thead>
+            <thead><tr><th><span class="vi">Phiên bản</span><span class="en" lang="en">Version</span></th><th><span class="vi">In ấn (rộng)</span><span class="en" lang="en">Print (width)</span></th><th><span class="vi">Màn hình (rộng)</span><span class="en" lang="en">Screen (width)</span></th></tr></thead>
             <tbody>
-              <tr><td>Ngang</td><td>35 mm</td><td>160 px</td></tr>
-              <tr><td>Dọc</td><td>20 mm</td><td>90 px</td></tr>
-              <tr><td>Biểu tượng</td><td>8 mm</td><td>24 px</td></tr>
+              <tr><td><span class="vi">Ngang</span><span class="en" lang="en">Horizontal</span></td><td>35 mm</td><td>160 px</td></tr>
+              <tr><td><span class="vi">Dọc</span><span class="en" lang="en">Stacked</span></td><td>20 mm</td><td>90 px</td></tr>
+              <tr><td><span class="vi">Biểu tượng</span><span class="en" lang="en">Symbol</span></td><td>8 mm</td><td>24 px</td></tr>
             </tbody>
           </table>
         </div>
         <div class="fact">
-          <h3>Tỉ lệ khung</h3>
-          <p class="note">Ngang ≈ 2 : 1 &nbsp;·&nbsp; Dọc ≈ 1 : 1,72 &nbsp;·&nbsp; Biểu tượng 1 : 1. Luôn kéo theo góc khi đổi kích thước để giữ đúng tỉ lệ.</p>
+          <h3><span class="vi">Tỉ lệ khung</span><span class="en" lang="en">Proportions</span></h3>
+          <p class="note"><span class="vi">Ngang ≈ 2 : 1 · Dọc ≈ 1 : 1,72 · Biểu tượng 1 : 1. Khi đổi kích thước, bạn kéo theo góc để giữ đúng tỉ lệ.</span><span class="en" lang="en">Horizontal ≈ 2 : 1 · Stacked ≈ 1 : 1.72 · Symbol 1 : 1. When resizing, drag from a corner to keep the proportions.</span></p>
         </div>
       </div>
     </div>
@@ -293,47 +311,47 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
 
   <section id="nen">
     <div class="sec-head">
-      <h2>Chọn nền cho logo</h2>
-      <p class="muted">Logo phải luôn nổi rõ trên nền. Nền sáng dùng bản màu, nền tối hoặc ảnh tối dùng bản trắng.</p>
+      <h2><span class="vi">Chọn nền cho logo</span><span class="en" lang="en">Choosing a background</span></h2>
+      <p class="muted"><span class="vi">Logo đẹp nhất khi nổi rõ trên nền: nền sáng dùng bản màu, nền tối hoặc ảnh tối dùng bản trắng.</span><span class="en" lang="en">The logo looks best with strong contrast: the colour version on light backgrounds, the white version on dark backgrounds or dark photos.</span></p>
     </div>
     <div class="grounds">
-      <div class="ground"><div class="stage on-white"><img src="logo/sepa-logo-ngang-mau.svg" alt="Logo màu trên nền trắng"></div><p class="verdict yes"><span><b>Đúng.</b> Bản màu trên nền trắng hoặc nền sáng.</span></p></div>
-      <div class="ground"><div class="stage on-blue"><img src="logo/sepa-logo-ngang-trang.svg" alt="Logo trắng trên nền xanh SEPA"></div><p class="verdict yes"><span><b>Đúng.</b> Bản trắng trên nền xanh SEPA.</span></p></div>
-      <div class="ground"><div class="stage photo"><img src="logo/sepa-logo-ngang-trang.svg" alt="Logo trắng trên ảnh tối"></div><p class="verdict yes"><span><b>Đúng.</b> Bản trắng trên ảnh tối, vùng ảnh ít chi tiết.</span></p></div>
-      <div class="ground"><div class="stage" style="background:#5a6fb8"><img src="logo/sepa-logo-ngang-mau.svg" alt="Logo màu trên nền xanh trung tính, thiếu tương phản"></div><p class="verdict no"><span><b>Sai.</b> Bản màu trên nền cùng tông, thiếu tương phản.</span></p></div>
+      <div class="ground"><div class="stage on-white"><img src="logo/sepa-logo-ngang-mau.svg" alt=""></div><p class="verdict yes"><span><b><span class="vi">Nên dùng.</span><span class="en" lang="en">Recommended.</span></b> <span class="vi">Bản màu trên nền trắng hoặc nền sáng.</span><span class="en" lang="en">Colour logo on white or light backgrounds.</span></span></p></div>
+      <div class="ground"><div class="stage on-blue"><img src="logo/sepa-logo-ngang-trang.svg" alt=""></div><p class="verdict yes"><span><b><span class="vi">Nên dùng.</span><span class="en" lang="en">Recommended.</span></b> <span class="vi">Bản trắng trên nền xanh SEPA.</span><span class="en" lang="en">White logo on SEPA Blue.</span></span></p></div>
+      <div class="ground"><div class="stage photo"><img src="logo/sepa-logo-ngang-trang.svg" alt=""></div><p class="verdict yes"><span><b><span class="vi">Nên dùng.</span><span class="en" lang="en">Recommended.</span></b> <span class="vi">Bản trắng trên ảnh tối, ở vùng ảnh ít chi tiết.</span><span class="en" lang="en">White logo on a dark, calm area of a photo.</span></span></p></div>
+      <div class="ground"><div class="stage" style="background:#5a6fb8"><img src="logo/sepa-logo-ngang-mau.svg" alt=""></div><p class="verdict no"><span><b><span class="vi">Nên tránh.</span><span class="en" lang="en">Best avoided.</span></b> <span class="vi">Bản màu trên nền cùng tông, logo bị chìm.</span><span class="en" lang="en">Colour logo on a similar tone, where it gets lost.</span></span></p></div>
     </div>
   </section>
 
-  <section id="khong">
+  <section id="luu-y">
     <div class="sec-head">
-      <h2>Không được làm</h2>
-      <p class="muted">Dùng nguyên file đã tải về. Không chỉnh sửa, vẽ lại hay ghép thêm bất cứ chi tiết nào vào logo.</p>
+      <h2><span class="vi">Một vài lưu ý nhỏ</span><span class="en" lang="en">A few things to avoid</span></h2>
+      <p class="muted"><span class="vi">Để logo SEPA luôn nhất quán ở mọi nơi, mong bạn dùng nguyên file đã tải về và giúp chúng tôi tránh những trường hợp dưới đây.</span><span class="en" lang="en">To keep the SEPA logo consistent everywhere, please use the downloaded files as they are and help us avoid the cases below.</span></p>
     </div>
     <div class="donts">
-      <div class="dont"><div class="stage on-white"><img src="logo/sepa-logo-ngang-mau.svg" alt="" style="transform:scaleX(1.45)"></div><p class="verdict no"><span><b>Không</b> kéo giãn hay bóp méo tỉ lệ.</span></p></div>
-      <div class="dont"><div class="stage on-white"><img src="logo/sepa-logo-ngang-mau.svg" alt="" style="filter:hue-rotate(150deg) saturate(1.6)"></div><p class="verdict no"><span><b>Không</b> đổi sang màu khác ngoài xanh, trắng, đen.</span></p></div>
-      <div class="dont"><div class="stage on-white"><img src="logo/sepa-logo-ngang-mau.svg" alt="" style="transform:rotate(-14deg)"></div><p class="verdict no"><span><b>Không</b> xoay hoặc đặt nghiêng logo.</span></p></div>
-      <div class="dont"><div class="stage on-white"><img src="logo/sepa-logo-ngang-mau.svg" alt="" style="filter:drop-shadow(6px 6px 3px rgba(0,0,0,.55))"></div><p class="verdict no"><span><b>Không</b> thêm đổ bóng, viền, hiệu ứng 3D.</span></p></div>
-      <div class="dont"><div class="stage busy"><img src="logo/sepa-logo-ngang-mau.svg" alt=""></div><p class="verdict no"><span><b>Không</b> đặt trên nền rối, nhiều màu.</span></p></div>
-      <div class="dont"><div class="stage on-white"><img src="logo/sepa-logo-bieu-tuong-mau.svg" alt="" style="width:40%;height:80%;justify-self:start"><span style="position:absolute;right:10%;top:50%;transform:translateY(-50%);font:700 26px/1.05 Georgia,serif;color:#253E93">SEPA<br><span style="font-size:13px;font-weight:400">Giáo dục STEM</span></span></div><p class="verdict no"><span><b>Không</b> thay chữ, đổi font hay sắp xếp lại các thành phần.</span></p></div>
+      <div class="dont"><div class="stage on-white"><img src="logo/sepa-logo-ngang-mau.svg" alt="" style="transform:scaleX(1.45)"></div><p class="verdict no"><span><span class="vi">Vui lòng không kéo giãn hay thay đổi tỉ lệ logo.</span><span class="en" lang="en">Please don’t stretch or squash the logo.</span></span></p></div>
+      <div class="dont"><div class="stage on-white"><img src="logo/sepa-logo-ngang-mau.svg" alt="" style="filter:hue-rotate(150deg) saturate(1.6)"></div><p class="verdict no"><span><span class="vi">Vui lòng không đổi logo sang màu khác ngoài xanh, trắng, đen.</span><span class="en" lang="en">Please don’t recolour the logo beyond blue, white or black.</span></span></p></div>
+      <div class="dont"><div class="stage on-white"><img src="logo/sepa-logo-ngang-mau.svg" alt="" style="transform:rotate(-14deg)"></div><p class="verdict no"><span><span class="vi">Vui lòng không xoay hoặc đặt nghiêng logo.</span><span class="en" lang="en">Please don’t rotate or tilt the logo.</span></span></p></div>
+      <div class="dont"><div class="stage on-white"><img src="logo/sepa-logo-ngang-mau.svg" alt="" style="filter:drop-shadow(6px 6px 3px rgba(0,0,0,.55))"></div><p class="verdict no"><span><span class="vi">Vui lòng không thêm đổ bóng, viền hay hiệu ứng 3D.</span><span class="en" lang="en">Please don’t add shadows, outlines or 3D effects.</span></span></p></div>
+      <div class="dont"><div class="stage busy"><img src="logo/sepa-logo-ngang-mau.svg" alt=""></div><p class="verdict no"><span><span class="vi">Vui lòng tránh đặt logo trên nền rối, nhiều màu.</span><span class="en" lang="en">Please avoid busy, multicoloured backgrounds.</span></span></p></div>
+      <div class="dont"><div class="stage on-white"><img src="logo/sepa-logo-bieu-tuong-mau.svg" alt="" style="width:40%;height:80%;justify-self:start"><span style="position:absolute;right:10%;top:50%;transform:translateY(-50%);font:700 26px/1.05 Georgia,serif;color:#253E93">SEPA<br><span style="font-size:13px;font-weight:400">STEM</span></span></div><p class="verdict no"><span><span class="vi">Vui lòng không thay chữ, đổi font hay sắp xếp lại các thành phần.</span><span class="en" lang="en">Please don’t change the wording, typeface or arrangement.</span></span></p></div>
     </div>
   </section>
 
   <section id="doi-tac">
     <div class="sec-head">
-      <h2>Ghép logo với đối tác</h2>
-      <p class="muted">Khi logo SEPA đứng cạnh logo đơn vị khác (backdrop, banner, thư mời, chứng nhận):</p>
+      <h2><span class="vi">Ghép logo với đối tác</span><span class="en" lang="en">Co-branding</span></h2>
+      <p class="muted"><span class="vi">Khi logo SEPA đứng cạnh logo đơn vị khác (backdrop, banner, thư mời, chứng nhận), gợi ý bố cục như sau:</span><span class="en" lang="en">When the SEPA logo sits next to another organisation’s logo (backdrops, banners, invitations, certificates), we suggest:</span></p>
     </div>
-    <div class="cobrand" aria-label="Ví dụ bố cục ghép logo">
-      <div class="part"><img src="logo/sepa-logo-ngang-mau.svg" alt="Logo SEPA"></div>
+    <div class="cobrand" aria-label="Co-branding layout example">
+      <div class="part"><img src="logo/sepa-logo-ngang-mau.svg" alt="SEPA"></div>
       <div class="sep"></div>
-      <div class="part"><div class="partner-ph">Logo đối tác</div></div>
+      <div class="part"><div class="partner-ph"><span class="vi">Logo đối tác</span><span class="en" lang="en">Partner logo</span></div></div>
     </div>
     <ul class="plain">
-      <li>Hai logo có chiều cao thị giác tương đương; không logo nào lấn át logo nào.</li>
-      <li>Khoảng cách giữa hai logo tối thiểu bằng 2X, có thể ngăn bằng một đường kẻ mảnh.</li>
-      <li>Căn giữa theo chiều dọc, dùng cùng một kiểu nền.</li>
-      <li>Nếu cần gửi bản thiết kế để SEPA duyệt trước khi in, vui lòng liên hệ đầu mối làm việc của bạn tại SEPA.</li>
+      <li><span class="vi">Hai logo có chiều cao thị giác tương đương, cân bằng với nhau.</span><span class="en" lang="en">Give both logos a similar visual height so they feel balanced.</span></li>
+      <li><span class="vi">Khoảng cách giữa hai logo tối thiểu bằng 2X, có thể ngăn bằng một đường kẻ mảnh.</span><span class="en" lang="en">Keep at least 2X between them; a thin divider line works well.</span></li>
+      <li><span class="vi">Căn giữa theo chiều dọc và dùng cùng một kiểu nền.</span><span class="en" lang="en">Centre them vertically on the same background.</span></li>
+      <li><span class="vi">Nếu muốn SEPA xem giúp bản thiết kế trước khi in, bạn cứ gửi cho đầu mối làm việc của mình tại SEPA.</span><span class="en" lang="en">If you would like SEPA to review a design before printing, just send it to your SEPA contact.</span></li>
     </ul>
   </section>
 
@@ -341,8 +359,8 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
 
 <footer>
   <div class="wrap">
-    <span>© Liên minh Thúc đẩy Giáo dục STEM (SEPA) · <a href="https://sepa.org.vn">sepa.org.vn</a></span>
-    <span>Logo SEPA là tài sản của SEPA. Chỉ dùng cho các hoạt động hợp tác đã thống nhất.</span>
+    <span>© <span class="vi">Liên minh Thúc đẩy Giáo dục STEM (SEPA)</span><span class="en" lang="en">STEM Education Promotion Alliance (SEPA)</span> · <a href="https://sepa.org.vn">sepa.org.vn</a></span>
+    <span><span class="vi">Logo SEPA thuộc sở hữu của SEPA. Cảm ơn bạn đã sử dụng logo đúng cách trong các hoạt động hợp tác.</span><span class="en" lang="en">The SEPA logo is the property of SEPA. Thank you for using it with care in our joint activities.</span></span>
   </div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -350,33 +368,49 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
 (function(){
+  var root=document.documentElement, lang='vi';
+  function T(vi,en){return lang==='en'?en:vi}
   var layouts=[
-    {key:'ngang',name:'Logo ngang',hint:'Phiên bản chính, dùng cho hầu hết trường hợp'},
-    {key:'doc',name:'Logo dọc',hint:'Khung vuông hoặc khung đứng: poster, standee, áo'},
-    {key:'bieu-tuong',name:'Biểu tượng',hint:'Ảnh đại diện, favicon, huy hiệu, không gian rất nhỏ'}
+    {key:'ngang',vi:'Logo ngang',en:'Horizontal logo',hvi:'Phiên bản chính, dùng cho hầu hết trường hợp',hen:'Primary version, for most uses'},
+    {key:'doc',vi:'Logo dọc',en:'Stacked logo',hvi:'Khung vuông hoặc khung đứng: poster, standee, áo',hen:'Square or tall spaces: posters, standees, shirts'},
+    {key:'bieu-tuong',vi:'Biểu tượng',en:'Symbol',hvi:'Ảnh đại diện, favicon, huy hiệu, không gian rất nhỏ',hen:'Avatars, favicons, badges, very small spaces'}
   ];
   var colors=[
-    {key:'mau',name:'Màu xanh',stage:'on-white',use:'nền trắng, nền sáng'},
-    {key:'trang',name:'Trắng',stage:'on-blue',use:'nền tối, nền xanh'},
-    {key:'den',name:'Đen',stage:'on-light',use:'in đơn sắc'}
+    {key:'mau',vi:'Màu xanh',en:'Blue',stage:'on-white',uvi:'nền trắng, nền sáng',uen:'white or light backgrounds'},
+    {key:'trang',vi:'Trắng',en:'White',stage:'on-blue',uvi:'nền tối, nền xanh',uen:'dark or blue backgrounds'},
+    {key:'den',vi:'Đen',en:'Black',stage:'on-light',uvi:'in đơn sắc',uen:'one-colour printing'}
   ];
-  var html='';
-  layouts.forEach(function(l){
-    html+='<div class="variant"><div class="variant-head"><h3>'+l.name+'</h3><span class="note">'+l.hint+'</span></div><div class="tiles">';
-    colors.forEach(function(c){
-      var f='sepa-logo-'+l.key+'-'+c.key;
-      html+='<div class="tile"><div class="stage '+c.stage+'"><img src="logo/'+f+'.svg" alt="'+l.name+' – '+c.name+'" loading="lazy"></div>'+
-        '<div class="tile-foot"><span><span class="tile-name">'+c.name+'</span><br><span class="note">'+c.use+'</span></span>'+
-        '<span class="dl"><a class="chip" href="logo/'+f+'.svg" download data-dl="logo/'+f+'.svg">SVG</a><a class="chip" href="logo/'+f+'.png" download data-dl="logo/'+f+'.png">PNG</a></span></div></div>';
+  function renderVariants(){
+    var html='';
+    layouts.forEach(function(l){
+      html+='<div class="variant"><div class="variant-head"><h3>'+T(l.vi,l.en)+'</h3><span class="note">'+T(l.hvi,l.hen)+'</span></div><div class="tiles">';
+      colors.forEach(function(c){
+        var f='sepa-logo-'+l.key+'-'+c.key;
+        html+='<div class="tile"><div class="stage '+c.stage+'"><img src="logo/'+f+'.svg" alt="'+T(l.vi,l.en)+' – '+T(c.vi,c.en)+'" loading="lazy"></div>'+
+          '<div class="tile-foot"><span><span class="tile-name">'+T(c.vi,c.en)+'</span><br><span class="note">'+T(c.uvi,c.uen)+'</span></span>'+
+          '<span class="dl"><a class="chip" href="logo/'+f+'.svg" download data-dl="logo/'+f+'.svg">SVG</a><a class="chip" href="logo/'+f+'.png" download data-dl="logo/'+f+'.png">PNG</a></span></div></div>';
+      });
+      html+='</div></div>';
     });
-    html+='</div></div>';
-  });
-  document.getElementById('variants').innerHTML=html;
+    document.getElementById('variants').innerHTML=html;
+  }
+  function setLang(l,save){
+    lang=l==='en'?'en':'vi'; root.setAttribute('data-lang',lang); root.lang=lang;
+    document.title=T('Nhận diện thương hiệu SEPA','SEPA Brand Guidelines');
+    ['vi','en'].forEach(function(k){document.getElementById('lang-'+k).setAttribute('aria-pressed',String(k===lang))});
+    renderVariants();
+    if(save){try{localStorage.setItem('sepa-lang',lang)}catch(e){}}
+  }
+  var start='vi';
+  try{start=localStorage.getItem('sepa-lang')||''}catch(e){start=''}
+  if(!start)start=/^vi\b/i.test(navigator.language||'vi')?'vi':'en';
+  setLang(start,false);
+  document.querySelectorAll('[data-lang]').forEach(function(b){if(b.tagName==='BUTTON')b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'),true)})});
 
   var toastEl=document.getElementById('toast'),tt;
   function toast(m){toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toastEl.classList.remove('show')},2200)}
 
-  // Inside the claude.ai viewer, plain download links are blocked: use the downloads capability there.
+  // Inside the claude.ai viewer plain download links are blocked, so use the downloads capability there.
   var downloads=null;
   if(window.claude&&window.claude.use){window.claude.use('downloads').then(function(d){downloads=d}).catch(function(){})}
   document.addEventListener('click',function(e){
@@ -384,13 +418,14 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
     if(a&&downloads){
       e.preventDefault();
       var p=a.getAttribute('data-dl');
-      if(p.slice(-4)==='.zip'){ zipAll(); return; }
+      if(p.slice(-4)==='.zip'){zipAll();return}
+      var name=p.split('/').pop();
       fetch(p).then(function(r){if(!r.ok)throw new Error(r.status);return r.blob()})
-        .then(function(b){return downloads.save({filename:p.split('/').pop(),data:b})})
-        .then(function(){toast('Đã lưu '+p.split('/').pop())})
+        .then(function(b){return downloads.save({filename:name,data:b})})
+        .then(function(){toast(T('Đã lưu ','Saved ')+name)})
         .catch(function(err){
           if(err&&err.code==='declined')return;
-          if(err&&err.code==='rate_limited'){toast('Đang có hộp thoại lưu file, thử lại sau giây lát');return}
+          if(err&&err.code==='rate_limited'){toast(T('Đang có hộp thoại lưu file, thử lại sau giây lát','A save dialog is already open, try again shortly'));return}
           window.open(p,'_blank');
         });
       return;
@@ -398,25 +433,24 @@ footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content
     var c=e.target.closest('[data-copy]');
     if(c){
       var v=c.getAttribute('data-copy');
-      var ok=function(){toast('Đã sao chép '+v)};
+      var ok=function(){toast(T('Đã sao chép ','Copied ')+v)};
       if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(ok,function(){sel(c)})}else sel(c);
     }
   });
-  // Build the full pack in the browser (the viewer cannot host .zip files directly).
   var busy=false;
   function zipAll(){
     if(busy)return; if(!window.JSZip){window.open('sepa-logo-tron-bo.zip','_blank');return}
-    busy=true; toast('Đang đóng gói logo…');
+    busy=true; toast(T('Đang đóng gói logo…','Packing the logos…'));
     var list=['goc/sepa-logo-goc.pdf'];
     layouts.forEach(function(l){colors.forEach(function(c){['svg','png'].forEach(function(x){list.push('logo/sepa-logo-'+l.key+'-'+c.key+'.'+x)})})});
     var z=new JSZip();
     Promise.all(list.map(function(p){return fetch(p).then(function(r){if(!r.ok)throw new Error(p);return r.blob()}).then(function(b){z.file(p.split('/').pop(),b)})}))
       .then(function(){return z.generateAsync({type:'blob'})})
       .then(function(b){return downloads.save({filename:'sepa-logo-tron-bo.zip',data:b})})
-      .then(function(){toast('Đã lưu sepa-logo-tron-bo.zip')})
-      .catch(function(err){if(err&&err.code==='declined')return;toast('Không tạo được gói .zip, hãy tải từng file bên dưới')})
+      .then(function(){toast(T('Đã lưu sepa-logo-tron-bo.zip','Saved sepa-logo-tron-bo.zip'))})
+      .catch(function(err){if(err&&err.code==='declined')return;toast(T('Chưa tạo được gói .zip, bạn có thể tải từng file bên dưới','Could not build the .zip; you can download files one by one below'))})
       .then(function(){busy=false});
   }
-  function sel(btn){var r=document.createRange();r.selectNodeContents(btn.parentNode.firstChild);var s=getSelection();s.removeAllRanges();s.addRange(r);toast('Đã chọn mã màu, nhấn Ctrl+C để sao chép')}
+  function sel(btn){var r=document.createRange();r.selectNodeContents(btn.parentNode.firstChild);var s=getSelection();s.removeAllRanges();s.addRange(r);toast(T('Đã chọn mã màu, nhấn Ctrl+C để sao chép','Colour code selected, press Ctrl+C to copy'))}
 })();
 </script>
