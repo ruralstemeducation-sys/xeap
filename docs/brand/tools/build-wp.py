@@ -65,6 +65,14 @@ css_out += """
 #sepa-brand .btn,#sepa-brand .chip{text-decoration:none}
 #sepa-brand ul.plain li{margin:0}
 #sepa-brand footer{margin-top:56px}
+/* the site theme forces Inter with !important on body text and headings */
+#sepa-brand,#sepa-brand p,#sepa-brand li,#sepa-brand td,#sepa-brand th,#sepa-brand button,#sepa-brand h3,#sepa-brand span,#sepa-brand a{font-family:var(--f-body)!important}
+#sepa-brand h1,#sepa-brand h2,#sepa-brand .specimen-a,#sepa-brand .specimen-a span,#sepa-brand h1 span,#sepa-brand h2 span,#sepa-brand .chipcol,#sepa-brand .chipcol span{font-family:var(--f-display)!important;font-weight:400!important;letter-spacing:.01em!important}
+#sepa-brand h1{font-size:clamp(40px,6.5vw,68px)!important;line-height:1.05!important}
+#sepa-brand h2{font-size:clamp(28px,4vw,38px)!important;line-height:1.15!important}
+#sepa-brand .specimen-b{font-family:"Myriad Pro","Be Vietnam Pro",sans-serif!important}
+#sepa-brand dd,#sepa-brand dd span:not(.vi):not(.en){font-family:var(--f-mono)!important}
+#sepa-brand dd .copy,#sepa-brand dd .copy span{font-family:var(--f-body)!important}
 """
 open(os.path.join(BRAND, 'wp', 'sepa-brand.css'), 'w', encoding='utf-8').write(css_out)
 
@@ -84,6 +92,7 @@ js = r"""/* SEPA brand guidelines – WordPress embed. Built by docs/brand/tools
 var host=document.getElementById('sepa-brand'); if(!host) return;
 var UP=%(up)s, SVG=%(svgs)s, COL={mau:'#253E93',trang:'#FFFFFF',den:'#000000'};
 host.innerHTML=%(markup)s;
+var art=host.closest('article'),eh=art&&art.querySelector('.entry-header');if(eh&&/thương hiệu|brand/i.test(eh.textContent))eh.style.display='none';
 function svgText(name){var m=name.match(/^sepa-logo-(ngang|doc|bieu-tuong)-(mau|trang|den)$/);return SVG[m[1]].replace('fill="#253E93"','fill="'+COL[m[2]]+'"')}
 var urls={};
 function svgUrl(name){if(!urls[name])urls[name]=URL.createObjectURL(new Blob([svgText(name)],{type:'image/svg+xml'}));return urls[name]}
