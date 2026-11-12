@@ -19,7 +19,7 @@ Nguồn: file Word "Phỏng vấn" (11/2026). Đã biên tập lại thành bài
 
 ## Đã sửa so với bản gốc
 
-- "Giảm khảo" → "Giám khảo"; thống nhất tên **PGS.TS. Lê Chí Ngọc** (bản gốc có chỗ ghi "Lê Trí Ngọc"; ảnh ghi Le Chi Ngoc).
+- "Giảm khảo" → "Giám khảo"; thống nhất tên **PGS. TS Lê Chí Ngọc** (bản gốc có chỗ ghi "Lê Trí Ngọc"; ảnh ghi Le Chi Ngoc).
 - Tên đội theo ảnh: **BlueMarble VR**.
 - Mục kinh nghiệm của TS. Cao Thị Luyên bản gốc nhảy số (thiếu mục 4): đánh lại tiêu đề, bỏ số.
 - Thêm đoạn mở đầu và phần "5 điều cần nhớ" ở cuối.
