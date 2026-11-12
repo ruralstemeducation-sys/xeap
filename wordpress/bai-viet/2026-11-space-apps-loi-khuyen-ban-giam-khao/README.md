@@ -8,6 +8,7 @@ Nguồn: file Word "Phỏng vấn" (11/2026), đã biên tập lại thành bài
 - **Ảnh đại diện:** banner Space Apps Hà Nội 2026 (media 23840)
 - **Ảnh trong bài:** media 24186 (chân dung PGS. TS Lê Chí Ngọc), 24185 (đội BlueMarble VR)
 - `bai-viet.html`: nội dung đúng như trên web (khối HTML, cùng kiểu `.sepa-pr` với thông cáo báo chí 11/11/2026).
+- `bai-viet-en.html`: bản tiếng Anh, bài ID 24189, chuyên mục EN `spaceapp2026-en` (ID 653, con của News 79), ảnh đại diện banner EN (23841). Đã liên kết bản dịch VI 24187 ↔ EN 24189 và chuyên mục 651 ↔ 653 (Polylang).
 
 ## Đã sửa so với bản gốc
 
