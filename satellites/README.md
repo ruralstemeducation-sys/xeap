@@ -47,6 +47,17 @@ Tạo thư mục `content/<tên miền>/`:
   /ten-bai-cu/ https://sepa.org.vn/ten-bai-moi.htm 301
   ```
 
+## Site có giao diện riêng (vd. roboticschampionship.vn)
+
+Nếu có `content/<tên miền>/shell.html` thì site được dựng theo giao diện riêng thay cho mẫu chung:
+
+- `shell.html`: khung trang (header, footer, CSS) với chỗ trống `{{title}}`, `{{description}}`, `{{head}}`, `{{content}}`.
+- `pages/<đường-dẫn>.html`: mỗi file là một trang `/<đường-dẫn>/`, riêng `home.html` là trang chủ. Dòng đầu có dạng `<!--meta {"title": "...", "description": "..."} -->`. File có `<!doctype html>` được giữ nguyên, file chỉ có nội dung thì được bọc trong `shell.html`.
+- `{{news:6}}` / `{{news:all}}` trong trang: chèn thẻ tin lấy từ sepa theo mẫu `news-card.html`.
+- `extra.css`: CSS bổ sung, chèn vào mọi trang.
+
+Muốn sửa nội dung thì sửa thẳng file trong `pages/`. Bản sao lưu WordPress cũ nằm ở `backup/roboticschampionship.vn/`. File `pages-truoc-sua-2026-11-16.json` là bản trước khi sửa lịch, `pages.json` là bản sau khi sửa.
+
 ## Chạy thử trên máy
 
 ```bash

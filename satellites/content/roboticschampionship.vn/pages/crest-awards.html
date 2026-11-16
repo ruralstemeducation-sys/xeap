@@ -1,0 +1,2924 @@
+<!--meta {"title": "CREST Awards", "description": "CREST Awards – chứng nhận dự án STEM của Hiệp hội Khoa học Anh dành cho các đội VRC."} -->
+<!-- =========================================================
+VRC × CREST AWARDS
+BILINGUAL VI / EN
+COPY TO WORDPRESS CUSTOM HTML
+========================================================= -->
+
+<style>
+
+.vrc-crest-page{
+  --navy:#062f69;
+  --navy-dark:#031d43;
+  --blue:#0a407f;
+  --red:#ef0017;
+  --text:#24364d;
+  --muted:#667085;
+  --soft:#f5f8fc;
+  --line:#dce5ef;
+  --white:#ffffff;
+  --bronze:#a66d3b;
+  --silver:#7d8da1;
+
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--text);
+}
+
+.vrc-crest-page *{
+  box-sizing:border-box;
+}
+
+.vrc-crest-wrap{
+  width:min(1180px,calc(100% - 40px));
+  margin:0 auto;
+}
+
+.vrc-crest-section{
+  padding:82px 0;
+}
+
+.vrc-crest-soft{
+  background:var(--soft);
+}
+
+
+/* =========================
+TYPOGRAPHY
+========================= */
+
+.vrc-crest-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--red);
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.vrc-crest-kicker:before{
+  content:"";
+  width:34px;
+  height:3px;
+  background:var(--red);
+  transform:skewX(-28deg);
+}
+
+.vrc-crest-title{
+  margin:12px 0 18px;
+  color:var(--navy);
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:clamp(2.6rem,5vw,4.6rem);
+  line-height:.95;
+  text-transform:uppercase;
+}
+
+.vrc-crest-lead{
+  max-width:820px;
+  margin:0;
+  color:var(--muted);
+  font-size:1.06rem;
+  line-height:1.75;
+}
+
+
+/* =========================
+LANGUAGE SWITCH
+========================= */
+
+.vrc-crest-language{
+  position:absolute;
+  top:22px;
+  right:22px;
+  z-index:30;
+
+  display:flex;
+  gap:4px;
+
+  padding:5px;
+
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;
+
+  backdrop-filter:blur(10px);
+}
+
+.vrc-lang-button{
+  appearance:none;
+  border:0;
+  cursor:pointer;
+
+  padding:8px 13px;
+
+  border-radius:999px;
+
+  background:transparent;
+  color:#fff;
+
+  font-weight:900;
+  font-size:.75rem;
+  letter-spacing:.08em;
+}
+
+.vrc-lang-button.active{
+  background:#fff;
+  color:var(--navy);
+}
+
+.vrc-lang-en{
+  display:none;
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.vrc-crest-hero{
+  position:relative;
+  overflow:hidden;
+
+  padding:94px 0 86px;
+
+  color:#fff;
+
+  background:
+    radial-gradient(
+      circle at 82% 15%,
+      rgba(239,0,23,.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #031d43 0%,
+      #062f69 62%,
+      #0a407f 100%
+    );
+}
+
+.vrc-crest-hero:before{
+  content:"";
+  position:absolute;
+
+  width:54%;
+  height:7px;
+
+  top:120px;
+  right:-12%;
+
+  background:var(--red);
+  transform:skewX(-30deg);
+}
+
+.vrc-crest-hero-grid{
+  position:relative;
+  z-index:2;
+
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:58px;
+
+  align-items:center;
+}
+
+.vrc-crest-badge{
+  display:inline-flex;
+
+  padding:8px 14px;
+
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;
+
+  background:rgba(255,255,255,.07);
+
+  font-size:.76rem;
+  font-weight:900;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+
+.vrc-crest-hero h1{
+  margin:22px 0 20px;
+
+  font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:clamp(4rem,8vw,7rem);
+
+  line-height:.84;
+
+  text-transform:uppercase;
+}
+
+.vrc-crest-hero h1 span{
+  display:block;
+  color:#fff;
+}
+
+.vrc-crest-hero h1 strong{
+  display:block;
+  color:var(--red);
+}
+
+.vrc-crest-hero-copy{
+  max-width:720px;
+
+  margin:0;
+
+  color:#dce8f6;
+
+  font-size:1.08rem;
+  line-height:1.75;
+}
+
+.vrc-crest-actions{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:12px;
+
+  margin-top:28px;
+}
+
+.vrc-crest-btn{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:14px 22px;
+
+  border-radius:12px;
+
+  text-decoration:none;
+
+  font-weight:900;
+
+  transition:.2s;
+}
+
+.vrc-crest-btn-red{
+  background:var(--red);
+  color:#fff;
+}
+
+.vrc-crest-btn-red:hover{
+  background:#ff1529;
+  transform:translateY(-2px);
+}
+
+.vrc-crest-btn-outline{
+  color:#fff;
+
+  background:rgba(255,255,255,.04);
+
+  border:1px solid rgba(255,255,255,.45);
+}
+
+.vrc-crest-btn-outline:hover{
+  background:rgba(255,255,255,.12);
+}
+
+
+/* =========================
+HERO INFO
+========================= */
+
+.vrc-crest-hero-card{
+  padding:28px;
+
+  background:#fff;
+
+  border-radius:26px;
+
+  box-shadow:0 28px 70px rgba(0,0,0,.23);
+}
+
+.vrc-crest-stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:12px;
+}
+
+.vrc-crest-stat{
+  padding:20px;
+
+  background:#f4f7fb;
+
+  border-radius:16px;
+
+  color:var(--navy);
+}
+
+.vrc-crest-stat b{
+  display:block;
+
+  font-family:"Barlow Condensed",Arial,sans-serif;
+
+  font-size:2.5rem;
+  line-height:1;
+}
+
+.vrc-crest-stat span{
+  display:block;
+
+  margin-top:7px;
+
+  color:#697a90;
+
+  font-size:.75rem;
+
+  font-weight:800;
+
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+
+
+/* =========================
+OVERVIEW
+========================= */
+
+.vrc-crest-overview{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  gap:16px;
+
+  margin-top:38px;
+}
+
+.vrc-crest-overview-card{
+  padding:23px;
+
+  background:#fff;
+
+  border:1px solid var(--line);
+  border-radius:18px;
+}
+
+.vrc-crest-overview-card b{
+  display:block;
+
+  margin-bottom:7px;
+
+  color:var(--navy);
+}
+
+.vrc-crest-overview-card span{
+  color:var(--muted);
+
+  font-size:.93rem;
+}
+
+
+/* =========================
+BRONZE SILVER
+========================= */
+
+.vrc-crest-level-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:24px;
+
+  margin-top:42px;
+}
+
+.vrc-crest-level{
+  position:relative;
+  overflow:hidden;
+
+  padding:32px;
+
+  background:#fff;
+
+  border:1px solid var(--line);
+  border-radius:22px;
+}
+
+.vrc-crest-level:before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:6px;
+}
+
+.vrc-crest-level.bronze:before{
+  background:var(--bronze);
+}
+
+.vrc-crest-level.silver:before{
+  background:var(--silver);
+}
+
+.vrc-crest-level-label{
+  display:inline-flex;
+
+  padding:6px 11px;
+
+  border-radius:999px;
+
+  font-size:.73rem;
+
+  font-weight:900;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+}
+
+.bronze .vrc-crest-level-label{
+  background:#f5e8dc;
+  color:#875329;
+}
+
+.silver .vrc-crest-level-label{
+  background:#edf1f5;
+  color:#536276;
+}
+
+.vrc-crest-level h3{
+  margin:15px 0 10px;
+
+  color:var(--navy);
+
+  font-family:"Barlow Condensed",Arial,sans-serif;
+
+  font-size:2.5rem;
+  line-height:1;
+
+  text-transform:uppercase;
+}
+
+.vrc-crest-level p,
+.vrc-crest-level li{
+  color:var(--muted);
+}
+
+.vrc-crest-level ul{
+  padding-left:20px;
+}
+
+.vrc-crest-level li{
+  margin:8px 0;
+}
+
+
+/* =========================
+PROJECTS
+========================= */
+
+.vrc-crest-project-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:24px;
+
+  margin-top:40px;
+}
+
+.vrc-crest-project{
+  overflow:hidden;
+
+  background:#fff;
+
+  border:1px solid var(--line);
+  border-radius:22px;
+}
+
+.vrc-crest-project-head{
+  padding:28px;
+
+  color:#fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #031d43,
+      #0a407f
+    );
+}
+
+.vrc-crest-project-head span{
+  color:#d7e5f5;
+
+  font-size:.74rem;
+
+  font-weight:900;
+
+  letter-spacing:.09em;
+
+  text-transform:uppercase;
+}
+
+.vrc-crest-project-head h3{
+  margin:8px 0 0;
+
+  font-family:"Barlow Condensed",Arial,sans-serif;
+
+  font-size:2.2rem;
+
+  line-height:1;
+
+  text-transform:uppercase;
+}
+
+.vrc-crest-project-body{
+  padding:28px;
+}
+
+.vrc-crest-project-body p,
+.vrc-crest-project-body li{
+  color:var(--muted);
+}
+
+.vrc-crest-project-body ul{
+  padding-left:20px;
+}
+
+.vrc-crest-project-body li{
+  margin:7px 0;
+}
+
+.vrc-crest-level-row{
+  margin-top:20px;
+
+  padding-top:18px;
+
+  border-top:1px solid var(--line);
+}
+
+
+/* =========================
+STUDENT CENTERED
+========================= */
+
+.vrc-crest-policy{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+
+  gap:48px;
+
+  align-items:start;
+}
+
+.vrc-crest-policy-panel{
+  padding:32px;
+
+  color:#fff;
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #031d43,
+      #0a407f
+    );
+}
+
+.vrc-crest-policy-panel h3{
+  margin:10px 0 14px;
+
+  font-family:"Barlow Condensed",Arial,sans-serif;
+
+  font-size:2.7rem;
+
+  line-height:1;
+
+  text-transform:uppercase;
+}
+
+.vrc-crest-policy-panel p{
+  color:#d9e5f4;
+}
+
+.vrc-crest-check-grid{
+  display:grid;
+  gap:14px;
+}
+
+.vrc-crest-check{
+  display:grid;
+  grid-template-columns:42px 1fr;
+
+  gap:14px;
+}
+
+.vrc-crest-check i{
+  width:42px;
+  height:42px;
+
+  display:grid;
+
+  place-items:center;
+
+  background:#fdecef;
+
+  color:var(--red);
+
+  border-radius:12px;
+
+  font-style:normal;
+
+  font-weight:900;
+}
+
+.vrc-crest-check b{
+  display:block;
+
+  color:var(--navy);
+}
+
+.vrc-crest-check span{
+  color:var(--muted);
+
+  font-size:.94rem;
+}
+
+
+/* =========================
+PROCESS
+========================= */
+
+.vrc-crest-process{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+
+  gap:14px;
+
+  margin-top:38px;
+}
+
+.vrc-crest-process-step{
+  padding:22px;
+
+  background:#fff;
+
+  border:1px solid var(--line);
+  border-radius:17px;
+}
+
+.vrc-crest-process-step strong{
+  display:block;
+
+  color:var(--red);
+
+  font-family:"Barlow Condensed",Arial,sans-serif;
+
+  font-size:2rem;
+
+  line-height:1;
+}
+
+.vrc-crest-process-step b{
+  display:block;
+
+  margin:9px 0 7px;
+
+  color:var(--navy);
+}
+
+.vrc-crest-process-step span{
+  color:var(--muted);
+
+  font-size:.9rem;
+}
+
+
+/* =========================
+ASSESSMENT
+========================= */
+
+.vrc-crest-criteria-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  gap:18px;
+
+  margin-top:34px;
+}
+
+.vrc-crest-criteria-card{
+  padding:24px;
+
+  background:#fff;
+
+  border:1px solid var(--line);
+  border-radius:18px;
+}
+
+.vrc-crest-criteria-card b{
+  display:block;
+
+  margin-bottom:8px;
+
+  color:var(--navy);
+}
+
+.vrc-crest-criteria-card span{
+  color:var(--muted);
+
+  font-size:.92rem;
+}
+
+.vrc-crest-callout{
+  margin-top:28px;
+
+  padding:22px 24px;
+
+  background:#fff;
+
+  border-left:5px solid var(--red);
+
+  border-radius:0 15px 15px 0;
+}
+
+.vrc-crest-callout b{
+  display:block;
+
+  margin-bottom:6px;
+
+  color:var(--navy);
+}
+
+.vrc-crest-callout span{
+  color:var(--muted);
+}
+
+
+/* =========================
+EVIDENCE
+========================= */
+
+.vrc-crest-evidence{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+
+  gap:16px;
+
+  margin-top:34px;
+}
+
+.vrc-crest-evidence-card{
+  padding:22px;
+
+  color:#fff;
+
+  background:var(--navy);
+
+  border-radius:17px;
+}
+
+.vrc-crest-evidence-card b{
+  display:block;
+
+  margin-bottom:6px;
+}
+
+.vrc-crest-evidence-card span{
+  color:#d9e5f4;
+
+  font-size:.9rem;
+}
+
+
+/* =========================
+CONTACT
+========================= */
+
+.vrc-crest-contact{
+  padding:46px;
+
+  color:#fff;
+
+  border-radius:26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #031d43,
+      #062f69
+    );
+}
+
+.vrc-crest-contact h2{
+  margin:8px 0 14px;
+
+  color:#fff;
+
+  font-family:"Barlow Condensed",Arial,sans-serif;
+
+  font-size:clamp(2.8rem,5vw,4.6rem);
+
+  line-height:.95;
+
+  text-transform:uppercase;
+}
+
+.vrc-crest-contact-intro{
+  max-width:800px;
+
+  color:#d7e4f3;
+
+  line-height:1.75;
+}
+
+.vrc-crest-contact-box{
+  margin-top:26px;
+
+  padding:24px;
+
+  background:rgba(255,255,255,.08);
+
+  border:1px solid rgba(255,255,255,.18);
+
+  border-radius:17px;
+}
+
+.vrc-crest-contact-box p{
+  margin:0 0 14px;
+
+  color:#d7e4f3;
+}
+
+.vrc-crest-contact-box p:last-child{
+  margin-bottom:0;
+}
+
+.vrc-crest-contact-box strong{
+  color:#fff;
+}
+
+.vrc-crest-contact-box a{
+  color:#fff;
+
+  text-decoration:none;
+
+  font-weight:800;
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .vrc-crest-hero-grid,
+  .vrc-crest-policy{
+    grid-template-columns:1fr;
+  }
+
+  .vrc-crest-level-grid,
+  .vrc-crest-project-grid{
+    grid-template-columns:1fr;
+  }
+
+  .vrc-crest-overview,
+  .vrc-crest-criteria-grid,
+  .vrc-crest-evidence{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .vrc-crest-process{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+@media(max-width:600px){
+
+  .vrc-crest-wrap{
+    width:min(100% - 28px,1180px);
+  }
+
+  .vrc-crest-section{
+    padding:58px 0;
+  }
+
+  .vrc-crest-hero{
+    padding:72px 0 56px;
+  }
+
+  .vrc-crest-hero:before{
+    display:none;
+  }
+
+  .vrc-crest-language{
+    top:14px;
+    right:14px;
+  }
+
+  .vrc-crest-hero h1{
+    font-size:3.35rem;
+    line-height:.9;
+  }
+
+  .vrc-crest-stat-grid,
+  .vrc-crest-overview,
+  .vrc-crest-criteria-grid,
+  .vrc-crest-evidence{
+    grid-template-columns:1fr;
+  }
+
+  .vrc-crest-actions{
+    flex-direction:column;
+  }
+
+  .vrc-crest-actions .vrc-crest-btn{
+    width:100%;
+  }
+
+  .vrc-crest-contact{
+    padding:30px 22px;
+  }
+
+}
+
+</style>
+
+
+
+<div class="vrc-crest-page">
+
+
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<section class="vrc-crest-hero">
+
+  <div class="vrc-crest-language">
+
+    <button
+      class="vrc-lang-button active"
+      type="button"
+      onclick="vrcSetCrestLanguage('vi',this)">
+      VI
+    </button>
+
+    <button
+      class="vrc-lang-button"
+      type="button"
+      onclick="vrcSetCrestLanguage('en',this)">
+      EN
+    </button>
+
+  </div>
+
+
+  <div class="vrc-crest-wrap vrc-crest-hero-grid">
+
+
+    <!-- VI -->
+
+    <div class="vrc-lang-vi">
+
+      <span class="vrc-crest-badge">
+        CREST Awards for RECF Teams
+      </span>
+
+      <h1>
+        <span>CHỨNG NHẬN CREST</span>
+        <strong>CHO DỰ ÁN ROBOTICS</strong>
+      </h1>
+
+      <p class="vrc-crest-hero-copy">
+        Các đội Robotics có thể phát triển quá trình
+        thiết kế, chế tạo, lập trình, thử nghiệm và
+        Engineering Notebook thành một dự án khoa học –
+        kỹ thuật có cấu trúc để đăng ký xét CREST Awards
+        theo cấp độ phù hợp.
+      </p>
+
+      <div class="vrc-crest-actions">
+
+        <a
+          class="vrc-crest-btn vrc-crest-btn-red"
+          href="#crest-register">
+          Đăng ký xét CREST Awards →
+        </a>
+
+        <a
+          class="vrc-crest-btn vrc-crest-btn-outline"
+          href="#crest-pathway">
+          Xem lộ trình
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- EN -->
+
+    <div class="vrc-lang-en">
+
+      <span class="vrc-crest-badge">
+        CREST Awards for RECF Teams
+      </span>
+
+      <h1>
+        <span>CREST AWARDS</span>
+        <strong>FOR ROBOTICS PROJECTS</strong>
+      </h1>
+
+      <p class="vrc-crest-hero-copy">
+        Robotics teams can develop their design,
+        building, programming, testing and
+        Engineering Notebook into a structured
+        science and engineering project for
+        CREST Awards assessment at an appropriate level.
+      </p>
+
+      <div class="vrc-crest-actions">
+
+        <a
+          class="vrc-crest-btn vrc-crest-btn-red"
+          href="#crest-register">
+          Apply for CREST Awards →
+        </a>
+
+        <a
+          class="vrc-crest-btn vrc-crest-btn-outline"
+          href="#crest-pathway">
+          View pathway
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- STATISTICS -->
+
+    <div class="vrc-crest-hero-card">
+
+      <div class="vrc-crest-stat-grid">
+
+
+        <div class="vrc-crest-stat">
+
+          <b>10+</b>
+
+          <span class="vrc-lang-vi">
+            Giờ dự án Bronze
+          </span>
+
+          <span class="vrc-lang-en">
+            Bronze project hours
+          </span>
+
+        </div>
+
+
+        <div class="vrc-crest-stat">
+
+          <b>30+</b>
+
+          <span class="vrc-lang-vi">
+            Giờ dự án Silver
+          </span>
+
+          <span class="vrc-lang-en">
+            Silver project hours
+          </span>
+
+        </div>
+
+
+        <div class="vrc-crest-stat">
+
+          <b>15</b>
+
+          <span class="vrc-lang-vi">
+            Tiêu chí CREST
+          </span>
+
+          <span class="vrc-lang-en">
+            CREST criteria
+          </span>
+
+        </div>
+
+
+        <div class="vrc-crest-stat">
+
+          <b>11/15</b>
+
+          <span class="vrc-lang-vi">
+            Mức đáp ứng tối thiểu
+          </span>
+
+          <span class="vrc-lang-en">
+            Minimum criteria
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+INTRO
+===================================================== -->
+
+<section class="vrc-crest-section">
+
+  <div class="vrc-crest-wrap">
+
+
+    <div class="vrc-lang-vi">
+
+      <span class="vrc-crest-kicker">
+        Từ thi đấu đến nghiên cứu
+      </span>
+
+      <h2 class="vrc-crest-title">
+        Biến quá trình làm robot thành một dự án khoa học – kỹ thuật
+      </h2>
+
+      <p class="vrc-crest-lead">
+        Quá trình chuẩn bị cho một cuộc thi Robotics đã bao gồm
+        nhiều thành phần của một dự án khoa học và kỹ thuật:
+        xác định vấn đề, nghiên cứu, thiết kế giải pháp,
+        chế tạo robot, lập trình, thử nghiệm, thu thập dữ liệu,
+        đánh giá kết quả và cải tiến.
+      </p>
+
+    </div>
+
+
+    <div class="vrc-lang-en">
+
+      <span class="vrc-crest-kicker">
+        From competition to research
+      </span>
+
+      <h2 class="vrc-crest-title">
+        Turn robotics preparation into a science and engineering project
+      </h2>
+
+      <p class="vrc-crest-lead">
+        Preparing for a robotics competition already involves
+        many components of a science and engineering project:
+        defining a problem, research, designing a solution,
+        building, programming, testing, collecting evidence,
+        evaluating performance and improving the design.
+      </p>
+
+    </div>
+
+
+    <div class="vrc-crest-overview">
+
+
+      <div class="vrc-crest-overview-card">
+
+        <b class="vrc-lang-vi">
+          Thiết kế
+        </b>
+
+        <b class="vrc-lang-en">
+          Design
+        </b>
+
+        <span class="vrc-lang-vi">
+          Xác định bài toán và phát triển
+          các phương án giải pháp.
+        </span>
+
+        <span class="vrc-lang-en">
+          Define the challenge and develop
+          alternative solutions.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-overview-card">
+
+        <b class="vrc-lang-vi">
+          Chế tạo & lập trình
+        </b>
+
+        <b class="vrc-lang-en">
+          Build & program
+        </b>
+
+        <span class="vrc-lang-vi">
+          Chuyển ý tưởng thành hệ thống robot
+          có thể hoạt động.
+        </span>
+
+        <span class="vrc-lang-en">
+          Turn ideas into a functioning
+          robotic system.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-overview-card">
+
+        <b class="vrc-lang-vi">
+          Thử nghiệm
+        </b>
+
+        <b class="vrc-lang-en">
+          Experiment
+        </b>
+
+        <span class="vrc-lang-vi">
+          Đo thời gian, độ tin cậy,
+          điểm số và hiệu suất.
+        </span>
+
+        <span class="vrc-lang-en">
+          Measure time, reliability,
+          scores and performance.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-overview-card">
+
+        <b class="vrc-lang-vi">
+          Phân tích & cải tiến
+        </b>
+
+        <b class="vrc-lang-en">
+          Analyse & iterate
+        </b>
+
+        <span class="vrc-lang-vi">
+          Sử dụng dữ liệu và thất bại
+          để cải tiến thiết kế.
+        </span>
+
+        <span class="vrc-lang-en">
+          Use evidence and failure
+          to improve the design.
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+BRONZE / SILVER
+===================================================== -->
+
+<section
+  class="vrc-crest-section vrc-crest-soft"
+  id="crest-pathway">
+
+  <div class="vrc-crest-wrap">
+
+
+    <div class="vrc-lang-vi">
+
+      <span class="vrc-crest-kicker">
+        CREST Pathway
+      </span>
+
+      <h2 class="vrc-crest-title">
+        Hai cấp độ dự án
+      </h2>
+
+      <p class="vrc-crest-lead">
+        Bronze và Silver có thể được lựa chọn tùy theo
+        thời lượng dự án, độ sâu nghiên cứu và mức độ
+        độc lập của học sinh.
+      </p>
+
+    </div>
+
+
+    <div class="vrc-lang-en">
+
+      <span class="vrc-crest-kicker">
+        CREST Pathway
+      </span>
+
+      <h2 class="vrc-crest-title">
+        Two project levels
+      </h2>
+
+      <p class="vrc-crest-lead">
+        Bronze and Silver may be selected according to
+        project duration, depth of investigation
+        and level of student independence.
+      </p>
+
+    </div>
+
+
+    <div class="vrc-crest-level-grid">
+
+
+      <!-- BRONZE -->
+
+      <article class="vrc-crest-level bronze">
+
+        <span class="vrc-crest-level-label">
+          CREST Bronze
+        </span>
+
+        <h3>
+          Design · Build · Test
+        </h3>
+
+
+        <div class="vrc-lang-vi">
+
+          <p>
+            Phù hợp với học sinh bắt đầu phát triển
+            một dự án kỹ thuật có cấu trúc.
+          </p>
+
+          <ul>
+
+            <li>
+              Khoảng <strong>10+ giờ</strong>
+              làm việc do học sinh chủ trì
+            </li>
+
+            <li>
+              Thường triển khai trong khoảng
+              <strong>2–4 tuần</strong>
+            </li>
+
+            <li>
+              Hoàn thành đầy đủ một chu trình
+              thiết kế – chế tạo – thử nghiệm
+            </li>
+
+            <li>
+              Xem xét và so sánh nhiều phương án
+              hoặc chiến lược
+            </li>
+
+            <li>
+              Thu thập bằng chứng và dữ liệu
+            </li>
+
+            <li>
+              Phân tích kết quả và đề xuất cải tiến
+            </li>
+
+            <li>
+              Hoàn thiện Engineering Notebook
+              và phần trình bày dự án
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="vrc-lang-en">
+
+          <p>
+            Suitable for students beginning
+            a structured engineering project.
+          </p>
+
+          <ul>
+
+            <li>
+              Approximately <strong>10+ hours</strong>
+              of student-led work
+            </li>
+
+            <li>
+              Typically completed over
+              <strong>2–4 weeks</strong>
+            </li>
+
+            <li>
+              Complete a full design-build-test cycle
+            </li>
+
+            <li>
+              Consider and compare more than
+              one approach or strategy
+            </li>
+
+            <li>
+              Collect evidence and data
+            </li>
+
+            <li>
+              Analyse results and propose improvements
+            </li>
+
+            <li>
+              Complete an Engineering Notebook
+              and project presentation
+            </li>
+
+          </ul>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- SILVER -->
+
+      <article class="vrc-crest-level silver">
+
+        <span class="vrc-crest-level-label">
+          CREST Silver
+        </span>
+
+        <h3>
+          Model · Experiment · Evaluate
+        </h3>
+
+
+        <div class="vrc-lang-vi">
+
+          <p>
+            Dành cho đội muốn phát triển dự án
+            với độ sâu nghiên cứu và phân tích
+            định lượng cao hơn.
+          </p>
+
+          <ul>
+
+            <li>
+              Khoảng <strong>30+ giờ</strong>
+              làm việc do học sinh chủ trì
+            </li>
+
+            <li>
+              Có thể triển khai khoảng
+              <strong>9 tuần / 2 tháng</strong>
+            </li>
+
+            <li>
+              Xây dựng câu hỏi nghiên cứu
+              hoặc giả thuyết
+            </li>
+
+            <li>
+              Xây dựng mô hình định lượng
+              để dự đoán kết quả
+            </li>
+
+            <li>
+              Thiết kế chương trình thử nghiệm
+              có cấu trúc
+            </li>
+
+            <li>
+              So sánh mô hình với dữ liệu thực nghiệm
+            </li>
+
+            <li>
+              Đánh giá khả năng chuyển giao
+              sang bài toán kỹ thuật thực tế
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="vrc-lang-en">
+
+          <p>
+            Suitable for teams developing
+            a deeper project with quantitative
+            research and analysis.
+          </p>
+
+          <ul>
+
+            <li>
+              Approximately <strong>30+ hours</strong>
+              of student-led work
+            </li>
+
+            <li>
+              Can be developed over approximately
+              <strong>9 weeks / 2 months</strong>
+            </li>
+
+            <li>
+              Develop a research question
+              or hypothesis
+            </li>
+
+            <li>
+              Build a quantitative model
+              to predict outcomes
+            </li>
+
+            <li>
+              Design a structured experimental programme
+            </li>
+
+            <li>
+              Compare model predictions
+              with experimental results
+            </li>
+
+            <li>
+              Evaluate transfer to
+              a real engineering context
+            </li>
+
+          </ul>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+PROJECT MODELS
+===================================================== -->
+
+<section class="vrc-crest-section">
+
+  <div class="vrc-crest-wrap">
+
+
+    <div class="vrc-lang-vi">
+
+      <span class="vrc-crest-kicker">
+        RECF Project Models
+      </span>
+
+      <h2 class="vrc-crest-title">
+        Hai mô hình dự án đã được xây dựng
+      </h2>
+
+      <p class="vrc-crest-lead">
+        Các thử thách Robotics được chuyển từ
+        cơ chế trò chơi thành những bài toán kỹ thuật
+        gắn với bối cảnh thực tế.
+      </p>
+
+    </div>
+
+
+    <div class="vrc-lang-en">
+
+      <span class="vrc-crest-kicker">
+        RECF Project Models
+      </span>
+
+      <h2 class="vrc-crest-title">
+        Two project models
+      </h2>
+
+      <p class="vrc-crest-lead">
+        Robotics game challenges are reframed
+        as engineering problems connected
+        to real-world contexts.
+      </p>
+
+    </div>
+
+
+    <div class="vrc-crest-project-grid">
+
+
+      <!-- ENGAGE -->
+
+      <article class="vrc-crest-project">
+
+        <div class="vrc-crest-project-head">
+
+          <span>
+            RECF Engage · Tier Takeover
+          </span>
+
+          <h3>
+            The Tiered Warehouse Challenge
+          </h3>
+
+        </div>
+
+
+        <div class="vrc-crest-project-body">
+
+
+          <div class="vrc-lang-vi">
+
+            <p>
+              Tier Takeover được mô hình hóa thành
+              một hệ thống kho hàng tự động.
+              Robot phải xử lý các vật mềm, phân loại
+              hàng hóa theo màu và đưa chúng tới
+              các tầng lưu trữ khác nhau trong thời gian giới hạn.
+            </p>
+
+            <ul>
+
+              <li>
+                Gắp và xử lý vật mềm, biến dạng
+              </li>
+
+              <li>
+                Phân loại hàng hóa theo màu
+              </li>
+
+              <li>
+                Đặt vật chính xác lên nhiều tầng
+              </li>
+
+              <li>
+                Tối ưu throughput và cycle time
+              </li>
+
+              <li>
+                So sánh teleoperated và autonomous
+              </li>
+
+              <li>
+                Tối ưu chiến lược lưu trữ
+              </li>
+
+            </ul>
+
+
+            <div class="vrc-crest-level-row">
+
+              <p>
+                <strong>Bronze:</strong>
+                thiết kế, chế tạo, thử nghiệm robot
+                và so sánh các chiến lược.
+              </p>
+
+              <p>
+                <strong>Silver:</strong>
+                xây dựng mô hình value-per-second,
+                dự đoán chiến lược tối ưu và kiểm chứng
+                bằng dữ liệu thực nghiệm.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="vrc-lang-en">
+
+            <p>
+              Tier Takeover is reframed as an
+              automated warehouse system.
+              The robot handles deformable goods,
+              sorts items by colour and moves them
+              into different storage tiers within
+              a limited operating window.
+            </p>
+
+            <ul>
+
+              <li>
+                Handling soft and deformable objects
+              </li>
+
+              <li>
+                Colour-based sorting
+              </li>
+
+              <li>
+                Accurate placement on higher tiers
+              </li>
+
+              <li>
+                Throughput and cycle-time optimisation
+              </li>
+
+              <li>
+                Teleoperated vs autonomous operation
+              </li>
+
+              <li>
+                Storage strategy optimisation
+              </li>
+
+            </ul>
+
+
+            <div class="vrc-crest-level-row">
+
+              <p>
+                <strong>Bronze:</strong>
+                design, build and test the robot
+                while comparing alternative strategies.
+              </p>
+
+              <p>
+                <strong>Silver:</strong>
+                develop a value-per-second model,
+                predict the optimal strategy and
+                test it experimentally.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ACHIEVE -->
+
+      <article class="vrc-crest-project">
+
+        <div class="vrc-crest-project-head">
+
+          <span>
+            RECF Achieve · Pinnacle
+          </span>
+
+          <h3>
+            Robotic Assembly & Inspection Cell
+          </h3>
+
+        </div>
+
+
+        <div class="vrc-crest-project-body">
+
+
+          <div class="vrc-lang-vi">
+
+            <p>
+              Pinnacle được mô hình hóa thành
+              một dây chuyền lắp ráp và kiểm tra
+              chất lượng tự động.
+              Robot phải lấy linh kiện, ghép các bộ phận,
+              kiểm soát hướng lắp và đưa các bộ phận
+              hoàn thành lên các trạm khác nhau.
+            </p>
+
+            <ul>
+
+              <li>
+                Gripping và part handling
+              </li>
+
+              <li>
+                Peg-in-hole / nesting
+              </li>
+
+              <li>
+                Kiểm soát orientation
+              </li>
+
+              <li>
+                Quality inspection
+              </li>
+
+              <li>
+                Stacking / palletizing
+              </li>
+
+              <li>
+                Tối ưu throughput và value-per-cycle
+              </li>
+
+            </ul>
+
+
+            <div class="vrc-crest-level-row">
+
+              <p>
+                <strong>Bronze:</strong>
+                xây dựng robot lắp ráp,
+                thử driver và coding,
+                sau đó đánh giá giải pháp.
+              </p>
+
+              <p>
+                <strong>Silver:</strong>
+                đo độ tin cậy, thời gian,
+                orientation success và giá trị mỗi chu kỳ;
+                xây dựng mô hình và kiểm chứng
+                bằng thực nghiệm.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="vrc-lang-en">
+
+            <p>
+              Pinnacle is reframed as
+              a robotic assembly and quality-inspection cell.
+              The robot collects components,
+              mates parts together,
+              controls orientation and stacks
+              completed units onto different stations.
+            </p>
+
+            <ul>
+
+              <li>
+                Gripping and part handling
+              </li>
+
+              <li>
+                Peg-in-hole / nesting
+              </li>
+
+              <li>
+                Orientation control
+              </li>
+
+              <li>
+                Quality inspection
+              </li>
+
+              <li>
+                Stacking / palletising
+              </li>
+
+              <li>
+                Throughput and value-per-cycle optimisation
+              </li>
+
+            </ul>
+
+
+            <div class="vrc-crest-level-row">
+
+              <p>
+                <strong>Bronze:</strong>
+                build an assembly robot,
+                test driver and coding approaches,
+                then evaluate the solution.
+              </p>
+
+              <p>
+                <strong>Silver:</strong>
+                measure reliability, time,
+                orientation success and value per cycle;
+                build a model and test it experimentally.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+STUDENT CENTERED
+===================================================== -->
+
+<section class="vrc-crest-section vrc-crest-soft">
+
+  <div class="vrc-crest-wrap vrc-crest-policy">
+
+
+    <div class="vrc-crest-policy-panel">
+
+
+      <div class="vrc-lang-vi">
+
+        <span
+          class="vrc-crest-kicker"
+          style="color:#fff;">
+          Student-Centered
+        </span>
+
+        <h3>
+          Học sinh là chủ thể của dự án
+        </h3>
+
+        <p>
+          Các dự án được xây dựng theo nguyên tắc
+          student-led. Thiết kế, chế tạo, lập trình,
+          chiến thuật và các quyết định kỹ thuật cốt lõi
+          phải thuộc về chính học sinh.
+        </p>
+
+      </div>
+
+
+      <div class="vrc-lang-en">
+
+        <span
+          class="vrc-crest-kicker"
+          style="color:#fff;">
+          Student-Centered
+        </span>
+
+        <h3>
+          Students own the project
+        </h3>
+
+        <p>
+          Projects follow a student-led approach.
+          Core decisions concerning design,
+          building, programming, strategy
+          and engineering must belong to the students.
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="vrc-crest-check-grid">
+
+
+      <div class="vrc-crest-check">
+
+        <i>01</i>
+
+        <div>
+
+          <b class="vrc-lang-vi">
+            Học sinh đưa ra quyết định
+          </b>
+
+          <b class="vrc-lang-en">
+            Students make the decisions
+          </b>
+
+          <span class="vrc-lang-vi">
+            Thiết kế, chế tạo, lập trình
+            và chiến thuật thuộc về học sinh.
+          </span>
+
+          <span class="vrc-lang-en">
+            Design, building, programming
+            and strategy belong to the students.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="vrc-crest-check">
+
+        <i>02</i>
+
+        <div>
+
+          <b class="vrc-lang-vi">
+            Mentor hướng dẫn, không làm thay
+          </b>
+
+          <b class="vrc-lang-en">
+            Mentors teach, but do not do
+          </b>
+
+          <span class="vrc-lang-vi">
+            Mentor có thể dạy kiến thức và kỹ năng,
+            nhưng không thiết kế robot
+            hoặc viết code thay đội.
+          </span>
+
+          <span class="vrc-lang-en">
+            Mentors may teach concepts and techniques
+            but must not design the robot
+            or write the team's code.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="vrc-crest-check">
+
+        <i>03</i>
+
+        <div>
+
+          <b class="vrc-lang-vi">
+            Thất bại là một phần của bằng chứng
+          </b>
+
+          <b class="vrc-lang-en">
+            Failure is part of the evidence
+          </b>
+
+          <span class="vrc-lang-vi">
+            Các lỗi, thử nghiệm thất bại
+            và cách khắc phục cần được ghi lại.
+          </span>
+
+          <span class="vrc-lang-en">
+            Failures, unsuccessful tests
+            and improvements should be recorded.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="vrc-crest-check">
+
+        <i>04</i>
+
+        <div>
+
+          <b class="vrc-lang-vi">
+            Học sinh giải thích được sản phẩm
+          </b>
+
+          <b class="vrc-lang-en">
+            Students can explain their work
+          </b>
+
+          <span class="vrc-lang-vi">
+            Thành viên cần hiểu và giải thích được
+            các quyết định kỹ thuật của mình.
+          </span>
+
+          <span class="vrc-lang-en">
+            Team members should understand
+            and explain their engineering decisions.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="vrc-crest-check">
+
+        <i>05</i>
+
+        <div>
+
+          <b>
+            Engineering Notebook
+          </b>
+
+          <span class="vrc-lang-vi">
+            Notebook ghi lại ý tưởng, sketch,
+            dữ liệu, thất bại, thay đổi
+            và quá trình cải tiến.
+          </span>
+
+          <span class="vrc-lang-en">
+            The notebook records ideas, sketches,
+            data, failures, changes and iteration.
+          </span>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+PROCESS
+===================================================== -->
+
+<section class="vrc-crest-section">
+
+  <div class="vrc-crest-wrap">
+
+
+    <div class="vrc-lang-vi">
+
+      <span class="vrc-crest-kicker">
+        Project Process
+      </span>
+
+      <h2 class="vrc-crest-title">
+        Năm giai đoạn của dự án
+      </h2>
+
+    </div>
+
+
+    <div class="vrc-lang-en">
+
+      <span class="vrc-crest-kicker">
+        Project Process
+      </span>
+
+      <h2 class="vrc-crest-title">
+        Five project stages
+      </h2>
+
+    </div>
+
+
+    <div class="vrc-crest-process">
+
+
+      <div class="vrc-crest-process-step">
+
+        <strong>01</strong>
+
+        <b>
+          Plan & Frame
+        </b>
+
+        <span class="vrc-lang-vi">
+          Xác định vấn đề, mục tiêu,
+          tiêu chí thành công và kế hoạch.
+        </span>
+
+        <span class="vrc-lang-en">
+          Define the problem, objectives,
+          success criteria and plan.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-process-step">
+
+        <strong>02</strong>
+
+        <b>
+          Research & Design
+        </b>
+
+        <span class="vrc-lang-vi">
+          Nghiên cứu bối cảnh,
+          đề xuất và lựa chọn giải pháp.
+        </span>
+
+        <span class="vrc-lang-en">
+          Research the context,
+          develop and select a solution.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-process-step">
+
+        <strong>03</strong>
+
+        <b>
+          Build · Code · Test
+        </b>
+
+        <span class="vrc-lang-vi">
+          Chế tạo robot, lập trình,
+          thử nghiệm và thu thập dữ liệu.
+        </span>
+
+        <span class="vrc-lang-en">
+          Build the robot, program it,
+          test and collect evidence.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-process-step">
+
+        <strong>04</strong>
+
+        <b>
+          Analyse & Iterate
+        </b>
+
+        <span class="vrc-lang-vi">
+          Phân tích kết quả,
+          tìm điểm yếu và cải tiến.
+        </span>
+
+        <span class="vrc-lang-en">
+          Analyse results,
+          identify weaknesses and iterate.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-process-step">
+
+        <strong>05</strong>
+
+        <b>
+          Report & Present
+        </b>
+
+        <span class="vrc-lang-vi">
+          Hoàn thiện Engineering Notebook,
+          báo cáo và phần trình bày.
+        </span>
+
+        <span class="vrc-lang-en">
+          Complete the Engineering Notebook,
+          report and presentation.
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+ASSESSMENT
+===================================================== -->
+
+<section class="vrc-crest-section vrc-crest-soft">
+
+  <div class="vrc-crest-wrap">
+
+
+    <div class="vrc-lang-vi">
+
+      <span class="vrc-crest-kicker">
+        Assessment
+      </span>
+
+      <h2 class="vrc-crest-title">
+        15 tiêu chí CREST
+      </h2>
+
+      <p class="vrc-crest-lead">
+        Các dự án được đối chiếu với hệ thống
+        15 tiêu chí CREST.
+        Theo các proposal hiện tại,
+        dự án cần đáp ứng ít nhất 11 trên 15 tiêu chí.
+      </p>
+
+    </div>
+
+
+    <div class="vrc-lang-en">
+
+      <span class="vrc-crest-kicker">
+        Assessment
+      </span>
+
+      <h2 class="vrc-crest-title">
+        15 CREST criteria
+      </h2>
+
+      <p class="vrc-crest-lead">
+        Projects are mapped against
+        the 15 CREST assessment criteria.
+        Under the current project proposals,
+        at least 11 of the 15 criteria must be met.
+      </p>
+
+    </div>
+
+
+    <div class="vrc-crest-criteria-grid">
+
+
+      <div class="vrc-crest-criteria-card">
+
+        <b class="vrc-lang-vi">
+          1 · Lập kế hoạch dự án
+        </b>
+
+        <b class="vrc-lang-en">
+          1 · Planning the project
+        </b>
+
+        <span class="vrc-lang-vi">
+          Mục tiêu, mục đích rộng hơn,
+          các phương án, kế hoạch
+          và quản lý thời gian.
+        </span>
+
+        <span class="vrc-lang-en">
+          Aims, wider purpose,
+          alternative approaches,
+          planning and time management.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-criteria-card">
+
+        <b class="vrc-lang-vi">
+          2 · Trong quá trình thực hiện
+        </b>
+
+        <b class="vrc-lang-en">
+          2 · Throughout the project
+        </b>
+
+        <span class="vrc-lang-vi">
+          Nghiên cứu, sử dụng nguồn lực
+          và nguồn tham khảo phù hợp.
+        </span>
+
+        <span class="vrc-lang-en">
+          Research, effective use of resources
+          and appropriate references.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-criteria-card">
+
+        <b class="vrc-lang-vi">
+          3 · Hoàn thiện dự án
+        </b>
+
+        <b class="vrc-lang-en">
+          3 · Finalising the project
+        </b>
+
+        <span class="vrc-lang-vi">
+          Kết luận logic, đánh giá tác động
+          của các quyết định và đề xuất cải tiến.
+        </span>
+
+        <span class="vrc-lang-en">
+          Logical conclusions,
+          evaluation of decisions
+          and proposed improvements.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-criteria-card">
+
+        <b class="vrc-lang-vi">
+          4 · Tiêu chí xuyên suốt
+        </b>
+
+        <b class="vrc-lang-en">
+          4 · Project-wide criteria
+        </b>
+
+        <span class="vrc-lang-vi">
+          Hiểu kỹ thuật, an toàn,
+          sáng tạo, giải quyết vấn đề
+          và giao tiếp.
+        </span>
+
+        <span class="vrc-lang-en">
+          Engineering understanding,
+          safety, creativity,
+          problem solving and communication.
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="vrc-crest-callout">
+
+
+      <b class="vrc-lang-vi">
+        CREST đánh giá quá trình,
+        không chỉ đánh giá robot cuối cùng.
+      </b>
+
+      <b class="vrc-lang-en">
+        CREST assesses the process,
+        not only the final robot.
+      </b>
+
+
+      <span class="vrc-lang-vi">
+        Thành tích thi đấu cao không tự động
+        đồng nghĩa với một dự án CREST tốt.
+        Đội cần thể hiện quá trình tư duy,
+        thiết kế, thử nghiệm, thu thập dữ liệu,
+        thất bại và cải tiến.
+      </span>
+
+      <span class="vrc-lang-en">
+        A high competition score does not
+        automatically make a strong CREST project.
+        Teams need evidence of thinking,
+        design, experimentation, data,
+        failure and iteration.
+      </span>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+EVIDENCE
+===================================================== -->
+
+<section class="vrc-crest-section">
+
+  <div class="vrc-crest-wrap">
+
+
+    <div class="vrc-lang-vi">
+
+      <span class="vrc-crest-kicker">
+        Evidence & Deliverables
+      </span>
+
+      <h2 class="vrc-crest-title">
+        Đội cần chuẩn bị những gì?
+      </h2>
+
+    </div>
+
+
+    <div class="vrc-lang-en">
+
+      <span class="vrc-crest-kicker">
+        Evidence & Deliverables
+      </span>
+
+      <h2 class="vrc-crest-title">
+        What should teams prepare?
+      </h2>
+
+    </div>
+
+
+    <div class="vrc-crest-evidence">
+
+
+      <div class="vrc-crest-evidence-card">
+
+        <b>
+          01 · Robot
+        </b>
+
+        <span class="vrc-lang-vi">
+          Robot hoạt động được
+          và giải quyết bài toán kỹ thuật.
+        </span>
+
+        <span class="vrc-lang-en">
+          A functioning robot
+          addressing the engineering challenge.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-evidence-card">
+
+        <b>
+          02 · Engineering Notebook
+        </b>
+
+        <span class="vrc-lang-vi">
+          Ghi lại toàn bộ quá trình thiết kế,
+          thử nghiệm và cải tiến.
+        </span>
+
+        <span class="vrc-lang-en">
+          A record of the full design,
+          testing and iteration process.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-evidence-card">
+
+        <b>
+          03 · Experimental Data
+        </b>
+
+        <span class="vrc-lang-vi">
+          Dữ liệu thử nghiệm
+          để so sánh các phương án.
+        </span>
+
+        <span class="vrc-lang-en">
+          Experimental evidence
+          comparing alternative approaches.
+        </span>
+
+      </div>
+
+
+      <div class="vrc-crest-evidence-card">
+
+        <b>
+          04 · Report & Presentation
+        </b>
+
+        <span class="vrc-lang-vi">
+          Báo cáo kết quả,
+          kết luận và trình bày dự án.
+        </span>
+
+        <span class="vrc-lang-en">
+          Project report,
+          conclusions and presentation.
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="vrc-crest-callout">
+
+      <b class="vrc-lang-vi">
+        Engineering Notebook phải là sản phẩm của học sinh.
+      </b>
+
+      <b class="vrc-lang-en">
+        The Engineering Notebook must be the students' own work.
+      </b>
+
+
+      <span class="vrc-lang-vi">
+        Theo các proposal dự án hiện tại,
+        Engineering Notebook cần phản ánh
+        công việc thực tế của học sinh.
+        Nội dung do AI tạo không được sử dụng
+        như nội dung của Engineering Notebook.
+      </span>
+
+      <span class="vrc-lang-en">
+        Under the current project proposals,
+        the Engineering Notebook must reflect
+        the students' actual work.
+        AI-generated content must not be used
+        as Engineering Notebook content.
+      </span>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+CONTACT / REGISTRATION
+===================================================== -->
+
+<section
+  class="vrc-crest-section"
+  id="crest-register">
+
+  <div class="vrc-crest-wrap">
+
+    <div class="vrc-crest-contact">
+
+
+      <!-- VI -->
+
+      <div class="vrc-lang-vi">
+
+        <span
+          class="vrc-crest-kicker"
+          style="color:#fff;">
+          CREST Awards
+        </span>
+
+        <h2>
+          Đăng ký xét CREST Awards
+        </h2>
+
+        <p class="vrc-crest-contact-intro">
+          Các đội có nhu cầu đăng ký xét CREST Awards
+          vui lòng liên hệ để được hướng dẫn lựa chọn
+          cấp độ phù hợp, xây dựng kế hoạch dự án,
+          chuẩn bị Engineering Notebook và các minh chứng
+          cần thiết cho quá trình xét.
+        </p>
+
+
+        <div class="vrc-crest-contact-box">
+
+          <p>
+            <strong>Người phụ trách:</strong><br>
+            Thầy Nguyễn Mạnh Cường
+            (Đại diện SEPA)
+          </p>
+
+          <p>
+            <strong>Hotline hỗ trợ:</strong><br>
+
+            <a href="tel:+84834899888">
+              +84 834 899 888
+            </a>
+          </p>
+
+          <p>
+            <strong>Tài khoản Zalo OA:</strong><br>
+
+            <a
+              href="https://zalo.me/1412292975064049980"
+              target="_blank"
+              rel="noopener">
+
+              Zalo OA Vietnam Robotics Championship →
+
+            </a>
+          </p>
+
+        </div>
+
+
+        <div class="vrc-crest-actions">
+
+          <a
+            class="vrc-crest-btn vrc-crest-btn-red"
+            href="tel:+84834899888">
+
+            Gọi Hotline →
+
+          </a>
+
+          <a
+            class="vrc-crest-btn vrc-crest-btn-outline"
+            href="https://zalo.me/1412292975064049980"
+            target="_blank"
+            rel="noopener">
+
+            Nhắn Zalo OA
+
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- EN -->
+
+      <div class="vrc-lang-en">
+
+        <span
+          class="vrc-crest-kicker"
+          style="color:#fff;">
+          CREST Awards
+        </span>
+
+        <h2>
+          Apply for CREST Awards assessment
+        </h2>
+
+        <p class="vrc-crest-contact-intro">
+          Teams interested in CREST Awards assessment
+          may contact us for guidance on selecting
+          an appropriate project level,
+          developing the project plan,
+          preparing the Engineering Notebook
+          and assembling the required evidence.
+        </p>
+
+
+        <div class="vrc-crest-contact-box">
+
+          <p>
+            <strong>Contact person:</strong><br>
+            Mr. Nguyen Manh Cuong
+            (SEPA Representative)
+          </p>
+
+          <p>
+            <strong>Support Hotline:</strong><br>
+
+            <a href="tel:+84834899888">
+              +84 834 899 888
+            </a>
+          </p>
+
+          <p>
+            <strong>Zalo Official Account:</strong><br>
+
+            <a
+              href="https://zalo.me/1412292975064049980"
+              target="_blank"
+              rel="noopener">
+
+              Vietnam Robotics Championship Zalo OA →
+
+            </a>
+          </p>
+
+        </div>
+
+
+        <div class="vrc-crest-actions">
+
+          <a
+            class="vrc-crest-btn vrc-crest-btn-red"
+            href="tel:+84834899888">
+
+            Call Hotline →
+
+          </a>
+
+          <a
+            class="vrc-crest-btn vrc-crest-btn-outline"
+            href="https://zalo.me/1412292975064049980"
+            target="_blank"
+            rel="noopener">
+
+            Message us on Zalo
+
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</div>
+
+
+
+<!-- =====================================================
+LANGUAGE SCRIPT
+===================================================== -->
+
+<script>
+
+function vrcSetCrestLanguage(lang, button){
+
+  var vi =
+    document.querySelectorAll('.vrc-lang-vi');
+
+  var en =
+    document.querySelectorAll('.vrc-lang-en');
+
+  var buttons =
+    document.querySelectorAll('.vrc-lang-button');
+
+
+  buttons.forEach(function(btn){
+    btn.classList.remove('active');
+  });
+
+
+  if(button){
+    button.classList.add('active');
+  }
+
+
+  if(lang === 'en'){
+
+    vi.forEach(function(el){
+      el.style.display = 'none';
+    });
+
+    en.forEach(function(el){
+      el.style.display = '';
+    });
+
+    localStorage.setItem(
+      'vrcCrestLanguage',
+      'en'
+    );
+
+  }else{
+
+    en.forEach(function(el){
+      el.style.display = 'none';
+    });
+
+    vi.forEach(function(el){
+      el.style.display = '';
+    });
+
+    localStorage.setItem(
+      'vrcCrestLanguage',
+      'vi'
+    );
+
+  }
+
+}
+
+
+document.addEventListener(
+  'DOMContentLoaded',
+  function(){
+
+    var savedLanguage =
+      localStorage.getItem(
+        'vrcCrestLanguage'
+      ) || 'vi';
+
+    var buttons =
+      document.querySelectorAll(
+        '.vrc-lang-button'
+      );
+
+
+    if(
+      savedLanguage === 'en'
+      && buttons[1]
+    ){
+
+      vrcSetCrestLanguage(
+        'en',
+        buttons[1]
+      );
+
+    }else if(buttons[0]){
+
+      vrcSetCrestLanguage(
+        'vi',
+        buttons[0]
+      );
+
+    }
+
+  }
+);
+
+</script>

@@ -3,7 +3,7 @@
 // Chạy: node satellites/build.mjs [domain ...]   → kết quả ở satellites/dist/<domain>/
 // Không cần thư viện ngoài (Node 18+).
 
-import { readFile, writeFile, mkdir, rm, cp, access } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm, cp, access, readdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -194,16 +194,94 @@ async function buildRedirect(site, dir) {
   console.log(`✓ ${site.domain} → chuyển hướng ${to}`);
 }
 
+// Site có giao diện riêng: content/<domain>/shell.html + pages/*.html (+ news-card.html, extra.css)
+// Mỗi trang mở đầu bằng <!--meta {"title": "...", "description": "..."} -->.
+// Trang là tài liệu HTML đầy đủ (có <!doctype>) giữ nguyên; trang chỉ có nội dung thì bọc trong shell.html.
+// Chỗ {{news:6}} / {{news:all}} được thay bằng thẻ tin lấy từ sepa.org.vn.
+async function buildCustom(site, dir, contentDir) {
+  const t = T[site.lang];
+  const posts = await postsForSite(site);
+  const shell = await readFile(join(contentDir, 'shell.html'), 'utf8');
+  const cardTpl = (await exists(join(contentDir, 'news-card.html'))) ? (await readFile(join(contentDir, 'news-card.html'), 'utf8')).trim() : null;
+  const extraCss = (await exists(join(contentDir, 'extra.css'))) ? await readFile(join(contentDir, 'extra.css'), 'utf8') : '';
+  const fill = (tpl, map) => tpl.replace(/\{\{(\w+)\}\}/g, (m, k) => (k in map ? map[k] : m));
+
+  const newsHtml = (n) => {
+    const list = n === 'all' ? posts : posts.slice(0, Number(n));
+    if (!list.length) return `<p class="empty">${t.empty}</p>`;
+    if (!cardTpl) return grid(list, t);
+    return `<div class="${site.newsGrid || 'vrc-news-grid'}">\n` + list.map((p) => fill(cardTpl, {
+      link: esc(p.link), title: p.title, excerpt: esc(p.excerpt), iso: p.date, date: fmtDate(p.date, t.locale),
+      imageTag: p.image ? `<img src="${esc(p.image)}" alt="${esc(p.imageAlt)}" loading="lazy" decoding="async">` : '<span class="sat-noimg"></span>',
+    })).join('\n') + '\n</div>';
+  };
+
+  const headExtra = (path, title, desc) => [
+    `<link rel="canonical" href="https://${site.domain}${path}">`,
+    `<meta property="og:type" content="website">`,
+    `<meta property="og:title" content="${esc(title)}">`,
+    `<meta property="og:description" content="${esc(desc)}">`,
+    `<meta property="og:url" content="https://${site.domain}${path}">`,
+    `<link rel="icon" href="/favicon.svg" type="image/svg+xml">`,
+    `<link rel="alternate" type="application/rss+xml" title="${esc(site.name)}" href="/feed.xml">`,
+    extraCss ? `<style>${extraCss}</style>` : '',
+  ].filter(Boolean).join('\n');
+
+  const render = (raw, path) => {
+    const m = raw.match(/^<!--meta (\{.*?\}) -->\s*/);
+    const meta = m ? JSON.parse(m[1]) : {};
+    let body = m ? raw.slice(m[0].length) : raw;
+    body = body.replace(/\{\{news:(\d+|all)\}\}/g, (_, n) => newsHtml(n));
+    const title = meta.title ? `${meta.title} | ${site.name}` : `${site.name} 2026–2027`;
+    const desc = meta.description || site.tagline;
+    if (/^\s*<!doctype/i.test(body)) {
+      if (!/<meta name="description"/.test(body)) body = body.replace('</head>', `<meta name="description" content="${esc(desc)}">\n</head>`);
+      return body.replace('</head>', headExtra(path, title, desc) + '\n</head>');
+    }
+    return fill(shell, { title: esc(title), description: esc(desc), head: headExtra(path, title, desc), content: body });
+  };
+
+  const urls = [];
+  const pagesDir = join(contentDir, 'pages');
+  for (const f of (await readdir(pagesDir)).filter((f) => f.endsWith('.html')).sort()) {
+    const slug = f.replace(/\.html$/, '');
+    const path = slug === 'home' ? '/' : `/${slug}/`;
+    await write(dir, slug === 'home' ? 'index.html' : `${slug}/index.html`, render(await readFile(join(pagesDir, f), 'utf8'), path));
+    urls.push(path);
+  }
+  await write(dir, '404.html', render(`<!--meta {"title": "${t.notFound}"} -->
+<section class="vrc-page-hero"><div class="vrc-container"><h1>${t.notFound}</h1><p>${t.notFoundText}</p></div></section>
+<section class="vrc-section"><div class="vrc-container"><a class="vrc-btn vrc-btn--primary" href="/">${t.home}</a></div></section>`, '/404'));
+
+  await writeCommon(site, dir, contentDir, urls, posts);
+  console.log(`✓ ${site.domain}: ${urls.length} trang, ${posts.length} bài (giao diện riêng)`);
+}
+
+async function writeCommon(site, dir, contentDir, urls, posts) {
+  const today = new Date().toISOString().slice(0, 10);
+  await write(dir, 'sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map((u) => `<url><loc>https://${site.domain}${u}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
+</urlset>
+`);
+  await write(dir, 'robots.txt', `User-agent: *\nAllow: /\nSitemap: https://${site.domain}/sitemap.xml\n`);
+  await write(dir, 'feed.xml', rss(site, posts));
+  await write(dir, 'favicon.svg', favicon(site));
+  await cp(join(ROOT, 'template', '_headers'), join(dir, '_headers'));
+  const redirectsFile = join(contentDir, '_redirects');
+  if (await exists(redirectsFile)) await cp(redirectsFile, join(dir, '_redirects'));
+}
+
 async function buildNews(site, dir) {
   const t = T[site.lang];
   const contentDir = join(ROOT, 'content', site.domain);
+  if (await exists(join(contentDir, 'shell.html'))) return buildCustom(site, dir, contentDir);
   const aboutFile = join(contentDir, 'gioi-thieu.html');
   const introFile = join(contentDir, 'intro.html');
   site.hasAbout = await exists(aboutFile);
   const intro = (await exists(introFile)) ? await readFile(introFile, 'utf8') : '';
 
   const posts = await postsForSite(site);
-  const today = new Date().toISOString().slice(0, 10);
 
   // Trang chủ
   await write(dir, 'index.html', layout(site, { path: '/', body: `
@@ -243,20 +321,9 @@ async function buildNews(site, dir) {
 </section>` }));
 
   const urls = ['/', '/tin-tuc/', ...(site.hasAbout ? ['/gioi-thieu/'] : [])];
-  await write(dir, 'sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `<url><loc>https://${site.domain}${u}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
-</urlset>
-`);
-  await write(dir, 'robots.txt', `User-agent: *\nAllow: /\nSitemap: https://${site.domain}/sitemap.xml\n`);
-  await write(dir, 'feed.xml', rss(site, posts));
-  await write(dir, 'favicon.svg', favicon(site));
   await cp(join(ROOT, 'template', 'style.css'), join(dir, 'style.css'));
-  await cp(join(ROOT, 'template', '_headers'), join(dir, '_headers'));
-
-  // Chuyển hướng riêng (vd. bài cũ trên WordPress → bài tương ứng trên sepa)
-  const redirectsFile = join(contentDir, '_redirects');
-  if (await exists(redirectsFile)) await cp(redirectsFile, join(dir, '_redirects'));
+  // sitemap, RSS, favicon, _headers, _redirects (vd. bài cũ trên WordPress → bài trên sepa)
+  await writeCommon(site, dir, contentDir, urls, posts);
 
   console.log(`✓ ${site.domain}: ${posts.length} bài`);
 }
