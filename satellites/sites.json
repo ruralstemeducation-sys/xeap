@@ -1,0 +1,78 @@
+{
+  "source": "https://sepa.org.vn",
+  "sites": [
+    {
+      "domain": "roboticschampionship.vn",
+      "type": "news",
+      "lang": "vi",
+      "name": "Giải Vô địch Robotics Việt Nam",
+      "tagline": "Sân chơi robotics cho học sinh tiểu học, THCS và THPT trên toàn quốc",
+      "color": "#c8102e",
+      "filter": { "site": "roboticschampionship-vn", "categories": [186, 411] }
+    },
+    {
+      "domain": "internationalroboticscompetition.vn",
+      "type": "news",
+      "lang": "en",
+      "name": "International Robotics Competition Vietnam",
+      "tagline": "Robotics competitions for students across Vietnam",
+      "color": "#0b4f9c",
+      "filter": { "site": "internationalroboticscompetition-vn", "categories": [204] }
+    },
+    {
+      "domain": "roboticsforgood.vn",
+      "type": "news",
+      "lang": "vi",
+      "name": "Robotics for Good",
+      "tagline": "Robotics và AI phục vụ cộng đồng",
+      "color": "#0f8a5f",
+      "filter": { "site": "roboticsforgood-vn", "tags": [511] }
+    },
+    {
+      "domain": "darwinstem.vn",
+      "type": "news",
+      "lang": "vi",
+      "name": "Darwin STEM",
+      "tagline": "Phòng thí nghiệm sáng tạo Darwin Lab",
+      "color": "#6a3fb5",
+      "filter": { "site": "darwinstem-vn", "categories": [441], "tags": [443] }
+    },
+    {
+      "domain": "stembansacviet.vn",
+      "type": "news",
+      "lang": "vi",
+      "name": "STEM Bản sắc Việt",
+      "tagline": "Học STEM qua văn hóa và bài học địa phương",
+      "color": "#b5651d",
+      "filter": { "site": "stembansacviet-vn", "categories": [220] }
+    },
+    {
+      "domain": "apistem.vn",
+      "type": "news",
+      "lang": "vi",
+      "name": "APISTEM",
+      "tagline": "Tin tức từ SEPA",
+      "color": "#1d6fa5",
+      "filter": { "site": "apistem-vn" }
+    },
+    {
+      "domain": "phuongmyloc.vn",
+      "type": "news",
+      "lang": "vi",
+      "name": "Phương Mỹ Lộc",
+      "tagline": "Tin tức từ SEPA",
+      "color": "#8a6d1d",
+      "filter": { "site": "phuongmyloc-vn" }
+    },
+    {
+      "domain": "sepa.edu.vn",
+      "type": "redirect",
+      "to": "https://sepa.org.vn"
+    },
+    {
+      "domain": "internationalroboticscompetition.com.vn",
+      "type": "redirect",
+      "to": "https://internationalroboticscompetition.vn"
+    }
+  ]
+}

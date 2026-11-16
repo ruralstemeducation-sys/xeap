@@ -7,6 +7,7 @@ Repo dùng để xây lại và quản lý thay đổi cho website của Liên m
 - `docs/ra-soat-2026-11/` – báo cáo rà soát toàn diện website (11/2026), kèm ảnh chụp.
 - `wordpress/snippets/` – bản sao mã các snippet đang chạy trên WordPress (plugin Code Snippets).
   Số ở đầu tên file là ID snippet trên web. Sửa trên web thì cập nhật lại file ở đây.
+- `satellites/` – dựng các site vệ tinh tĩnh (roboticschampionship.vn, darwinstem.vn…) từ bài trên sepa.org.vn. Xem `satellites/README.md`.
 
 ## Snippet 38 – Sửa nhanh sau rà soát
 
