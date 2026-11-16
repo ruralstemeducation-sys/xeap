@@ -1,0 +1,174 @@
+{
+ "home": [
+  [
+   "tv2026-tran-xep-hang",
+   "Trận xếp hạng theo thể thức liên minh – RECF Engage Hà Nội 2026",
+   "An alliance qualification match – RECF Engage Hanoi 2026"
+  ],
+  [
+   "vex2025-chung-ket-v5",
+   "Chung kết Quốc gia VEX Robotics 2025 – hạng mục V5",
+   "VEX Robotics 2025 National Finals – V5 division"
+  ],
+  [
+   "tv2026-kiem-tra-ky-thuat",
+   "Kiểm tra kỹ thuật robot trước giờ thi đấu",
+   "Robot inspection before the matches"
+  ],
+  [
+   "tv2026-mang-robot-vao-san",
+   "Mang robot vào sân thi đấu",
+   "Carrying the robot onto the field"
+  ],
+  [
+   "vex2025-bac-trung-bo",
+   "Vòng khu vực Bắc Trung Bộ – VEX Robotics 2025",
+   "North Central regional – VEX Robotics 2025"
+  ],
+  [
+   "tv2026-bgk-phong-van",
+   "Ban Giám khảo phỏng vấn đội về thiết kế, chế tạo và lập trình",
+   "Judges interview a team about design, build and programming"
+  ],
+  [
+   "tv2026-tinh-chinh-robot",
+   "Các đội tinh chỉnh robot giữa các lượt thi",
+   "Teams fine-tune their robots between matches"
+  ],
+  [
+   "vex2025-tinh-nguyen-vien-2",
+   "Tình nguyện viên hỗ trợ các đội tại VEX Robotics 2025",
+   "Volunteers supporting teams at VEX Robotics 2025"
+  ],
+  [
+   "tv2026-hoc-sinh-ky-ten",
+   "Học sinh ký tên lên bảng “Sign your name to reach the world”",
+   "Students sign the “Sign your name to reach the world” board"
+  ]
+ ],
+ "engage": [
+  [
+   "tv2026-toan-canh-khu-thi-dau",
+   "Toàn cảnh khu thi đấu tại THCS Trưng Vương",
+   "Overview of the competition area at Trung Vuong school"
+  ],
+  [
+   "tv2026-tran-xep-hang",
+   "Một trận xếp hạng theo thể thức liên minh",
+   "A qualification match in the alliance format"
+  ],
+  [
+   "tv2026-kiem-tra-ky-thuat",
+   "Kiểm tra kỹ thuật robot trước giờ thi đấu",
+   "Robot inspection before the matches"
+  ],
+  [
+   "tv2026-tinh-chinh-robot",
+   "Các đội tinh chỉnh robot giữa các lượt thi",
+   "Teams fine-tune their robots between matches"
+  ],
+  [
+   "tv2026-bgk-phong-van",
+   "Ban Giám khảo phỏng vấn đội thi",
+   "Judges interview a team"
+  ],
+  [
+   "tv2026-chuan-bi-ben-san",
+   "Các đội chuẩn bị bên sân thi đấu",
+   "Teams getting ready at the field"
+  ],
+  [
+   "tv2026-tap-trung-truoc-luot-thi",
+   "Tập trung trước lượt thi",
+   "Focus before a match"
+  ],
+  [
+   "tv2026-robot-doi-tieu-hoc",
+   "Robot của đội Tiểu học",
+   "A primary school team’s robot"
+  ],
+  [
+   "tv2026-mang-robot-vao-san",
+   "Mang robot vào sân thi đấu",
+   "Carrying the robot onto the field"
+  ]
+ ],
+ "achieve": [
+  [
+   "vex2025-chung-ket-v5",
+   "Chung kết Quốc gia VEX Robotics 2025 – hạng mục V5",
+   "VEX Robotics 2025 National Finals – V5 division"
+  ],
+  [
+   "vex2025-khai-mac",
+   "Lễ chào cờ khai mạc Chung kết Quốc gia VEX Robotics 2025",
+   "Opening ceremony of the VEX Robotics 2025 National Finals"
+  ],
+  [
+   "vex2025-bac-trung-bo",
+   "Các đội thi tại vòng khu vực Bắc Trung Bộ",
+   "Teams at the North Central regional"
+  ]
+ ],
+ "season": [
+  [
+   "vex2025-khai-mac",
+   "Khai mạc Chung kết Quốc gia VEX Robotics 2025",
+   "Opening of the VEX Robotics 2025 National Finals"
+  ],
+  [
+   "vex2025-chung-ket-iq",
+   "Chung kết Quốc gia – hạng mục VEX IQ",
+   "National Finals – VEX IQ division"
+  ],
+  [
+   "vex2025-mien-nam",
+   "Vòng khu vực miền Nam",
+   "Southern regional"
+  ],
+  [
+   "vex2025-bac-trung-bo",
+   "Vòng khu vực Bắc Trung Bộ",
+   "North Central regional"
+  ],
+  [
+   "vex2025-dbsh-giam-khao",
+   "Ban Giám khảo vòng khu vực Đồng bằng sông Hồng",
+   "Judges at the Red River Delta regional"
+  ],
+  [
+   "vex2025-tinh-nguyen-vien-1",
+   "Tình nguyện viên Chung kết Quốc gia",
+   "National Finals volunteers"
+  ]
+ ],
+ "team": [
+  [
+   "vex2025-tinh-nguyen-vien-1",
+   "Đội ngũ tình nguyện viên VEX Robotics 2025",
+   "The VEX Robotics 2025 volunteer team"
+  ],
+  [
+   "vex2025-tinh-nguyen-vien-3",
+   "Tình nguyện viên hướng dẫn các đội",
+   "Volunteers guiding teams"
+  ],
+  [
+   "vex2025-dbsh-giam-khao",
+   "Ban Giám khảo vòng khu vực Đồng bằng sông Hồng",
+   "Judges at the Red River Delta regional"
+  ],
+  [
+   "tv2026-bgk-phong-van",
+   "Ban Giám khảo phỏng vấn đội thi – RECF Engage 2026",
+   "Judges interviewing a team – RECF Engage 2026"
+  ]
+ ],
+ "crest": [
+  [
+   "crest-nova",
+   "Team Robotics NOVA – dự án đạt chứng nhận CREST Bronze",
+   "Team Robotics NOVA – CREST Bronze project"
+  ]
+ ]
+}

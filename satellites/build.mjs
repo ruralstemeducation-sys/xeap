@@ -210,6 +210,16 @@ async function buildCustom(site, dir, contentDir) {
   const navHtml = (await opt('nav.html')).trim();
   const footerHtml = (await opt('footer.html')).trim();
   const bilingual = await exists(join(contentDir, 'static', 'i18n.js'));
+  const hasLightbox = await exists(join(contentDir, 'static', 'gallery.js'));
+  const galleries = (await exists(join(contentDir, 'galleries.json'))) ? JSON.parse(await readFile(join(contentDir, 'galleries.json'), 'utf8')) : {};
+  // {{gallery:tên}} hoặc {{gallery:tên:feature}} → lưới ảnh, ảnh nhỏ /img/<tên>-720.webp, bấm mở /img/<tên>.webp
+  const galleryHtml = (key, mode) => {
+    const items = galleries[key];
+    if (!items) throw new Error(`Không có bộ ảnh "${key}" trong galleries.json`);
+    return `<div class="sat-gallery${mode ? ` sat-gallery--${mode}` : ''}">\n` + items.map(([img, vi, en]) =>
+      `<figure><a href="/img/${img}.webp" data-zoom><img src="/img/${img}-720.webp" alt="${esc(vi)}" data-alt-vi="${esc(vi)}" data-alt-en="${esc(en || vi)}" loading="lazy" decoding="async"></a>` +
+      `<figcaption data-vi="${esc(vi)}" data-en="${esc(en || vi)}">${esc(vi)}</figcaption></figure>`).join('\n') + '\n</div>';
+  };
   const fill = (tpl, map) => tpl.replace(/\{\{(\w+)\}\}/g, (m, k) => (k in map ? map[k] : m));
   const attr = (s) => esc(s);
 
@@ -249,6 +259,7 @@ async function buildCustom(site, dir, contentDir) {
       html = html.replace(/<html[^>]*>/i, `<html lang="vi" data-lang="vi" data-title-vi="${attr(titles.vi)}" data-title-en="${attr(titles.en)}">`);
       html = html.replace(/<\/body>(?![\s\S]*<\/body>)/i, '<script src="/i18n.js"></script>\n</body>');
     }
+    if (hasLightbox && html.includes('sat-gallery')) html = html.replace(/<\/body>(?![\s\S]*<\/body>)/i, '<script src="/gallery.js" defer></script>\n</body>');
     return html;
   };
 
@@ -257,6 +268,7 @@ async function buildCustom(site, dir, contentDir) {
     const meta = m ? JSON.parse(m[1]) : {};
     let body = m ? raw.slice(m[0].length) : raw;
     body = body.replace(/\{\{news:(\d+|all)\}\}/g, (_, n) => newsHtml(n));
+    body = body.replace(/\{\{gallery:([\w-]+)(?::(\w+))?\}\}/g, (_, k, mode) => galleryHtml(k, mode));
     const name = site.name;
     const title = meta.title ? `${meta.title} | ${name}` : `${name} 2026–2027`;
     const titleEn = meta.title_en ? `${meta.title_en} | ${site.nameEn || name}` : meta.title ? title : `${site.nameEn || name} 2026–2027`;

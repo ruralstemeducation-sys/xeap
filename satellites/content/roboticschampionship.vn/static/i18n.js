@@ -14,6 +14,8 @@
       var v = nodes[i].getAttribute('data-' + lang);
       if (v !== null && v !== '' && nodes[i].innerHTML !== v) nodes[i].innerHTML = v;
     }
+    var alts = d.querySelectorAll('[data-alt-en]');
+    for (var k = 0; k < alts.length; k++) alts[k].setAttribute('alt', alts[k].getAttribute('data-alt-' + lang) || alts[k].getAttribute('alt'));
     var t = root.getAttribute('data-title-' + lang); if (t) d.title = t;
     var btns = d.querySelectorAll('button[data-lang],a[data-lang]');
     for (var j = 0; j < btns.length; j++) {

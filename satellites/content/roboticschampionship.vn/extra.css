@@ -23,3 +23,21 @@ html[data-lang=en] [data-only=vi],html[data-lang=vi] [data-only=en]{display:none
 @media(max-width:700px){.vrc-hero:before,.vrc-hero:after{display:none}}
 html[data-lang=en] .vrc-lang-en{display:revert!important}
 html[data-lang=en] .vrc-lang-vi,html[data-lang=vi] .vrc-lang-en{display:none!important}
+/* ảnh thực tế */
+.sat-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:26px}
+.sat-gallery figure{margin:0;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--vrc-line);box-shadow:0 10px 26px rgba(6,47,105,.07)}
+.sat-gallery a{display:block;overflow:hidden;aspect-ratio:4/3;background:#dfe7f1}
+.sat-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.sat-gallery a:hover img{transform:scale(1.04)}
+.sat-gallery figcaption{padding:10px 14px 12px;font-size:.88rem;line-height:1.45;color:var(--vrc-muted)}
+.sat-gallery--feature figure:first-child{grid-column:span 2;grid-row:span 2}
+.sat-gallery--feature figure:first-child a{aspect-ratio:auto;height:calc(100% - 46px);min-height:260px}
+@media(max-width:620px){.sat-gallery{grid-template-columns:1fr 1fr;gap:10px}.sat-gallery figcaption{font-size:.78rem;padding:8px 10px}.sat-gallery--feature figure:first-child{grid-column:span 2;grid-row:auto}.sat-gallery--feature figure:first-child a{height:auto;aspect-ratio:4/3;min-height:0}}
+.sat-lightbox{position:fixed;inset:0;z-index:1000;background:rgba(3,14,32,.92);display:none;align-items:center;justify-content:center;padding:24px}
+.sat-lightbox.is-open{display:flex}
+.sat-lightbox figure{margin:0;max-width:min(1200px,100%);text-align:center}
+.sat-lightbox img{max-width:100%;max-height:80vh;border-radius:10px;margin:auto}
+.sat-lightbox figcaption{color:#dbe8f7;margin-top:12px;font-size:.95rem}
+.sat-lightbox button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:999px;width:46px;height:46px;font-size:28px;line-height:1;cursor:pointer}
+.sat-lb-x{top:18px;right:18px}.sat-lb-prev{left:14px;top:50%}.sat-lb-next{right:14px;top:50%}
+.vrc-hero.sat-hero-photo{background:linear-gradient(120deg,rgba(4,29,66,.94) 0%,rgba(6,47,105,.86) 48%,rgba(10,64,127,.55) 100%),url(/img/tv2026-toan-canh-khu-thi-dau.webp) center/cover no-repeat}
