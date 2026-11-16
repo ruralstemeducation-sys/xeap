@@ -201,19 +201,32 @@ async function buildRedirect(site, dir) {
 async function buildCustom(site, dir, contentDir) {
   const t = T[site.lang];
   const posts = await postsForSite(site);
-  const shell = await readFile(join(contentDir, 'shell.html'), 'utf8');
-  const cardTpl = (await exists(join(contentDir, 'news-card.html'))) ? (await readFile(join(contentDir, 'news-card.html'), 'utf8')).trim() : null;
-  const extraCss = (await exists(join(contentDir, 'extra.css'))) ? await readFile(join(contentDir, 'extra.css'), 'utf8') : '';
+  // Song ngữ: bài tiếng Anh lấy theo filterEn (vd. chuyên mục Robotics tiếng Anh trên sepa)
+  const postsEn = site.filterEn ? await postsForSite({ ...site, filter: site.filterEn }) : [];
+  const opt = async (f) => ((await exists(join(contentDir, f))) ? readFile(join(contentDir, f), 'utf8') : '');
+  const shell = await opt('shell.html');
+  const cardTpl = (await opt('news-card.html')).trim();
+  const extraCss = await opt('extra.css');
+  const navHtml = (await opt('nav.html')).trim();
+  const footerHtml = (await opt('footer.html')).trim();
+  const bilingual = await exists(join(contentDir, 'static', 'i18n.js'));
   const fill = (tpl, map) => tpl.replace(/\{\{(\w+)\}\}/g, (m, k) => (k in map ? map[k] : m));
+  const attr = (s) => esc(s);
 
-  const newsHtml = (n) => {
-    const list = n === 'all' ? posts : posts.slice(0, Number(n));
-    if (!list.length) return `<p class="empty">${t.empty}</p>`;
-    if (!cardTpl) return grid(list, t);
+  const cards = (list, lang) => {
+    const L = T[lang];
+    if (!list.length) return `<p class="empty">${L.empty}</p>`;
+    if (!cardTpl) return grid(list, L);
     return `<div class="${site.newsGrid || 'vrc-news-grid'}">\n` + list.map((p) => fill(cardTpl, {
-      link: esc(p.link), title: p.title, excerpt: esc(p.excerpt), iso: p.date, date: fmtDate(p.date, t.locale),
+      link: esc(p.link), title: p.title, excerpt: esc(p.excerpt), iso: p.date, date: fmtDate(p.date, L.locale),
+      more: lang === 'en' ? 'Read more →' : 'Đọc tiếp →',
       imageTag: p.image ? `<img src="${esc(p.image)}" alt="${esc(p.imageAlt)}" loading="lazy" decoding="async">` : '<span class="sat-noimg"></span>',
     })).join('\n') + '\n</div>';
+  };
+  const newsHtml = (n) => {
+    const pick = (arr) => (n === 'all' ? arr : arr.slice(0, Number(n)));
+    if (!site.filterEn) return cards(pick(posts), site.lang);
+    return `<div data-only="vi">${cards(pick(posts), 'vi')}</div>\n<div data-only="en">${cards(pick(postsEn), 'en')}</div>`;
   };
 
   const headExtra = (path, title, desc) => [
@@ -225,20 +238,37 @@ async function buildCustom(site, dir, contentDir) {
     `<link rel="icon" href="/favicon.svg" type="image/svg+xml">`,
     `<link rel="alternate" type="application/rss+xml" title="${esc(site.name)}" href="/feed.xml">`,
     extraCss ? `<style>${extraCss}</style>` : '',
+    // chọn EN từ trước: ẩn nội dung tới khi dịch xong, tránh nháy chữ tiếng Việt
+    bilingual ? `<script>try{if(localStorage.getItem('vrcLang')==='en'||/[?&]lang=en\\b/.test(location.search)){var h=document.documentElement;h.setAttribute('data-lang','en');h.lang='en';h.classList.add('i18n-fade')}}catch(e){}</script>` : '',
   ].filter(Boolean).join('\n');
+
+  const finish = (html, titles) => {
+    if (navHtml) html = html.replace(/<nav id="vrc-nav"[^>]*>[\s\S]*?<\/nav>(\s*<div class="vrc-lang-switch"[\s\S]*?<\/div>)?/, () => navHtml);
+    if (footerHtml) html = html.replace(/<footer class="vrc-footer">[\s\S]*?<\/footer>/, () => footerHtml);
+    if (bilingual) {
+      html = html.replace(/<html[^>]*>/i, `<html lang="vi" data-lang="vi" data-title-vi="${attr(titles.vi)}" data-title-en="${attr(titles.en)}">`);
+      html = html.replace(/<\/body>(?![\s\S]*<\/body>)/i, '<script src="/i18n.js"></script>\n</body>');
+    }
+    return html;
+  };
 
   const render = (raw, path) => {
     const m = raw.match(/^<!--meta (\{.*?\}) -->\s*/);
     const meta = m ? JSON.parse(m[1]) : {};
     let body = m ? raw.slice(m[0].length) : raw;
     body = body.replace(/\{\{news:(\d+|all)\}\}/g, (_, n) => newsHtml(n));
-    const title = meta.title ? `${meta.title} | ${site.name}` : `${site.name} 2026–2027`;
+    const name = site.name;
+    const title = meta.title ? `${meta.title} | ${name}` : `${name} 2026–2027`;
+    const titleEn = meta.title_en ? `${meta.title_en} | ${site.nameEn || name}` : meta.title ? title : `${site.nameEn || name} 2026–2027`;
     const desc = meta.description || site.tagline;
+    let html;
     if (/^\s*<!doctype/i.test(body)) {
       if (!/<meta name="description"/.test(body)) body = body.replace('</head>', `<meta name="description" content="${esc(desc)}">\n</head>`);
-      return body.replace('</head>', headExtra(path, title, desc) + '\n</head>');
+      html = body.replace('</head>', headExtra(path, title, desc) + '\n</head>');
+    } else {
+      html = fill(shell, { title: esc(title), description: esc(desc), head: headExtra(path, title, desc), content: body });
     }
-    return fill(shell, { title: esc(title), description: esc(desc), head: headExtra(path, title, desc), content: body });
+    return finish(html, { vi: title, en: titleEn });
   };
 
   const urls = [];
@@ -249,12 +279,15 @@ async function buildCustom(site, dir, contentDir) {
     await write(dir, slug === 'home' ? 'index.html' : `${slug}/index.html`, render(await readFile(join(pagesDir, f), 'utf8'), path));
     urls.push(path);
   }
-  await write(dir, '404.html', render(`<!--meta {"title": "${t.notFound}"} -->
-<section class="vrc-page-hero"><div class="vrc-container"><h1>${t.notFound}</h1><p>${t.notFoundText}</p></div></section>
-<section class="vrc-section"><div class="vrc-container"><a class="vrc-btn vrc-btn--primary" href="/">${t.home}</a></div></section>`, '/404'));
+  const v = T.vi, e = T.en;
+  await write(dir, '404.html', render(`<!--meta {"title": "${v.notFound}", "title_en": "${e.notFound}"} -->
+<section class="vrc-page-hero"><div class="vrc-container"><h1 data-vi="${v.notFound}" data-en="${e.notFound}">${v.notFound}</h1><p data-vi="${v.notFoundText}" data-en="${e.notFoundText}">${v.notFoundText}</p></div></section>
+<section class="vrc-section"><div class="vrc-container"><a class="vrc-btn vrc-btn--primary" href="/" data-vi="${v.home}" data-en="${e.home}">${v.home}</a></div></section>`, '/404'));
 
+  const staticDir = join(contentDir, 'static');
+  if (await exists(staticDir)) await cp(staticDir, dir, { recursive: true });
   await writeCommon(site, dir, contentDir, urls, posts);
-  console.log(`✓ ${site.domain}: ${urls.length} trang, ${posts.length} bài (giao diện riêng)`);
+  console.log(`✓ ${site.domain}: ${urls.length} trang, ${posts.length} bài VI${site.filterEn ? `, ${postsEn.length} bài EN` : ''} (giao diện riêng)`);
 }
 
 async function writeCommon(site, dir, contentDir, urls, posts) {

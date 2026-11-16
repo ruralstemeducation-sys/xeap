@@ -8,7 +8,19 @@
       "name": "Giải Vô địch Robotics Việt Nam",
       "tagline": "Sân chơi robotics cho học sinh tiểu học, THCS và THPT trên toàn quốc",
       "color": "#c8102e",
-      "filter": { "site": "roboticschampionship-vn", "categories": [186, 411] }
+      "filter": {
+        "site": "roboticschampionship-vn",
+        "categories": [
+          186,
+          411
+        ]
+      },
+      "nameEn": "Vietnam Robotics Championship",
+      "filterEn": {
+        "categories": [
+          204
+        ]
+      }
     },
     {
       "domain": "internationalroboticscompetition.vn",
@@ -17,7 +29,12 @@
       "name": "International Robotics Competition Vietnam",
       "tagline": "Robotics competitions for students across Vietnam",
       "color": "#0b4f9c",
-      "filter": { "site": "internationalroboticscompetition-vn", "categories": [204] }
+      "filter": {
+        "site": "internationalroboticscompetition-vn",
+        "categories": [
+          204
+        ]
+      }
     },
     {
       "domain": "roboticsforgood.vn",
@@ -26,7 +43,12 @@
       "name": "Robotics for Good",
       "tagline": "Robotics và AI phục vụ cộng đồng",
       "color": "#0f8a5f",
-      "filter": { "site": "roboticsforgood-vn", "tags": [511] }
+      "filter": {
+        "site": "roboticsforgood-vn",
+        "tags": [
+          511
+        ]
+      }
     },
     {
       "domain": "darwinstem.vn",
@@ -35,7 +57,15 @@
       "name": "Darwin STEM",
       "tagline": "Phòng thí nghiệm sáng tạo Darwin Lab",
       "color": "#6a3fb5",
-      "filter": { "site": "darwinstem-vn", "categories": [441], "tags": [443] }
+      "filter": {
+        "site": "darwinstem-vn",
+        "categories": [
+          441
+        ],
+        "tags": [
+          443
+        ]
+      }
     },
     {
       "domain": "stembansacviet.vn",
@@ -44,7 +74,12 @@
       "name": "STEM Bản sắc Việt",
       "tagline": "Học STEM qua văn hóa và bài học địa phương",
       "color": "#b5651d",
-      "filter": { "site": "stembansacviet-vn", "categories": [220] }
+      "filter": {
+        "site": "stembansacviet-vn",
+        "categories": [
+          220
+        ]
+      }
     },
     {
       "domain": "apistem.vn",
@@ -53,7 +88,9 @@
       "name": "APISTEM",
       "tagline": "Tin tức từ SEPA",
       "color": "#1d6fa5",
-      "filter": { "site": "apistem-vn" }
+      "filter": {
+        "site": "apistem-vn"
+      }
     },
     {
       "domain": "phuongmyloc.vn",
@@ -62,7 +99,9 @@
       "name": "Phương Mỹ Lộc",
       "tagline": "Tin tức từ SEPA",
       "color": "#8a6d1d",
-      "filter": { "site": "phuongmyloc-vn" }
+      "filter": {
+        "site": "phuongmyloc-vn"
+      }
     },
     {
       "domain": "sepa.edu.vn",

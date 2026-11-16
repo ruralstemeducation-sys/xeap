@@ -12,3 +12,14 @@
 .vrc-news-body h3 a{color:inherit;text-decoration:none}
 @media(max-width:560px){.sat-dates li{grid-template-columns:1fr;gap:2px}}
 .vrc-hero h1,.vrc-hero-copy,.vrc-hero .vrc-kicker{position:relative;z-index:2}
+/* song ngữ */
+.vrc-lang-switch{order:3;display:inline-flex;flex:none;border:1px solid var(--vrc-line);border-radius:999px;padding:3px;background:#fff}
+.vrc-lang-switch button{appearance:none;border:0;background:none;padding:6px 11px;border-radius:999px;font:800 .78rem/1 Inter,sans-serif;letter-spacing:.05em;color:var(--vrc-navy);cursor:pointer;transition:.2s}
+.vrc-lang-switch button.is-active{background:var(--vrc-navy);color:#fff}
+.vrc-lang-toggle,.vrc-lang-button{display:none!important}
+main,.vrc-footer,.vrc-nav{transition:opacity .16s ease}
+html.i18n-fade main,html.i18n-fade .vrc-footer,html.i18n-fade .vrc-nav{opacity:0}
+html[data-lang=en] [data-only=vi],html[data-lang=vi] [data-only=en]{display:none!important}
+@media(max-width:700px){.vrc-hero:before,.vrc-hero:after{display:none}}
+html[data-lang=en] .vrc-lang-en{display:revert!important}
+html[data-lang=en] .vrc-lang-vi,html[data-lang=vi] .vrc-lang-en{display:none!important}
