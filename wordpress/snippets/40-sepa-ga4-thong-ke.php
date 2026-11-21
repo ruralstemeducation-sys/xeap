@@ -5,10 +5,10 @@
    - Địa chỉ trang gửi đi chỉ giữ tham số nguồn (utm_*, ref) và mã trang (p, page_id, cat, lang);
      bỏ mọi tham số khác (vd. ?s= từ khoá tìm kiếm). Tắt Google signals + quảng cáo cá nhân hoá.
    - Điền mã luồng GA4 (G-…) của sepa.org.vn vào SEPA_GA4_ID. Mã này không bí mật.
-   Snippet #40 trên web (tạo 21/11/2026, đang tắt cho tới khi có mã G-…). */
+   Snippet #40 trên web (tạo + bật 21/11/2026). Thuộc tính GA4 "SEPA website", tài khoản daoquyen@sepa.org.vn. */
 
 if ( ! defined( 'SEPA_GA4_ID' ) ) {
-	define( 'SEPA_GA4_ID', '' );
+	define( 'SEPA_GA4_ID', 'G-LNJ29RQ42S' );
 }
 
 add_action( 'wp_head', function () {
