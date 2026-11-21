@@ -21,3 +21,10 @@ Repo dùng để xây lại và quản lý thay đổi cho website của Liên m
 - Sửa độ tương phản trang `/sang-lap`.
 - Trang con rộng 1200px thay cho 880px; ẩn tiêu đề trang lặp khi nội dung có phần mở đầu riêng; khối chỉ có chữ chia hai cột trên màn hình rộng.
 - Không hiện ảnh đại diện của theme khi nội dung trang đã có chính ảnh đó.
+
+## Snippet 40 – Đếm lượt truy cập Google Analytics 4
+
+Đã tạo trên web 21/11/2026, **đang tắt** cho tới khi điền mã luồng GA4. Thêm Google Analytics 4 cho sepa.org.vn, cùng cách làm với eventstem.com và Davilearn:
+không đếm quản trị / biên tập viên đang đăng nhập; địa chỉ trang gửi đi chỉ giữ tham số nguồn (`utm_*`, `ref`)
+và mã trang; tắt Google signals và quảng cáo cá nhân hoá. Điền mã luồng `G-…` vào `SEPA_GA4_ID`.
+Nhớ thêm mục Google Analytics vào trang Chính sách bảo mật.
